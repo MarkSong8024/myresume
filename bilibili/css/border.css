@@ -1,0 +1,103 @@
+
+.border {
+    width: 100%;
+    border-top: 1px solid #DDDDDD;
+}
+
+.border .borderMain {
+    width: 980px;
+    height: 260px;
+    /*background: plum;*/
+    margin: 0 auto;
+    border-bottom: 1px solid #E7E7E7;
+}
+
+.border .borderMain .bannerLeft {
+    float: left;
+    width: 440px;
+    height: 220px;
+    background: purple;
+    margin-top: 20px;
+}
+
+.border .borderMain .bannerRight {
+    float: right;
+    width: 520px;
+    height: 220px;
+    margin-top: 20px;
+    background: #b35513;
+}
+
+.border .borderVideo {
+    width: 980px;
+    margin: 0 auto;
+}
+
+.border .borderVideo .borderLeft {
+    clear: left;
+    width: 700px;
+    height: 200px;
+    background: yellow;
+    float: left;
+
+}
+
+.border .borderVideo .borderRight {
+    width: 260px;
+    height: 200px;
+    float: right;
+    background: peachpuff;
+}
+
+.borderLeft .b-head span {
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    background: url("../img/main_icons.png") no-repeat 0 0;
+    padding-left: 35px;
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: bold;
+    color: #222;
+    vertical-align: inherit;
+    margin-top: 10px;
+}
+
+.borderLeft .expand .imgDiv {
+    background: url("../img/border/img_loading.png") no-repeat center 15px;
+}
+
+.borderLeft .expand ul {
+    list-style: none;
+}
+
+.borderLeft .expand ul li {
+    float: left;
+    /*margin-left: 10px;*/
+    margin: 15px 15px 0 0;
+}
+
+.borderLeft .expand ul li img {
+    width: 160px;
+    height: 100px;
+    opacity: 0;
+}
+
+.borderLeft .expand .t {
+    height: 40px;
+    width: 160px;
+    margin: 0 0 9px 0;
+    padding-top: 5px;
+    line-height: 20px;
+    transition: all .2s linear;
+    color: #222;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+    text-align: left;
+}
+
+.borderLeft .expand .t:hover {
+    cursor: pointer;
+    color: #00a1d6;
+}

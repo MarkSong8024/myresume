@@ -1,0 +1,111 @@
+.bannerLeft {
+    position: relative;
+    overflow: hidden;
+}
+
+.bannerLeft .bannerImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4400px;
+    height: 220px;
+    overflow: hidden;
+    /*background: #000000;*/
+    /*z-index: 20;*/
+}
+
+/*创建出来bannerImg下的div 进行浮动*/
+.bannerLeft .bannerImg div {
+    float: left;
+    width: 440px;
+    height: 220px;
+    background: url("../img/border/loading.gif") no-repeat center center;
+}
+
+.bannerLeft .bannerImg div img {
+    width: 100%;
+    height: 100%;
+}
+
+/*对li进行设置样式*/
+.bannerLeft .bannerTipBg {
+    position: absolute;
+    bottom: 0px;
+    /*right: 10px;*/
+    /*width: 250px;*/
+    width: 100%;
+    height: 35px;
+    background: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    /*border-radius: 10px;*/
+}
+
+.bannerLeft .bannerTip {
+    list-style: none;
+    position: absolute;
+    bottom: 13px;
+    right: 20px;
+    /*width: 100px;*/
+    height: 12px;
+    /*overflow: hidden;*/
+}
+
+.bannerLeft .bannerTip li {
+    float: left;
+    margin-left: 7px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    /*background: #999;*/
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid transparent;
+}
+
+.bannerLeft .bannerTip li.select {
+    border: 2px solid #fff;
+    background: #00A1D6;
+}
+
+/*向左向右*/
+.bannerLeft .bannerL, .bannerLeft .bannerR {
+    display: none;
+    position: absolute;
+    top: 50%;
+    margin-top: -22px;
+    width: 30px;
+    height: 45px;
+    background: url("../img/banner/pre.png") no-repeat 0 0;
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+}
+
+.bannerLeft .bannerL {
+    /*left: 20px;*/
+}
+
+.bannerLeft .bannerR {
+    right: -2px;
+    background-position: -50px 0;
+}
+
+.bannerLeft .bannerL:hover, .bannerLeft .bannerR:hover {
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+
+.dataCount {
+    position: absolute;
+    /*left: 0;*/
+    top: 195px;
+    color: #fff;
+    z-index: 2;
+    font-size: 14px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.dataCount:hover {
+    text-shadow: 0 0 3px #fff;
+}

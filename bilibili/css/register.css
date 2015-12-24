@@ -1,0 +1,57 @@
+.register {
+    visibility: hidden;
+
+    /*display: none;*/
+    position: absolute;
+    /*width: 420px;*/
+    /*height: 520px;*/
+    width: 0;
+    height: 0;
+    background: darkorange;
+    z-index: 11;
+    top: 50%;
+    left: 50%;
+    /*margin-left: -226px;*/
+    /*margin-top: -260px;*/
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.register h2 {
+    display: none;
+    height: 45px;
+    line-height: 45px;
+    text-indent: 20px;
+    color: #fff;
+    background: pink;
+    opacity: 0;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    -webkit-user-select: none;
+    cursor: move;
+}
+
+.login:hover {
+    color: #222;
+    text-shadow: 0 0 2px #999;
+}
+
+.close {
+    display: none;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    float: right;
+    border-radius: 100%;
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    color: #fff;
+    -webkit-user-select: none;
+}
+
+.close:hover {
+    cursor: pointer;
+    background: #ccc;
+}

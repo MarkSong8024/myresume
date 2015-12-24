@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+
+        /*尾部*/
+        .footer {
+            clear: both;
+            width: 100%;
+            height: 300px;
+            background: springgreen;
+        }
+
+
+    </style>
+    <link type="text/css" rel="stylesheet" href="css/header.css"/>
+    <link type="text/css" rel="stylesheet" href="css/border.css"/>
+    <link type="text/css" rel="stylesheet" href="css/register.css"/>
+    <link type="text/css" rel="stylesheet" href="css/banner.css"/>
+</head>
+<body>
+<div class="header">
+    <div class="headerTitle">
+        <!-- 美女时钟-->
+        <div id="time">
+            <h3 id="current"></h3>
+            <img src="" id="img"/>
+        </div>
+        <div class="timeLine">
+            <p id="timeLine"></p>
+        </div>
+
+        <div class="hLeft">
+            <ul>
+                <li class="home"><a class="i-link i-link1" href="##">主站</a></li>
+                <li><a class="i-link1" href="##">画友</a></li>
+                <li><a class="i-link1" href="##">游戏中心</a></li>
+                <li><a class="i-link1" href="##">直播</a></li>
+                <li><a class="i-link1" href="##">手机端</a></li>
+                <li><a class="i-link1 jp" href="##">日本游 <em class="new"></em></a></li>
+            </ul>
+        </div>
+        <div class="hRight">
+            <ul class="index-login">
+
+                <!--<li class="b-btn"><a class="icon-qq" href="##"></a></li>-->
+                <!--<li class="b-btn"><a class="icon-sina" href="##"></a></li>-->
+                <li id="register" class="b-btn login"><a class="login" href="##">注册</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="headerImg">
+        <img class="img" src="img/1.jpg" alt=""/>
+
+        <div class="logo"></div>
+    </div>
+    <div class="headerMenu">
+        <div class="headerMenuLeft">
+            <ul>
+                <li class="sy"><a href="##">首页</a></li>
+                <li><a href="##">画友</a><span>22</span></li>
+                <li><a href="##">番剧</a><span>33</span></li>
+                <li><a href="##">音乐</a><span>44</span></li>
+                <li><a href="##">舞蹈</a><span>55</span></li>
+                <li><a href="##">游戏</a><span>66</span></li>
+                <li><a href="##">科技</a><span>77</span></li>
+                <li><a href="##">娱乐</a><span>88</span></li>
+                <li><a href="##">鬼畜</a><span>99</span></li>
+                <li><a href="##">电影</a><span>100</span></li>
+                <li><a href="##">电视剧</a><span>110</span></li>
+                <li><a class="i-link" href="##">排行</a></li>
+            </ul>
+        </div>
+        <div class="headerMenuRight">
+            <input type="text" placeholder="玉面小嫣然"/>
+            <input type="button" class="search-submit"/>
+        </div>
+    </div>
+</div>
+<div class="border">
+    <div class="borderMain">
+        <!-- 轮播图-->
+        <div id="banner" class="bannerLeft">
+            <div class="bannerImg"></div>
+            <div id="bannerTipBg" class="bannerTipBg"></div>
+            <ul class="bannerTip"></ul>
+            <a href="javascript:;" class="bannerL" id="bannerL"></a>
+            <a href="javascript:;" class="bannerR" id="bannerR"></a>
+        </div>
+        <div class="bannerRight"></div>
+    </div>
+    <div class="borderVideo">
+        <div class="borderLeft">
+            <div class="b-head">
+                <span>推广</span>
+            </div>
+            <div id="expand" class="expand">
+
+            </div>
+        </div>
+        <div class="borderRight"></div>
+        <!--<div class="borderLeft"></div>-->
+        <!--<div class="borderRight"></div>-->
+        <!--<div class="borderLeft"></div>-->
+        <!--<div class="borderRight"></div>-->
+        <!--<div class="borderLeft"></div>-->
+        <!--<div class="borderRight"></div>-->
+        <!--<div class="borderLeft"></div>-->
+        <!--<div class="borderRight"></div>-->
+        <!--<div class="borderLeft"></div>-->
+        <!--<div class="borderRight"></div>-->
+        <!--<div class="borderLeft"></div>-->
+        <!--<div class="borderRight"></div>-->
+    </div>
+</div>
+<div class="footer">
+    <!-- 百度分享-->
+    <script>window._bd_share_config = {
+        "common": {"bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16"},
+        "slide": {"type": "slide", "bdImg": "7", "bdPos": "left", "bdTop": "231.5"}
+    };
+    with (document)0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+</div>
+<!--注册-->
+<div id="boxRegister" class="register">
+    <h2 id="markRegister">注册</h2>
+
+    <div id="close" class="close">关闭</div>
+</div>
+<!--模态窗口处理-->
+<div id="model" style=" display: none; position: absolute; width: 100%;height: 100%; background: transparent;z-index: 10;top: 0;left: 0"></div>
+<!--向上-->
+<script type="text/javascript" src="js/utils-1.0.min.js"></script>
+<script type="text/javascript" src="js/DataArray.js"></script>
+<script type="text/javascript" src="js/bilibili.js"></script>
+</body>
+</html>
