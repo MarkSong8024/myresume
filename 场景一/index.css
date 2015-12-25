@@ -32,7 +32,7 @@ html, body {
 }
 
 .slide li:nth-child(1) {
-    background: #48CFAE;
+    background: #434A54;
 
 }
 
@@ -49,6 +49,18 @@ html, body {
 }
 
 .slide li:nth-child(5) {
+    background: #434A54;
+}
+
+.slide li:nth-child(6) {
+    background: #434A54;
+}
+
+.slide li:nth-child(7) {
+    background: #434A54;
+}
+
+.slide li:nth-child(8) {
     background: #434A54;
 }
 
@@ -88,43 +100,6 @@ html, body {
     font-family: 'Microsoft Yahei', Tahoma, Helvetica, Arial, sans-serif;
 }
 
-.a1 .self {
-    margin: 0 auto;
-    position: absolute;
-    bottom: 15%;
-    -webkit-transform: translate(0, 125px);
-    text-align: center;
-    box-sizing: border-box;
-
-}
-
-.a1 img {
-    width: 370px;
-    height: 370px;
-    position: absolute;
-    top: 50px;
-    left: 140px;
-    border-radius: 50%;
-    border: 2px dashed #fff;
-    -webkit-animation: scaleMove 1s infinite;
-    z-index: 1;
-}
-
-.a1 .self span {
-    letter-spacing: 5px;
-    display: block;
-    margin-left: 50px;
-    color: #fff;
-    line-height: 30px;
-    font-size: 30px;
-    font-family: 'Microsoft Yahei', Tahoma, Helvetica, Arial, sans-serif;
-}
-
-#a1 .self {
-    -webkit-transform: translate(0, 0);
-    -webkit-transition: 1s;
-}
-
 .a2 .number {
     width: 100px;
     height: 100px;
@@ -133,7 +108,6 @@ html, body {
     text-align: center;
     color: #fff;
     border-radius: 50%;
-
 }
 
 .a2 .hobby {
@@ -289,12 +263,12 @@ html, body {
     width: 80px;
     height: 200px;
 }*/
-.a5 {
+.a1 {
     width: 100%;
     height: 100%;
 }
 
-.a5 .myself {
+.a1 .myself {
     display: block;
     margin: 75px auto;
     padding: 20px 120px;
@@ -307,9 +281,27 @@ html, body {
     font-weight: 900;
     font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
     text-align: center;
+    -webkit-transform: translate(-600px, 0);
 }
 
-.a5 .per {
+#a1 .myself {
+    -webkit-transform: translate(0, 0);
+    -webkit-transition: 1s;
+}
+
+#a1 .per {
+    -webkit-transform: translate(0, 0);
+    -webkit-transition: 1s;
+}
+
+#a1 .qq {
+
+    -webkit-transform: translate(0, 0);
+    -webkit-transition: 1s;
+    -webkit-transform: rotateY(360deg);
+}
+
+.a1 .per {
     display: block;
     margin: -20px auto;
     width: 550px;
@@ -321,4 +313,39 @@ html, body {
     font-weight: 900;
     font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
     text-align: center;
+    -webkit-transform: translate(600px, 0);
 }
+
+.a1 .qq {
+    display: block;
+    position: relative;
+    top: 50%;
+    margin: 0 auto;
+    width: 400px;
+    font-size: 40px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    color: #FCE905;
+    text-align: center;
+
+    /*-webkit-transform: rotateY(0deg);*/
+    -webkit-animation: rotateAnimate 2s 2s;
+}
+
+@-webkit-keyframes rotateAnimate {
+    25% {
+        -webkit-transform: translate(-600px, 0);
+        -webkit-transform: rotate(-30deg);
+    }
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    75% {
+        -webkit-transform: rotate(30deg);
+    }
+    100% {
+        /*-webkit-transform: rotate(0deg);*/
+    }
+}
+
+
+
