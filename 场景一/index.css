@@ -359,21 +359,45 @@ html, body {
     background: url("images/qq.png") no-repeat center;
     background-color: #BEDD6B;
     background-size: 80%;
+    -webkit-transform: translate(-1000px, 0);
 }
 
 .a8 .tb2 {
     background: url("images/wx.png") no-repeat center;
     background-size: 100%;
+    -webkit-transform: translate(-1000px, 0);
 }
 
 .a8 .tb3 {
     background: url("images/dh.png") no-repeat center;
     background-size: 100%;
+    -webkit-transform: translate(-1000px, 0);
 }
 
 .a8 .tb4 {
     background: url("images/yx.jpg") no-repeat center;
     background-size: 100%;
+    -webkit-transform: translate(-1000px, 0);
+}
+
+#a8 .tb1 {
+    -webkit-transform: translate(0, 0);
+    -webkit-transition: 5s;
+}
+
+#a8 .tb2 {
+    -webkit-transform: translate(0, 0);
+    -webkit-transition: 6s;
+}
+
+#a8 .tb3 {
+    -webkit-transform: translate(0, 0);
+    -webkit-transition: 7s;
+}
+
+#a8 .tb4 {
+    -webkit-transform: translate(0, 0);
+    -webkit-transition: 8s;
 }
 
 .a8 .tb1 span, .a8 .tb2 span, .a8 .tb3 span, .a8 .tb4 span {
@@ -385,9 +409,10 @@ html, body {
 .a8 .comeon {
     -webkit-transform: scale(0);
 }
+
 #a8 .comeon {
     -webkit-transform: scale(1);
-    -webkit-transition: 4s;
+    -webkit-transition: 3s;
 }
 
 @-webkit-keyframes rotateAnimate {
