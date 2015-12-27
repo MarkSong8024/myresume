@@ -252,8 +252,8 @@ html, body {
     width: 300px;
     height: 80px;
     line-height: 80px;
-    border: 4px solid #FCE905;
-    color: #FCE905;
+    border: 4px solid rgb(253, 234, 6);
+    color: rgb(253, 234, 6);
     font-size: 75px;
     font-weight: 900;
     font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
@@ -272,7 +272,7 @@ html, body {
     width: 550px;
     height: 80px;
     line-height: 80px;
-    background: #FCE905;
+    background: rgb(253, 234, 6);
     color: #404449;
     font-size: 40px;
     font-weight: 900;
@@ -294,7 +294,7 @@ html, body {
     width: 400px;
     font-size: 40px;
     font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
-    color: #FCE905;
+    color: rgb(253, 234, 6);
     text-align: center;
 }
 
@@ -312,10 +312,162 @@ html, body {
     height: 100%;
 }
 
-.a3 img {
-    width: 50%;
-    margin: 0 auto;
+.a3 .whatJOB {
+    display: block;
+    width: 250px;
+    padding: 20px;
+    margin: 60px auto;
+    border: 5px solid rgb(253, 234, 6);
+    font-size: 40px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: rgb(253, 234, 6);
+    -webkit-transform: translate(0, -400px);
+}
 
+#a3 .whatJOB {
+    -webkit-animation: myMove 0.5s ease-out 1 both;
+}
+
+@-webkit-keyframes myMove {
+    25% {
+
+    }
+    50% {
+        /*-webkit-transform: translate(0, -400px);*/
+    }
+    100% {
+        -webkit-transform: translate(0, 0);
+    }
+}
+
+.a3 .por {
+    display: block;
+    width: 250px;
+    height: 250px;
+    background: rgb(253, 234, 6);
+    border-radius: 50%;
+}
+
+.a3 .por img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+    left: 10%;
+    top: 30px;
+}
+
+#a3 .por img {
+    -webkit-animation: loading 2s linear 1;
+}
+
+.a3 .lss {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    font-size: 65px;
+    font-weight: bold;
+    color: rgb(253, 234, 6);
+}
+
+.a3 .xhx {
+    display: block;
+    position: relative;
+    width: 340px;
+    left: 265px;
+    top: -80px;
+}
+
+.a3 .c1, .a3 .c2, .a3 .c3, .a3 .c4 {
+    display: block;
+    margin: 20px;
+    padding: 10px 0;
+    width: 200px;
+    font-size: 32px;
+    letter-spacing: 5px;
+    font-weight: bold;
+    text-align: center;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    color: rgb(253, 234, 6);
+    background: rgba(255, 255, 255, 0.298039);
+}
+
+.d1 {
+    float: left;
+}
+
+.d2 {
+    float: left;
+}
+
+.a3 .c5, .a3 .c6, .a3 .c7, .a3 .c8 {
+    display: block;
+    margin: 20px;
+    padding: 10px;
+    width: 300px;
+    text-align: center;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    color: #404449;
+    background: rgb(253, 234, 6);
+}
+
+.a4 .x1, .a4 .x2, .a4 .x3, .a4 .x4, .a4 .x5, .a4 .x6 {
+    border: 5px solid rgb(253, 234, 6);
+    border-left-width: 2px;
+    border-right-width: 3px;
+    border-bottom-width: 4px;
+    -webkit-animation: loading 2s linear 1;
+}
+
+.a4 .x1 {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: rgb(172, 147, 237);
+}
+
+.a4 .x2 {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: rgb(215, 113, 173);
+}
+
+.a4 .x3 {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: rgb(59, 176, 219);
+}
+
+.a4 .x4 {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: rgb(219, 68, 84);
+}
+
+.a4 .x5 {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: rgb(247, 188, 66);
+}
+
+.a4 .x6 {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: rgb(234, 87, 63);
 }
 
 /*#a3 {*/
@@ -382,22 +534,22 @@ html, body {
 
 #a8 .tb1 {
     -webkit-transform: translate(0, 0);
-    -webkit-transition: 5s;
+    -webkit-transition: 2s;
 }
 
 #a8 .tb2 {
     -webkit-transform: translate(0, 0);
-    -webkit-transition: 6s;
+    -webkit-transition: 3s;
 }
 
 #a8 .tb3 {
     -webkit-transform: translate(0, 0);
-    -webkit-transition: 7s;
+    -webkit-transition: 4s;
 }
 
 #a8 .tb4 {
     -webkit-transform: translate(0, 0);
-    -webkit-transition: 8s;
+    -webkit-transition: 5s;
 }
 
 .a8 .tb1 span, .a8 .tb2 span, .a8 .tb3 span, .a8 .tb4 span {
@@ -428,6 +580,15 @@ html, body {
     }
     100% {
         -webkit-transform: rotate(0deg);
+    }
+}
+
+@-webkit-keyframes loading {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
     }
 }
 
