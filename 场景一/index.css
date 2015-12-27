@@ -630,7 +630,7 @@ html, body {
 }
 
 #a5 .a5-6 {
-    -webkit-animation: myMove 0.5s ease-out 1 both;
+    -webkit-animation: myMove 3s ease-out 1 both;
 }
 
 .a5 .a5-1 span, .a5 .a5-2 span, .a5 .a5-3 span, .a5 .a5-4 span, .a5 .a5-5 span, .a5 .a5-6 span {
