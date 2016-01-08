@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            font-size: 16px;
+            font-family: "'Microsoft Yahei' Arial", Arial, sans-serif;
+        }
+
+        div {
+            width: 780px;
+            padding: 20px;
+            margin: 0 auto;
+            border: 1px solid red;
+            border-radius: 10px;
+        }
+
+        ul li {
+            padding: 10px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            list-style: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        a {
+            color: #000005;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <ul>
+        <li><a target="_blank" href="http://marksong8024.github.io/myresume/bilibili.html">bilibili(未完)</a></li>
+        <li ><a target="_blank" href="http://marksong8024.github.io/myresume/场景一/index.html">个人手机端简历(未完)</a></li>
+        <li><a target="_blank" href="http://marksong8024.github.io/myresume/tx/index.html">JSONP跨域请求腾讯体育</a></li>
+        <li><a target="_blank" href="http://marksong8024.github.io/myresume/委托多级菜单/3、多级菜单.html">委托多级菜单</a></li>
+        <li><a target="_blank" href="http://marksong8024.github.io/myresume/照片墙碰撞/20151206_5照片墙实例-4交换位置.html">照片拖拽碰撞</a></li>
+        <li><a target="_blank" href="http://marksong8024.github.io/myresume/百度拖拽/百度拖拽.html">百度拖拽</a></li>
+        <li><a target="_blank" href="http://marksong8024.github.io/myresume/京东放大镜/放大镜.html">京东放大镜</a></li>
+        <li><a target="_blank" href="http://marksong8024.github.io/myresume/图片延迟加载/图片延迟加载.html">图片延迟加载</a></li>
+    </ul>
+</div>
+<script type="text/javascript">
+    var oLis = document.getElementsByTagName("li");
+    for (var i = 0; i < oLis.length; i++) {
+        oLis[i].onmousemove = function () {
+            this.style.background = "peru";
+        }
+        oLis[i].onmouseout = function () {
+            this.style.background = "";
+        }
+    }
+</script>
+</body>
+</html>
