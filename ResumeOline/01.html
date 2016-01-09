@@ -13,6 +13,25 @@
             padding: 70px;
         }
     </style>
+    <script type="text/javascript">
+        function PrintResume(oper) {
+            if (oper < 10) {
+                bdhtml = window.document.body.innerHTML; //获取当前页的html代码
+                sprnstr = "<!--startprint" + oper + "-->"; //设置打印开始区域
+                eprnstr = "<!--endprint" + oper + "-->"; //设置打印结束区域
+                prnhtml = bdhtml.substring(bdhtml.indexOf(sprnstr) + 18); //从开始代码向后取html
+                prnhtml = prnhtml.substring(0, prnhtml.indexOf(eprnstr));//从结束代码向前取html
+                window.document.body.innerHTML = prnhtml;
+                window.print();
+                window.document.body.innerHTML = bdhtml;
+            } else {
+                window.print();
+            }
+        }
+        function PrintAll() {
+            window.print();
+        }
+    </script>
 </head>
 <body class="container">
 
@@ -28,26 +47,26 @@
                     <span class="icon-bar"></span>
                 </button>
             </div>
-
-            <div id="divNav" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right" style="margin-right:0px">
-                    <li>
-                        <button type="button" class="btn btn-success navbar-btn" data-toggle="modal" data-placement="bottom" data-target="#divModal" title="Print">打印</button>
-                        <script>
-                            $(function () {
-                                $('[data-toggle="modal"]').tooltip();
-                            });
-                        </script>
-                        <button type="button" class="btn btn-info navbar-btn" data-toggle="tooltip" data-placement="bottom" title="Download" onclick="window.location.href='Resume.doc'" formtarget="_self">下载</button>
-                        <!--<a href="Resume.doc" target="_self">test</a>-->
-                        <script>
-                            $(function () {
-                                $('[data-toggle="tooltip"]').tooltip();
-                            });
-                        </script>
-                    </li>
-                </ul>
-            </div>
+            <!--打印下载暂时关闭-->
+            <!--<div id="divNav" class="collapse navbar-collapse">-->
+            <!--<ul class="nav navbar-nav navbar-right" style="margin-right:0px">-->
+            <!--<li>-->
+            <!--<button type="button" class="btn btn-success navbar-btn" data-toggle="modal" data-placement="bottom" data-target="#divModal" title="Print">打印</button>-->
+            <!--<script>-->
+            <!--$(function () {-->
+            <!--$('[data-toggle="modal"]').tooltip();-->
+            <!--});-->
+            <!--</script>-->
+            <!--<button type="button" class="btn btn-info navbar-btn" data-toggle="tooltip" data-placement="bottom" title="Download" onclick="window.location.href='Resume.doc'" formtarget="_self">下载</button>-->
+            <!--&lt;!&ndash;<a href="Resume.doc" target="_self">test</a>&ndash;&gt;-->
+            <!--<script>-->
+            <!--$(function () {-->
+            <!--$('[data-toggle="tooltip"]').tooltip();-->
+            <!--});-->
+            <!--</script>-->
+            <!--</li>-->
+            <!--</ul>-->
+            <!--</div>-->
         </div>
     </nav>
     <div class="modal fade" id="divModal" style="" tabindex="1" role="dialog" aria-labelledby="myModallabel" aria-hidden="true">
@@ -291,10 +310,12 @@
                             <div class="carousel-inner">
                                 <div class="item active">
                                     <img src="images/1.jpg" alt="me" class="img-responsive img-rounded"/>
+
                                     <div class="carousel-caption">专业技能</div>
                                 </div>
                                 <div class="item">
                                     <img src="images/2.jpg" alt="me" class="img-responsive img-rounded"/>
+
                                     <div class="carousel-caption">万达集团项目</div>
 
                                 </div>
@@ -365,24 +386,6 @@
         &copy; Copyright by Song
     </p>
 </footer>
-<script type="text/javascript">
-    function PrintResume(oper) {
-        if (oper < 10) {
-            bdhtml = window.document.body.innerHTML; //获取当前页的html代码
-            sprnstr = "<!--startprint" + oper + "-->"; //设置打印开始区域
-            eprnstr = "<!--endprint" + oper + "-->"; //设置打印结束区域
-            prnhtml = bdhtml.substring(bdhtml.indexOf(sprnstr) + 18); //从开始代码向后取html
-            prnhtml = prnhtml.substring(0, prnhtml.indexOf(eprnstr));//从结束代码向前取html
-            window.document.body.innerHTML = prnhtml;
-            window.print();
-            window.document.body.innerHTML = bdhtml;
-        } else {
-            window.print();
-        }
-    }
-    function PrintAll() {
-        window.print();
-    }
-</script>
+
 </body>
 </html>
