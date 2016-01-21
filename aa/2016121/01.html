@@ -13,8 +13,9 @@
         html, body {
             width: 100%;
             height: 100%;
+            overflow: hidden;
             background: url("img/Background.jpg") no-repeat;
-            background-size: 100% 100%;
+            background-size: 115% 115%;
         }
 
         .div1 {
@@ -26,7 +27,6 @@
 
         .logo {
             height: 70px;
-            border: 1px solid red;
         }
 
         .logo img {
@@ -38,7 +38,6 @@
         }
 
         .main {
-            border: 1px solid red;
             width: 100%;
             margin-left: 30px;;
         }
@@ -63,13 +62,20 @@
         }
 
         .main ul li {
-            margin: 10px 0;
-            width: 340px;
+            margin: 20px 0;
+            width: 160px;
             list-style: none;
             border: 1px solid #fff;
             background-color: #5D84A5;
-            padding: 20px;
+            opacity: 0.8;
+            padding: 15px;
         }
+
+        .main ul li a img {
+            margin-left: 85px;
+        }
+
+
     </style>
 </head>
 <body>
@@ -87,13 +93,31 @@
         <p class="p2">请选择你所在的行业</p>
     </div>
     <div>
-        <ul>
-            <li><a href="##">媒体</a></li>
-            <li><a href="##">旅行社</a></li>
-            <li><a href="##">会奖旅游</a></li>
-            <li><a href="##">其他行业</a></li>
+        <ul class="ul1">
+            <li val="媒体"><a href="##">媒体&nbsp;&nbsp;<img src="img/icon_right.svg" alt=""/> </a></li>
+            <li val="旅行社"><a href="##">旅行社&nbsp;<img src="img/icon_right.svg" alt=""/></a></li>
+            <li val="会奖旅游"><a href="##">会奖旅游<img src="img/icon_right.svg" alt=""/></a></li>
+            <li val="其他行业"><a href="##">其他行业<img src="img/icon_right.svg" alt=""/></a></li>
         </ul>
     </div>
+    <div class="div2">
+        <p>你选择了"媒体"组别,之后你将无法修改</p>
+    </div>
 </div>
+<script type="text/javascript">
+    var oLi = document.getElementsByTagName("li");
+    for (var i = 0; i < oLi.length; i++) {
+        oLi[i].index = i;
+        oLi[i].onclick = function () {
+            var b = confirm("您选择了" + oLi[this.index].getAttribute("val") + "组别,之后您将无法\n修改此分别设置,要继续吗?");
+            if(b){
+                alert("你选择了确定!")
+            }else{
+                alert("你选择了取消!")
+            }
+        }
+
+    }
+</script>
 </body>
 </html>
