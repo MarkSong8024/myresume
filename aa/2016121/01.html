@@ -3,7 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-    <title></title>
+    <title>.</title>
     <style type="text/css">
         * {
             margin: 0;
@@ -75,6 +75,22 @@
             margin-left: 85px;
         }
 
+        .div2 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            background-color: peru;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -100px;
+        }
+
+        .div2 p {
+            color: #2f2f2f;
+        }
+
 
     </style>
 </head>
@@ -100,9 +116,13 @@
             <li val="其他行业"><a href="##">其他行业<img src="img/icon_right.svg" alt=""/></a></li>
         </ul>
     </div>
-    <div class="div2">
-        <p>你选择了"媒体"组别,之后你将无法修改</p>
-    </div>
+    <!-- 弹框部分-->
+    <!--<div class="div2">-->
+    <!--<p id="p1"></p>-->
+    <!--<input type="button" value="确定"/>-->
+    <!--<input type="button" value="取消"/>-->
+    <!--</div>-->
+
 </div>
 <script type="text/javascript">
     var oLi = document.getElementsByTagName("li");
@@ -110,13 +130,20 @@
         oLi[i].index = i;
         oLi[i].onclick = function () {
             var b = confirm("您选择了" + oLi[this.index].getAttribute("val") + "组别,之后您将无法\n修改此分别设置,要继续吗?");
-            if(b){
+            if (b) {
                 alert("你选择了确定!")
-            }else{
+            } else {
                 alert("你选择了取消!")
             }
         }
-
+//        oLi[i].onclick = function () {
+//            var oDiv = document.createElement("div");
+//            oDiv.className = "div2";
+//            document.body.appendChild(oDiv);
+//            var oP = document.createElement("p");
+//            oP.innerHTML = "您选择了" + oLi[this.index].getAttribute("val") + "组别,之后您将无法\n修改";
+//            oDiv.appendChild(oP);
+//        }
     }
 </script>
 </body>
