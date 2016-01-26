@@ -55,12 +55,12 @@
     </div>
     <div class="pres">
         <ul>
-            <li ><input val="真实姓名" type="text"  placeholder="真实姓名"/></li>
-            <li ><input val="手机号" type="text" placeholder="手机号"/></li>
-            <li ><input val="电子邮件" type="text" placeholder="电子邮件"/></li>
-            <li ><input val="所在城市" type="text" placeholder="所在城市"/></li>
-            <li ><input val="公司名称" type="text" placeholder="公司名称"/></li>
-            <li ><input val="职位" type="text" placeholder="职位"/></li>
+            <li val="真实姓名"><input type="text" placeholder="真实姓名"/></li>
+            <li val="手机号"><input type="text" placeholder="手机号"/></li>
+            <li val="电子邮件"><input type="text" placeholder="电子邮件"/></li>
+            <li val="所在城市"><input type="text" placeholder="所在城市"/></li>
+            <li val="公司名称"><input type="text" placeholder="公司名称"/></li>
+            <li val="职位"><input type="text" placeholder="职位"/></li>
             <li class="submit"><input type="button" value="提交"/></li>
         </ul>
     </div>
