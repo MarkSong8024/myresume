@@ -20,7 +20,7 @@ html, body {
 
 /*��һҳ*/
 #pageHome {
-    display: block;
+    /* display: block; */
     background: url("images/Background.jpg") right center no-repeat;
     background-size: cover;
     padding-bottom: 200px;
@@ -142,7 +142,7 @@ html, body {
 
 /*�ڶ�ҳ*/
 #pageInfo {
-    /*display: block;*/
+    display: block;
     background-image: url("images/Background_blur.jpg");
     background-size: cover;
     padding-bottom: 200px;
