@@ -1,24 +1,54 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>HTML5多文件预览上传</title>
-		<!-- 引用控制层插件样式 -->
-		<link rel="stylesheet" href="control/css/zyUpload.css" type="text/css">
-		
-		<script type="text/javascript" src="jquery-1.7.2.js"></script>
-		<!-- 引用核心层插件 -->
-		<script type="text/javascript" src="core/zyFile.js"></script>
-		<!-- 引用控制层插件 -->
-		<script type="text/javascript" src="control/js/zyUpload.js"></script>
-		<!-- 引用初始化JS -->
-		<script type="text/javascript" src="demo.js"></script>
-	</head>
-	
-	<body>
-		<h1 style="text-align:center;">zyUpload示例</h1>
-	    <div id="demo" class="demo"></div>   
-	</body>
+<head>
+    <meta charset="UTF-8"/>
+    <!-- <meta charset="utf-8" name="viewport"
+           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>-->
+    <title>HTML5多文件预览上传</title>
+    <!-- 引用控制层插件样式 -->
+    <link rel="stylesheet" href="control/css/zyUpload.css" type="text/css">
+
+    <script type="text/javascript" src="jquery-1.7.2.js"></script>
+    <!-- 引用核心层插件 -->
+    <script type="text/javascript" src="core/zyFile.js"></script>
+    <!-- 引用控制层插件 -->
+    <script type="text/javascript" src="control/js/zyUpload.js"></script>
+    <!-- 引用初始化JS -->
+    <script type="text/javascript" src="demo.js"></script>
+    <!--<script language="JavaScript">-->
+    <!--var winW = document.documentElement.clientWidth;//设备的宽-->
+    <!--var desW = 640;//设计稿的宽-->
+    <!--var rem = desW / 100;-->
+    <!--if (winW > desW) {-->
+    <!--winW = desW;-->
+    <!--}-->
+    <!--document.documentElement.style.fontSize = winW / rem + "px";-->
+    <!--</script>-->
+
+</head>
+
+<body>
+<h1 style="text-align:center;">zyUpload示例</h1>
+
+<div id="demo" class="demo"></div>
+<script type="text/javascript">
+    /*截取url字符串*/
+    function queryURLParameter(url) {
+        var obj = {};
+        var reg = /([^?=&]+)=([?=&]+)/g;
+        url.replace(reg, function () {
+            //第一个参数代表的索引号
+            //第二个参数代表的匹配的内容
+            //第三个参数代表的是原字符串
+            obj[arguments[1]] = arguments[2];
+        });
+        return obj;
+    }
+    var url = window.location.href;
+    var id = queryURLParameter(url)[id];
+    alert(id);
+</script>
+</body>
 </html>
 
 

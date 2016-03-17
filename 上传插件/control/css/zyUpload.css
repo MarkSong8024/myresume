@@ -1,4 +1,4 @@
-@CHARSET "UTF-8"; 
+@CHARSET "UTF-8";
 form{ font-size:84%; margin:0; line-height:1.5; color:#333; font-family:Arial, sans-serif;}
 a{color:#34538b; text-decoration:none;}a:hover{text-decoration:underline;}
 input,select,textarea{font-size:100%;}
@@ -217,7 +217,7 @@ pre{font-family:'simsun';}
 	margin:0px;
 	white-space: nowrap;
     width: 66%;                  /* IE6 需要定义宽度 */
-    overflow: hidden;            
+    overflow: hidden;
     -o-text-overflow: ellipsis;    /* Opera */
     text-overflow:    ellipsis;    /* IE, Safari (WebKit) */
     float: left;
@@ -252,7 +252,7 @@ pre{font-family:'simsun';}
 /* 设置图片等比例缩放 并且垂直居中*/
 .upload_append_list a {
 	display: table-cell;
-   /*  width: 140px;	
+   /*  width: 140px;
     height: 120px; */
     text-align: center;
     vertical-align: middle;
@@ -267,16 +267,16 @@ pre{font-family:'simsun';}
 	margin: auto;
 }
 .uploadImg img{
-	border:none;	
+	border:none;
 	max-width: 100%!important;
 	height: auto!important;
 }
-				
+
 /* 不带有拖拽的样式 */
 .add_upload{
-	height:100%; 
-	margin:1em; 
-	float:left; 
+	height:100%;
+	margin:1em;
+	float:left;
 	position:relative;
 }
 .add_upload:hover{
