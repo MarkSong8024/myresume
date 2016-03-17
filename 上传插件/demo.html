@@ -35,7 +35,7 @@
     /*截取url字符串*/
     function queryURLParameter(url) {
         var obj = {};
-        var reg = /([^?=&]+)=([?=&]+)/g;
+        var reg = /([^?=&]+)=([^?=&]+)/g;
         url.replace(reg, function () {
             //第一个参数代表的索引号
             //第二个参数代表的匹配的内容
