@@ -185,20 +185,20 @@
      */
     
     /**
-     * Web Uploader内部类的详细说明，以下提及的功能类，都可以在`WebUploader`这个变量中访问到。
+     * Web Uploader内部类的详细说明，以下提及的功能类，都可以在`webUploader`这个变量中访问到。
      *
      * As you know, Web Uploader的每个文件都是用过[AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)规范中的`define`组织起来的, 每个Module都会有个module id.
      * 默认module id为该文件的路径，而此路径将会转化成名字空间存放在WebUploader中。如：
      *
-     * * module `base`：WebUploader.Base
-     * * module `file`: WebUploader.File
-     * * module `lib/dnd`: WebUploader.Lib.Dnd
-     * * module `runtime/html5/dnd`: WebUploader.Runtime.Html5.Dnd
+     * * module `base`：webUploader.Base
+     * * module `file`: webUploader.File
+     * * module `lib/dnd`: webUploader.Lib.Dnd
+     * * module `runtime/html5/dnd`: webUploader.Runtime.Html5.Dnd
      *
      *
-     * 以下文档中对类的使用可能省略掉了`WebUploader`前缀。
-     * @module WebUploader
-     * @title WebUploader API文档
+     * 以下文档中对类的使用可能省略掉了`webUploader`前缀。
+     * @module webUploader
+     * @title webUploader API文档
      */
     define('base',[
         'dollar',
@@ -402,7 +402,7 @@
             bindFn: bindFn,
     
             /**
-             * 引用Console.log如果存在的话，否则引用一个[空函数noop](#WebUploader:Base.noop)。
+             * 引用Console.log如果存在的话，否则引用一个[空函数noop](#webUploader:Base.noop)。
              * @grammar Base.log( args... ) => undefined
              * @method log
              */
@@ -695,7 +695,7 @@
         };
     
         /**
-         * 中介者，它本身是个单例，但可以通过[installTo](#WebUploader:Mediator:installTo)方法，使任何对象具备事件行为。
+         * 中介者，它本身是个单例，但可以通过[installTo](#webUploader:Mediator:installTo)方法，使任何对象具备事件行为。
          * 主要目的是负责模块与模块之间的合作，降低耦合度。
          *
          * @class Mediator
@@ -730,7 +730,7 @@
          * @constructor
          * @grammar new Uploader( opts ) => Uploader
          * @example
-         * var uploader = WebUploader.Uploader({
+         * var uploader = webUploader.Uploader({
          *     swf: 'path_of_swf/Uploader.swf',
          *
          *     // 开起分片上传。
@@ -796,7 +796,7 @@
              * @example
              *
              * // 初始状态图片上传前不会压缩
-             * var uploader = new WebUploader.Uploader({
+             * var uploader = new webUploader.Uploader({
              *     compress: null;
              * });
              *
@@ -1894,7 +1894,7 @@
              * @for Uploader
              * @grammar addBtn( pick ) => Promise
              * @description
-             * 添加文件选择按钮，如果一个按钮不够，需要调用此方法来添加。参数跟[options.pick](#WebUploader:Uploader:options)一致。
+             * 添加文件选择按钮，如果一个按钮不够，需要调用此方法来添加。参数跟[options.pick](#webUploader:Uploader:options)一致。
              * @example
              * uploader.addBtn({
              *     id: '#btnContainer',
@@ -2470,7 +2470,7 @@
              * 设置状态，状态变化时会触发`change`事件。
              * @method setStatus
              * @grammar setStatus( status[, statusText] );
-             * @param {File.Status|String} status [文件状态值](#WebUploader:File:File.Status)
+             * @param {File.Status|String} status [文件状态值](#webUploader:File:File.Status)
              * @param {String} [statusText=''] 状态说明，常在error时使用，用http, abort,server等来标记是由于什么原因导致文件错误。
              */
             setStatus: function( status, text ) {
@@ -2651,8 +2651,8 @@
              * 从队列中取出一个指定状态的文件。
              * @grammar fetch( status ) => File
              * @method fetch
-             * @param {String} status [文件状态值](#WebUploader:File:File.Status)
-             * @return {File} [File](#WebUploader:File)
+             * @param {String} status [文件状态值](#webUploader:File:File.Status)
+             * @return {File} [File](#webUploader:File)
              */
             fetch: function( status ) {
                 var len = this._queue.length,
@@ -2684,10 +2684,10 @@
             },
     
             /**
-             * 获取指定类型的文件列表, 列表中每一个成员为[File](#WebUploader:File)对象。
+             * 获取指定类型的文件列表, 列表中每一个成员为[File](#webUploader:File)对象。
              * @grammar getFiles( [status1[, status2 ...]] ) => Array
              * @method getFiles
-             * @param {String} [status] [文件状态值](#WebUploader:File:File.Status)
+             * @param {String} [status] [文件状态值](#webUploader:File:File.Status)
              */
             getFiles: function() {
                 var sts = [].slice.call( arguments, 0 ),
@@ -8045,7 +8045,7 @@
      * 或者可以在初始化的时候通过 options.disableWidgets 属性禁用。
      *
      * 如：
-     * WebUploader.create({
+     * webUploader.create({
      *     ...
      *
      *     disableWidgets: 'log',

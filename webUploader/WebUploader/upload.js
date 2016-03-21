@@ -1,4 +1,29 @@
+
+
+
 (function ($) {
+
+
+    var wAlert = window.alert;
+    window.alert = function (message) {
+        try {
+            var iframe = document.createElement("IFRAME");
+            iframe.style.display = "none";
+            iframe.setAttribute("src", 'data:text/plain,');
+            document.documentElement.appendChild(iframe);
+            var alertFrame = window.frames[0];
+            var iwindow = alertFrame.window;
+            if (iwindow == undefined) {
+                iwindow = alertFrame.contentWindow;
+            }
+            iwindow.alert(message);
+            iframe.parentNode.removeChild(iframe);
+        }
+        catch (exc) {
+            return wAlert(message);
+        }
+    }
+
     // 当domReady的时候开始初始化
     $(function () {
 
@@ -421,7 +446,7 @@
 
             if (state === 'ready') {
 //                text = '选中' + fileCount + '张图片，共' +
-//                    WebUploader.formatSize(fileSize) + '。';
+//                    webUploader.formatSize(fileSize) + '。';
 
                 text = fileCount + '张图片，共' +
                     WebUploader.formatSize(fileSize) + '。';
@@ -502,6 +527,7 @@
                         alert('上传成功');
                     } else {
                         // 没有成功的图片，重设
+
                         state = 'done';
                         location.reload();
                     }
