@@ -446,7 +446,7 @@
 
             if (state === 'ready') {
 //                text = '选中' + fileCount + '张图片，共' +
-//                    webUploader.formatSize(fileSize) + '。';
+//                    wu_Demo.formatSize(fileSize) + '。';
 
                 text = fileCount + '张图片，共' +
                     WebUploader.formatSize(fileSize) + '。';
