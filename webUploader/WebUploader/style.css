@@ -4,7 +4,7 @@ a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, s
 small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video, input  {
+time, mark, audio, video, input {
     margin: 0;
     padding: 0;
     border: none;
@@ -57,26 +57,28 @@ table {
     width: 980px;
     margin: 0 auto;
 
-    margin: 1em;
+    margin: 0.5rem;
     width: auto;
+    overflow-x: hidden;
 }
 
 #container {
     border: 1px solid #dadada;
     color: #838383;
     font-size: 12px;
-    margin-top: 10px;
+    /*margin-top: 10px;*/
+    margin-top: 1rem;
     background-color: #FFF;
 }
 
 #uploader .queueList {
-    margin: 20px;
+    margin: 0.5rem;
 }
 
 .element-invisible {
     position: absolute !important;
     clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-    clip: rect(1px,1px,1px,1px);
+    clip: rect(1px, 1px, 1px, 1px);
 }
 
 #uploader .placeholder {
@@ -115,10 +117,12 @@ table {
     text-align: center;
     bottom: 20px;
 }
+
 #uploader .placeholder .flashTip a {
     color: #0785d1;
     text-decoration: none;
 }
+
 #uploader .placeholder .flashTip a:hover {
     text-decoration: underline;
 }
@@ -147,8 +151,8 @@ table {
 }
 
 #uploader .filelist li {
-    width: 110px;
-    height: 110px;
+    width: 246px;
+    height: 260px;
     background: url(./bg.png) no-repeat;
     text-align: center;
     margin: 0 8px 20px 0;
@@ -171,7 +175,7 @@ table {
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
-    text-overflow : ellipsis;
+    text-overflow: ellipsis;
     top: 5px;
     text-indent: 5px;
     text-align: left;
@@ -186,6 +190,7 @@ table {
     overflow: hidden;
     z-index: 50;
 }
+
 #uploader .filelist li p.progress span {
     display: none;
     overflow: hidden;
@@ -210,37 +215,40 @@ table {
 
 @-webkit-keyframes progressmove {
     0% {
-       background-position: 0 0;
+        background-position: 0 0;
     }
     100% {
-       background-position: 17px 0;
+        background-position: 17px 0;
     }
 }
+
 @-moz-keyframes progressmove {
     0% {
-       background-position: 0 0;
+        background-position: 0 0;
     }
     100% {
-       background-position: 17px 0;
+        background-position: 17px 0;
     }
 }
+
 @keyframes progressmove {
     0% {
-       background-position: 0 0;
+        background-position: 0 0;
     }
     100% {
-       background-position: 17px 0;
+        background-position: 17px 0;
     }
 }
 
 #uploader .filelist li p.imgWrap {
     position: relative;
     z-index: 2;
-    line-height: 110px;
+    line-height: 260px;
     vertical-align: middle;
     overflow: hidden;
-    width: 110px;
-    height: 110px;
+    width: 246px;
+    height: 260px;
+    margin: 0 auto;
 
     -webkit-transform-origin: 50% 50%;
     -moz-transform-origin: 50% 50%;
@@ -284,9 +292,10 @@ table {
 
 #uploader .filelist div.file-panel {
     position: absolute;
-    height: 0;
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#80000000', endColorstr='#80000000')\0;
-    background: rgba( 0, 0, 0, 0.5 );
+    height: 30px;
+    /*height: 0;*/
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#80000000', endColorstr='#80000000') \0;
+    background: rgba(0, 0, 0, 0.5);
     width: 100%;
     top: 0;
     left: 0;
@@ -309,6 +318,7 @@ table {
 #uploader .filelist div.file-panel span.rotateLeft {
     background-position: 0 -24px;
 }
+
 #uploader .filelist div.file-panel span.rotateLeft:hover {
     background-position: 0 0;
 }
@@ -316,6 +326,7 @@ table {
 #uploader .filelist div.file-panel span.rotateRight {
     background-position: -24px -24px;
 }
+
 #uploader .filelist div.file-panel span.rotateRight:hover {
     background-position: -24px 0;
 }
@@ -323,12 +334,13 @@ table {
 #uploader .filelist div.file-panel span.cancel {
     background-position: -48px -24px;
 }
+
 #uploader .filelist div.file-panel span.cancel:hover {
     background-position: -48px 0;
 }
 
 #uploader .statusBar {
-    height: 63px;
+    /*height: 63px;*/
     border-top: 1px solid #dadada;
     padding: 0 20px;
     line-height: 63px;
@@ -338,7 +350,8 @@ table {
 
 #uploader .statusBar .progress {
     border: 1px solid #1483d8;
-    width: 198px;
+    /*width: 198px;*/
+    width: 4.5rem;
     background: #fff;
     height: 18px;
     position: relative;
@@ -349,6 +362,7 @@ table {
     position: relative;
     margin-right: 10px;
 }
+
 #uploader .statusBar .progress span.percentage {
     width: 0;
     height: 100%;
@@ -357,6 +371,7 @@ table {
     background: #1483d8;
     position: absolute;
 }
+
 #uploader .statusBar .progress span.text {
     position: relative;
     z-index: 10;
@@ -371,7 +386,7 @@ table {
 #uploader .statusBar .btns {
     position: absolute;
     top: 10px;
-    right: 20px;
+    right: 10px;
     line-height: 40px;
 }
 
@@ -395,6 +410,7 @@ table {
     font-size: 14px;
     float: left;
 }
+
 #uploader .statusBar .btns .webuploader-pick-hover,
 #uploader .statusBar .btns .uploadBtn:hover,
 #uploader .statusBar .btns .uploadBtn.state-uploading:hover,
@@ -407,6 +423,7 @@ table {
     color: #fff;
     border-color: transparent;
 }
+
 #uploader .statusBar .btns .uploadBtn:hover {
     background: #00a2d4;
 }
