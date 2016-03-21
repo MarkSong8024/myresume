@@ -48,8 +48,8 @@
             ratio = window.devicePixelRatio || 1,
 
         // 缩略图大小
-            thumbnailWidth = 210 * ratio,
-            thumbnailHeight = 210 * ratio,
+            thumbnailWidth = 246 * ratio,
+            thumbnailHeight = 260 * ratio,
 
         // 可能有pedding, ready, uploading, confirm, done.
             state = 'pedding',
@@ -420,7 +420,10 @@
             var text = '', stats;
 
             if (state === 'ready') {
-                text = '选中' + fileCount + '张图片，共' +
+//                text = '选中' + fileCount + '张图片，共' +
+//                    WebUploader.formatSize(fileSize) + '。';
+
+                text =  fileCount + '张图片，共' +
                     WebUploader.formatSize(fileSize) + '。';
             } else if (state === 'confirm') {
                 stats = uploader.getStats();
@@ -569,6 +572,7 @@
                 case "Q_EXCEED_NUM_LIMIT":
                     console.log("请上传一张图片!");
                     break;
+
             }
 
         };
