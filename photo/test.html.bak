@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script src="Scripts/jquery-1.4.4.min.js" type="text/javascript"></script>
+    <video id="myVideo" autoplay="autoplay"></video>
+    <br />
+    <input type="button" value="拍照" /><br />
+    拍照結果：
+    <div id="result">
+    </div>
+    <script type="text/javascript">
+ 
+        $(document).ready(init);
+ 
+        function init() {
+ 
+            //Google Chrome要用webkitGetUserMedia函式
+            navigator.webkitGetUserMedia("video", success);  //顯示影像
+ 
+ 
+            //定義button點選後要做什麼
+            $("input[type='button']").click(function () {
+                shoot(); //執行拍照
+            });
+        }
+        function success(stream) {
+ 
+            $("#myVideo").attr("src", window.webkitURL.createObjectURL(stream));
+        }
+        //執行拍照
+        function shoot() {
+ 
+            var video = $("#myVideo")[0];
+            var canvas = capture(video);
+ 
+ 
+            $("#result").empty();
+            $("#result").append(canvas); //呈現圖像(拍照結果)
+            var imgData = canvas.toDataURL("image/jpg");
+            var base64String = imgData.substr(22); //取得base64字串
+ 
+            //上傳，儲存圖片
+            $.ajax({
+                url: "Handler.ashx",
+                type: "post",
+                data: { data: base64String },
+                async: true,
+                success: function (htmlVal) {
+                    alert("另存圖片成功！");
+                }, error: function (e) {
+                    alert(e.responseText); //alert錯誤訊息
+                }
+ 
+            });
+        }
+ 
+        //從video元素抓取圖像到canvas
+        function capture(video) {
+ 
+            var canvas = document.createElement('canvas'); //建立canvas js DOM元素
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            var ctx = canvas.getContext('2d');
+            ctx.drawImage(video, 0, 0);
+            return canvas;
+        }
+    </script>
+</body>
+</html>
