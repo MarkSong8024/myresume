@@ -156,13 +156,19 @@
         #time {
             color: red;
         }
-        .content{
+
+        .content {
             color: #999;
         }
 
         #time, .content {
             font-size: 15px;
 
+        }
+
+        .success {
+            line-height: 20px;
+            vertical-align: middle;
         }
     </style>
 </head>
@@ -174,44 +180,21 @@
         <!--成功-->
         <div>
             <div class="upload_showtip">
-                <img src="../images/upload_success.png"> 提交成功
+                <img src="../images/upload_success.png"> <span class="success">提交成功</span>
+
                 <div class="f12">
                     <!--<br>-->
 
+                    <span class="content">请关闭本窗口</span>
 
-                    <span id="time" class="autoClose">3</span> <span class="content">秒后自动关闭</span>
 
                 </div>
             </div>
         </div>
     </div>
 </div>
-<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
-<script type="text/javascript">
 
-    //设置超时时间为10秒钟
-    var timeout = 3;
-    function show() {
-        var showbox = $("#time");
-        showbox.html(timeout);
-        if (timeout <= 0) {
+<input type="button" value="关闭本窗口" onclick="WeixinJSBridge.call('closeWindow');" />
 
-            var userAgent = navigator.userAgent;
-            if (userAgent.indexOf("Firefox") != -1 || userAgent.indexOf("Presto") != -1) {
-                window.location.replace("about:blank");
-            } else {
-                window.opener = null;
-                window.open("", "_self");
-                window.close();
-            }
-        }
-        else {
-            setTimeout("show()", 1000);
-            timeout--;
-        }
-    }
-    show();
-
-</script>
 </body>
 </html>
