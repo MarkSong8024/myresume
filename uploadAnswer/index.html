@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
@@ -23,10 +23,23 @@
     </div>
     <div class="container kv-main">
         <form enctype="multipart/form-data" id="form01">
-            <input id="file" class="file" name="file" type="file" multiple  accept="image/*" capture="camera"
+            <input id="file" class="file" name="file" type="file" multiple accept="image/*" capture="camera"
                    data-min-file-count="1">
         </form>
     </div>
+
+</div>
+<div class="android">
+    <form id="f1" action="">
+        <p>提示：若点击“选择图片”无反应，</p>
+
+        <p><span>请尝试</span>
+            <a href="" class="fi">点击这里
+                <input id="android" type="file" name="file" accept="image/*" capture="camera"/>
+            </a>
+            <span>上传</span>
+        </p>
+    </form>
 </div>
 
 <!--<script src="http://libs.useso.com/js/jquery/2.1.1/jquery.min.js"></script>-->
@@ -38,10 +51,10 @@
 <script src="js/md5.js"></script>
 <script>
 
-//    window.addEventListener('load', function() {
-//        FastClick.attach(document.body);
-//    }, false);
-
+    //    window.addEventListener('load', function() {
+    //        FastClick.attach(document.body);
+    //    }, false);
+    var token = "cfc677209be33bd69fff08fd9d553d6e83c20317:OTU3Y2M5NGRjOGJiOTMzYWNiYmFiN2VjZGRiNTYzMmI2MDBjMGMyZQ==:eyJzY29wZSI6ImtzZmlsZSIsImRlYWRsaW5lIjoiMTQ4MzIwMDAwMDAwMCIsInJldHVybkJvZHkiOiJmbmFtZT0kKGZuYW1lKSZmc2l6ZT0kKGZzaXplKSZ1cmw9JCh1cmwpIiwib3ZlcndyaXRlIjoiMSIsInJldHVyblVybCI6bnVsbH0=";
     var key = "";
     var id = "";
     var num = "";
@@ -64,7 +77,7 @@
             {
 
                 uploadUrl: 'http://ksfile.up0.v1.wcsapi.com/file/upload?&key=stu/' + keyId,
-                uploadExtraData: {token: "cfc677209be33bd69fff08fd9d553d6e83c20317:OTU3Y2M5NGRjOGJiOTMzYWNiYmFiN2VjZGRiNTYzMmI2MDBjMGMyZQ==:eyJzY29wZSI6ImtzZmlsZSIsImRlYWRsaW5lIjoiMTQ4MzIwMDAwMDAwMCIsInJldHVybkJvZHkiOiJmbmFtZT0kKGZuYW1lKSZmc2l6ZT0kKGZzaXplKSZ1cmw9JCh1cmwpIiwib3ZlcndyaXRlIjoiMSIsInJldHVyblVybCI6bnVsbH0="},
+                uploadExtraData: {token: token},
                 allowedFileExtensions: ['jpg', 'jpeg', 'png', 'gif'],
                 overwriteInitial: false,
                 maxFileCount: 1, //表示允许同时上传的最大文件个数
@@ -72,30 +85,61 @@
                 maxImageWidth: 10,
                 showCaption: false//是否显示标题
             });
+
     //导入文件上传完成之后的事件
     $("#file").on("fileuploaded", function (event, data, previewId, index) {
         if (data.response) {
-            var strUrl = "/exam/question!savePicName.action?appKey=" + key + "&queId=" + id + "&str=";
-            var str = data.response;
-            console.log(str);
-            $.ajax({
-                type: "get",
-                url: strUrl + str,
-                success: function (result) {
-                    if (result.success == true) {
-                        window.open('./success.html', '_self');
-                    } else {
-                        alert(result.message);
-                    }
-                },
-                error: function () {
-                    /*    alert("上传失败，请重新上传！");
-                     window.location.reload();*/
-                }
-            });
-
+            addImgInfo(data);
         }
     });
+    function addImgInfo(data) {
+        var strUrl = "/exam/question!savePicName.action?appKey=" + key + "&queId=" + id + "&str=";
+        var str = data.response;
+        $.ajax({
+            type: "get",
+            url: strUrl + str,
+            success: function (result) {
+                if (result.success == true) {
+                    window.open('./success.html', '_self');
+                } else {
+                    alert(result.message);
+                }
+            },
+            error: function () {
+                alert("上传失败，请重新上传！");
+                window.location.reload();
+            }
+        });
+    }
+
+
+    function addImg() {
+        /*判断上传图片类型*/
+
+        var strUrl = $("#android").val();//获取图片地址
+        if (strUrl) {
+            var index = strUrl.lastIndexOf('.');
+            var str = strUrl.substr(index);
+            if (str != '.jpg' && str != '.jpeg' && str != '.png' && str != '.gif') {
+                alert("请选择图片格式的内容!");
+                return;
+            }
+
+            var fromData = new FormData($("#f1")[0]);
+            var oReq = new XMLHttpRequest();
+            oReq.open("POST", "http://ksfile.up0.v1.wcsapi.com/file/upload?key=stu/" + keyId + str + "&token=" + token);
+            oReq.send(fromData);
+            oReq.onload = function () {
+                if (oReq.status == 200) {
+                    addImgInfo(oReq)
+                } else {
+                    alert("error")
+                }
+            }
+        }
+
+    }
+
 
 </script>
 </body>
