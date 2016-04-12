@@ -31,16 +31,15 @@
 }
 
 .btn-file input[type=file] {
-    /*position: absolute;*/
+    position: absolute;
     top: 0;
     right: 0;
     min-width: 100%;
     min-height: 100%;
     text-align: right;
-    /*opacity: 0;*/
+    opacity: 0;
     filter: alpha(opacity=0);
-    border: 1px solid red;
-    /*opacity: 0;*/
+    opacity: 0;
     background: none repeat scroll 0 0 transparent;
     cursor: inherit;
     display: block;
@@ -237,4 +236,36 @@
 
 .htmleaf-container {
     text-align: center;
+}
+
+.android {
+    /*border-radius: 5px;*/
+    /*border: 1px solid #ddd;*/
+    padding: 10px 5px;
+    width: 80%;
+    margin: 15px auto;
+}
+
+.android p {
+    text-align: center;
+    color: #aaa;
+    font-size: 14px;
+}
+
+.fi {
+    text-decoration: underline;
+    position: relative;
+    display: inline-block;
+    border-radius: 4px;
+    text-indent: 0;
+    line-height: 20px;
+    color: #337ab7;
+}
+
+.fi input {
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    width: 56px;
 }

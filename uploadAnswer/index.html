@@ -35,7 +35,7 @@
 
         <p><span>请尝试</span>
             <a href="" class="fi">点击这里
-                <input id="android" type="file" name="file" accept="image/*" capture="camera"/>
+                <input id="android" type="file" name="file" accept="image/*" capture="camera" onchange="addImg()"/>
             </a>
             <span>上传</span>
         </p>
@@ -113,8 +113,11 @@
     }
 
 
-    function addImg() {
+    function addImg(e) {
         /*判断上传图片类型*/
+        //阻止默认行为
+        e = e || window.event;
+        e.preventDefault ? e.preventDefault() : e.returnValue = false;
 
         var strUrl = $("#android").val();//获取图片地址
         if (strUrl) {
