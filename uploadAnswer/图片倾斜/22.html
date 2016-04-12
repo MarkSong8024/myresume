@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="UTF-8">
+    <meta name="viewport" charset="UTF-8"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
     <title></title>
 </head>
 <body>
 <form action="" id="f1">
-    <input type="file" name="file" accept="image/*" id="uploadImage" capture="camera"
+    <input type="file" name="file" accept="image/*" id="uploadImage" capture="camera" multiple
            onchange="change(this);"/>
     <img id="img" src="" alt=""/>
     <input type="button" id="btn" value="提交"/>
@@ -14,6 +15,29 @@
 </body>
 <script type="text/javascript" src="js/exif.js"></script>
 <script type="text/javascript" src="js/jquery.js"></script>
+<style type="text/css">
+    html {
+        background-attachment: scroll !important;
+    }
+
+    body {
+        width: 100%;
+        height: 100%;
+        font-weight: 400;
+        font-family: 'Helvetica','Heiti SC', '黑体', sans-serif;
+        color: rgb(255, 255, 243);
+    }
+</style>
+<script language="JavaScript">
+    var winW = document.documentElement.clientWidth;//设备的宽
+    var desW = 640;//设计稿的宽
+    var rem = desW / 100;
+    if (winW > desW) {
+        winW = desW;
+    }
+    document.documentElement.style.fontSize = winW / rem + "px";
+</script>
+
 <script type="text/javascript">
 
     function change(fileObj) {
