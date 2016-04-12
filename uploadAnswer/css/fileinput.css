@@ -31,15 +31,16 @@
 }
 
 .btn-file input[type=file] {
-    position: absolute;
+    /*position: absolute;*/
     top: 0;
     right: 0;
     min-width: 100%;
     min-height: 100%;
     text-align: right;
-    opacity: 0;
+    /*opacity: 0;*/
     filter: alpha(opacity=0);
-    opacity: 0;
+    border: 1px solid red;
+    /*opacity: 0;*/
     background: none repeat scroll 0 0 transparent;
     cursor: inherit;
     display: block;
@@ -199,7 +200,7 @@
 }
 
 .file-drop-zone {
-    border: 1px dashed #aaa;
+    /*border: 1px dashed #aaa;*/
     border-radius: 4px;
     height: 100%;
     text-align: center;
@@ -230,10 +231,10 @@
     font-size: 1.2em;
 }
 
-#form01{
-	text-align: center;
+#form01 {
+    text-align: center;
 }
 
-.htmleaf-container{
-	text-align: center;
+.htmleaf-container {
+    text-align: center;
 }

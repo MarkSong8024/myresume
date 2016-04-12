@@ -100,6 +100,7 @@
             background: #fff;
             top: 0;
             left: 0;
+            margin: 50% auto;
         }
 
         #tc .N_title {
@@ -119,6 +120,7 @@
             text-align: center;
             padding: 10px 0;
             font-size: 18px;
+
         }
 
         #tc .tishi span {
@@ -150,6 +152,24 @@
         .upload_showtip img {
             vertical-align: middle;
         }
+
+        #time {
+            color: red;
+        }
+
+        .content {
+            color: #999;
+        }
+
+        #time, .content {
+            font-size: 15px;
+
+        }
+
+        .success {
+            line-height: 20px;
+            vertical-align: middle;
+        }
     </style>
 </head>
 <body>
@@ -157,23 +177,24 @@
 <!--成功和失败提示-->
 <div id="tc">
     <div class="mob_items">
-
         <!--成功-->
         <div>
             <div class="upload_showtip">
-                <img src="../images/upload_success.png"> 提交成功
-            </div>
-            <div class="f12">
-                <br>
+                <img src="../images/upload_success.png"> <span class="success">提交成功</span>
 
-                <div class="tishi">
-                    如需提交下一题，<br>请<span>关闭</span>本页面，<span>重新扫描</span>下一题
+                <div class="f12">
+                    <!--<br>-->
+
+                    <span class="content">请关闭本窗口</span>
+
+
                 </div>
             </div>
         </div>
     </div>
-
-
 </div>
+<!--
+<input type="button" value="关闭本窗口" onclick="WeixinJSBridge.call('closeWindow');"/>
+<input type="button" value="继续扫描下一题" onclick="WeixinJSBridge.call('scanQRCode');"/>-->
 </body>
 </html>

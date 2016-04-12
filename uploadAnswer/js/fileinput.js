@@ -522,7 +522,7 @@
             } else {
                 errMsg += dot;
             }
-            console.log(jqXHR);
+
 
             return fileName ? '<b>' + fileName + ': </b>' + jqXHR : errMsg;
         },
@@ -1091,6 +1091,8 @@
                 self.setEllipsis();
                 self.$caption.attr('title', '');
                 addCss(self.$container, 'file-input-new');
+                //展开选择图片
+                $(".btn-file").show();
             }
             if (self.$container.find('.file-preview-frame').length === 0) {
                 if (!self.initCaption()) {
@@ -1181,14 +1183,19 @@
             return xhrobj;
         },
         ajaxSubmit: function (fnBefore, fnSuccess, fnComplete, fnError) {
-            var self = this, settings;
+            var self = this, settings
+            var fileName = self.filestack[0].name;
+            if (fileName) {
+                var index = fileName.lastIndexOf(".");
+                var imgType = fileName.substr(index);
+            }
             self.uploadExtra();
             settings = $.extend({
                 xhr: function () {
                     var xhrobj = $.ajaxSettings.xhr();
                     return self.initXhr(xhrobj, 98);
                 },
-                url: self.uploadUrl,
+                url: self.uploadUrl + imgType,
                 type: 'POST',
 //                dataType: 'json',
                 data: self.formdata,
@@ -1199,6 +1206,7 @@
                 success: fnSuccess,
                 complete: fnComplete,
                 error: fnError
+
             }, self.ajaxSettings);
             self.ajaxRequests.push($.ajax(settings));
         },
@@ -1336,6 +1344,10 @@
                 }, 100);
             };
             fnError = function (jqXHR, textStatus, errorThrown) {
+                //文件上传失败,提示重新上传
+                alert("上传失败，请重新上传！");
+                window.location.reload();
+
                 var errMsg = self.parseError(jqXHR, errorThrown, (allFiles ? files[i].name : null));
                 setIndicator('indicatorError', 'indicatorErrorTitle');
                 params = $.extend(params, self.getOutData(jqXHR));
@@ -1677,6 +1689,7 @@
             });
         },
         readFiles: function (files) {
+
             this.reader = new FileReader();
             var self = this, $el = self.$element, $preview = self.$preview, reader = self.reader,
                 $container = self.$previewContainer, $status = self.$previewStatus, msgLoading = self.msgLoading,
@@ -1703,8 +1716,11 @@
                     $status.html('');
                     return;
                 }
+
+
                 var node = ctr + i, previewId = previewInitId + "-" + node, isText, file = files[i],
                     caption = self.slug(file.name), fileSize = (file.size || 0) / 1000, checkFile, fileExtExpr = '',
+                    fileSize = (file.size || 0) / 1000, checkFile, fileExtExpr = '',
                     previewData = objUrl.createObjectURL(file), fileCount = 0, j, msg, typ, chk,
                     fileTypes = self.allowedFileTypes, strTypes = isEmpty(fileTypes) ? '' : fileTypes.join(', '),
                     fileExt = self.allowedFileExtensions, strExt = isEmpty(fileExt) ? '' : fileExt.join(', ');
@@ -1832,7 +1848,9 @@
             }
             self.fileInputCleared = false;
             var tfiles, msg, total, $preview = self.$preview, isDragDrop = arguments.length > 1,
+
                 files = isDragDrop ? e.originalEvent.dataTransfer.files : $el.get(0).files,
+
                 isSingleUpload = isEmpty($el.attr('multiple')), i = 0, f, m, folders = 0,
                 ctr = self.filestack.length, isAjaxUpload = self.isUploadable,
                 throwError = function (mesg, file, previewId, index) {
@@ -1840,6 +1858,7 @@
                         p2 = {id: previewId, index: index, file: file, files: files};
                     return self.isUploadable ? self.showUploadError(mesg, p1) : self.showError(mesg, p2);
                 };
+
             self.reader = null;
             self.resetUpload();
             self.hideFileIcon();
@@ -1907,6 +1926,8 @@
             self.showFolderError(folders);
         },
         autoSizeImage: function (previewId) {
+            //隐藏选择图片
+            $(".btn-file").hide();
             var self = this, $preview = self.$preview,
                 $thumb = $preview.find("#" + previewId),
                 $img = $thumb.find('img'), w1, w2, $cap;
@@ -1926,6 +1947,7 @@
                     $cap.attr('title', $cap.text());
                 }
                 self.raise('fileimageloaded', previewId);
+
             });
         },
         initCaption: function () {
@@ -2024,7 +2046,7 @@
             if (!self.isUploadable || self.isDisabled) {
                 content = '<button type="submit" title="' + self.uploadTitle + '"class="' + css + '"' + status + '>' + self.uploadIcon + self.uploadLabel + '</button>';
             } else {
-                content = '<a href="' + self.uploadUrl + '" title="' + self.uploadTitle + '" class="' + css + '"' + status + '>' + self.uploadIcon + self.uploadLabel + '</a>';
+                content = '<a  href="' + self.uploadUrl + '" title="' + self.uploadTitle + '" class="btn-primary ' + css + '"' + status + '>' + self.uploadIcon + self.uploadLabel + '</a>';
             }
             return content;
         }
@@ -2168,4 +2190,5 @@
             $input.fileinput();
         }
     });
+
 })(window.jQuery);

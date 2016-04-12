@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+{__CONTENT__}
+</body>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='__PUBLIC__/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+</script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+    wx.config({
+        debug: false,
+        appId: '{$signPackage["appId"]}',
+        timestamp: {$signPackage["timestamp"]},
+        nonceStr: '{$signPackage["nonceStr"]}',
+        signature: '{$signPackage["signature"]}',
+        jsApiList: [
+            'checkJsApi',
+            'chooseImage',
+            'uploadImage',
+            'downloadImage',
+            'previewImage'
+        ]
+    });
+    wx.ready(function () {
+        var images = {
+            localId: [],
+            serverId: [],
+            downloadId: []
+        };
+        document.querySelector('#selectImage').onclick = function () {
+            wx.chooseImage({
+                success: function (res) {
+                    images.localId = res.localIds;
+                    jQuery(function(){
+                        $.each( res.localIds, function(i, n){
+                            $("#img").append('<img src="'+n+'" /> <br />');
+                        });
+                    });
+                }
+            });
+        };
+
+        document.querySelector('#uploadImage').onclick = function () {
+            if (images.localId.length == 0) {
+                alert('请先使用选择图片按钮');
+                return;
+            }
+            images.serverId = [];
+            jQuery(function(){
+                $.each(images.localId, function(i,n) {
+                    wx.uploadImage({
+                        localId: n,
+                        success: function (res) {
+                            images.serverId.push(res.serverId);
+                        },
+                        fail: function (res) {
+                            alert(JSON.stringify(res));
+                        }
+                    });
+                });
+            });
+        };
+
+        document.querySelector('#downloadImage').onclick = function () {
+            if (images.serverId.length == 0) {
+                alert('请先按上传图片按钮');
+                return;
+            }
+            jQuery(function() {
+                $.each(images.serverId, function (i, n) {
+                    wx.downloadImage({
+                        serverId: n,
+                        success: function (res) {
+                            images.downloadId.push(res.localId);
+                        }
+                    });
+                });
+                $.each( images.downloadId, function(i, n){
+                    $("#img2").append('<img src="'+n+'" /> <br />');
+                });
+            });
+        };
+
+        document.querySelector('#previewImage').onclick = function () {
+            var imgList = [
+                'http://wp83.net__PUBLIC__/images/gallery/image-1.jpg',
+                'http://wp83.net__PUBLIC__/images/gallery/image-2.jpg'
+            ];
+            wx.previewImage({
+                current: imgList[0],
+                urls:  imgList
+            });
+        };
+
+    });
+
+    wx.error(function(res){
+        var str = res.errMsg;
+        var reg = /invalid signature$/;
+        var r = str.match(reg);
+        if(r !== null) {
+            jQuery(function(){
+                $.getJSON('http://www.demo.com/tp/home/index/ticket', function(data) {
+                    if(data) {
+                        alert('ticket update');
+                        location = location;
+                        window.navigate(location);
+                    }
+                });
+            });
+        }
+    });
+</script>
+</html>
