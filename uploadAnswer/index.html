@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
@@ -110,13 +110,14 @@
             },
             error: function () {
                 //墨绿深蓝风
-                layer.alert('上传失败！请重新上传！', {
-                    skin: 'layui-layer-molv' //样式类名
-                    , closeBtn: 0
-                }, function () {
-                    window.location.reload();
-                });
-
+                //layer.alert('上传失败！请重新上传！', {
+                    //skin: 'layui-layer-molv' //样式类名
+                  //  , closeBtn: 0
+                //}, function () {
+                  //  window.location.reload();
+                //});
+		alert("上传失败了!");
+		window.location.reload();
             }
         });
     }
