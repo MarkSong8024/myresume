@@ -1,0 +1,66 @@
+﻿<html>
+<head>
+    <title>uploadPreview演示</title>
+
+    <style>
+        .UpSty1{
+
+            width: 0;
+            height: 0;
+            /*position: absolute;*/
+            /*需要隐藏的文件域的样式*/
+        }
+
+        .UpSty2 {
+            /*上传按钮的样式*/
+            width: 40px;
+            height: 40px;
+        }
+
+        .imgShowUp0,.imgShowUp1,.imgShowUp2 {
+            /*写缩略图的样式*/
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+        .imgShowUp{
+            /*预留默认的上传图片缩略图的样式*/
+        }
+
+    </style>
+    <script src="jquery-1.7.1.js"></script>
+    <script src="uploadPreview.js" type="text/javascript"></script>
+    <script>
+        window.onload = function () {
+
+            new uploadPreview({UpBtn: "InputUp0", DivShow: "Up0", ImgShow: "imgShowUp0"});
+            new uploadPreview({UpBtn: "InputUp1", DivShow: "Up1", ImgShow: "imgShowUp1"});
+            new uploadPreview({UpBtn: "InputUp2", DivShow: "Up2", ImgShow: "imgShowUp2"});
+//      没添加一组上传的标签，此处需要增加一组类似数据
+        }
+    </script>
+</head>
+<body>
+<div id="Up0">
+    <!--<img class="imgShowUp">-->
+    <input type="file" class="UpSty1" id="InputUp0" name="ImagePathUp0">
+</div>
+<img src="jia.png" class="UpSty2" id="BtnInputUp0">
+
+
+<div id="Up1">
+    <!--<img class="imgShowUp">-->
+    <input type="file" class="UpSty1" id="InputUp1" name="ImagePathUp1">
+</div>
+<img src="jia.png" class="UpSty2" id="BtnInputUp1">
+
+
+<div id="Up2">
+    <!--<img class="imgShowUp">-->
+    <input type="file" class="UpSty1" id="InputUp2" name="ImagePathUp2">
+</div>
+<img src="jia.png" class="UpSty2" id="BtnInputUp2">
+
+
+</body>
+</html>
