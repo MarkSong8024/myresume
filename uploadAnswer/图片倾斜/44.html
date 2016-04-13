@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Insert title here</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/ajaxfileupload.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function ajaxFileUpload() {
+            $.ajaxFileUpload
+            (
+                    {
+                        url: 'http://ksfile.up0.v1.wcsapi.com/file/upload?token=cfc677209be33bd69fff08fd9d553d6e83c20317:OTU3Y2M5NGRjOGJiOTMzYWNiYmFiN2VjZGRiNTYzMmI2MDBjMGMyZQ==:eyJzY29wZSI6ImtzZmlsZSIsImRlYWRsaW5lIjoiMTQ4MzIwMDAwMDAwMCIsInJldHVybkJvZHkiOiJmbmFtZT0kKGZuYW1lKSZmc2l6ZT0kKGZzaXplKSZ1cmw9JCh1cmwpIiwib3ZlcndyaXRlIjoiMSIsInJldHVyblVybCI6bnVsbH0=', //用于文件上传的服务器端请求地址
+                        secureuri: false, //一般设置为false
+                        fileElementId: 'file', //文件上传空间的id属性  <input type="file" id="file" name="file" />
+                        dataType: 'json', //返回值类型 一般设置为json
+                        success: function (data, status)  //服务器成功响应处理函数
+                        {
+                            $("#img1").attr("src", data.imgurl);
+                            if (typeof (data.error) != 'undefined') {
+                                if (data.error != '') {
+                                    alert(data.error);
+                                } else {
+                                    alert(data.msg);
+                                }
+                            }
+                        },
+                        error: function (data, status, e)//服务器响应失败处理函数
+                        {
+                            alert(e);
+                        }
+                    }
+            )
+            return false;
+        }
+    </script>
+</head>
+<body>
+<input type="file" id="file" name="file" value="上传" accept="image/*;capture=camera" onchange="ajaxFileUpload()"/>
+
+<p><img id="img1" alt="上传成功啦" src=""/></p>
+
+</body>
+</html>

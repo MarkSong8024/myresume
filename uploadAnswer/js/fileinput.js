@@ -1345,8 +1345,12 @@
             };
             fnError = function (jqXHR, textStatus, errorThrown) {
                 //文件上传失败,提示重新上传
-                alert("上传失败，请重新上传！");
-                window.location.reload();
+                layer.confirm('上传失败！请重新上传！', {
+                    btn: ['确定'] //按钮
+                }, function () {
+                    window.location.reload();
+                });
+
 
                 var errMsg = self.parseError(jqXHR, errorThrown, (allFiles ? files[i].name : null));
                 setIndicator('indicatorError', 'indicatorErrorTitle');

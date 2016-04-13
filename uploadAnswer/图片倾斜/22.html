@@ -7,10 +7,14 @@
 </head>
 <body>
 <form action="" id="f1">
-    <input type="file" name="file" accept="image/*" id="uploadImage" capture="camera" multiple
+
+    <input type="file" name="file" accept="image/*;capture=camera"  id="uploadImage"
            onchange="change(this);"/>
+
+
     <img id="img" src="" alt=""/>
     <input type="button" id="btn" value="提交"/>
+
 </form>
 </body>
 <script type="text/javascript" src="js/exif.js"></script>
@@ -38,7 +42,7 @@
     document.documentElement.style.fontSize = winW / rem + "px";
 </script>
 
-<script type="text/javascript">
+<!--<script type="text/javascript">
 
     function change(fileObj) {
         var file = fileObj.files[0];
@@ -104,5 +108,5 @@
     })
 
 
-</script>
+</script>-->
 </html>

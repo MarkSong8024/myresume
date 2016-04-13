@@ -25,19 +25,23 @@
             text-align: center;
         }
     </style>
+    <script language="JavaScript">
+        var winW = document.documentElement.clientWidth;//设备的宽
+        var desW = 640;//设计稿的宽
+        var rem = desW / 100;
+        if (winW > desW) {
+            winW = desW;
+        }
+        document.documentElement.style.fontSize = winW / rem + "px";
+    </script>
 </head>
 <body>
 
-<script language="JavaScript">
-    var winW = document.documentElement.clientWidth;//设备的宽
-    var desW = 640;//设计稿的宽
-    var rem = desW / 100;
-    if (winW > desW) {
-        winW = desW;
-    }
-    document.documentElement.style.fontSize = winW / rem + "px";
-</script>
-
+<div class="page-header">
+    <h3 id="que_num">
+        <small></small>
+    </h3>
+</div>
 <form action="" id="f1">
     <div class="cen">
         <input type="file" name="file" accept="image/*;capture=camera"/>
@@ -47,12 +51,13 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript">
 
-    /*function addImg() {
+    function addImg() {
         var data = new FormData(document.getElementById("f1"));
         var oReq = new XMLHttpRequest();
         oReq.open("POST", "http://ksfile.up0.v1.wcsapi.com/file/upload?token=cfc677209be33bd69fff08fd9d553d6e83c20317:OTU3Y2M5NGRjOGJiOTMzYWNiYmFiN2VjZGRiNTYzMmI2MDBjMGMyZQ==:eyJzY29wZSI6ImtzZmlsZSIsImRlYWRsaW5lIjoiMTQ4MzIwMDAwMDAwMCIsInJldHVybkJvZHkiOiJmbmFtZT0kKGZuYW1lKSZmc2l6ZT0kKGZzaXplKSZ1cmw9JCh1cmwpIiwib3ZlcndyaXRlIjoiMSIsInJldHVyblVybCI6bnVsbH0=");
         oReq.send(data);
-    }*/
+    }
+
 
 </script>
 </html>

@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="viewport" charset="utf-8"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
     <title>图片上传</title>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/exif.js"></script>
-    <script>
-
-    </script>
 </head>
 <body>
 <form action="" id="f1">
@@ -19,7 +16,7 @@
 
     </div>
     <div style="margin-top: 10px;">
-        <img alt="preview" src=" " id="myImage"/>
+        <img alt="preview" src="" id="myImage"/>
     </div>
     <input type="button" id="btn" value="提交"/>
 </form>
@@ -29,27 +26,23 @@
 <script type="text/javascript">
     function selectFileImage(fileObj) {
         var file = fileObj.files['0'];
+        //图片方向角 added by lzk
         var Orientation = null;
+
         if (file) {
             var rFilter = /^(image\/jpeg|image\/png)$/i; // 检查图片格式
             if (!rFilter.test(file.type)) {
-                //showMyTips("请选择jpeg、png格式的图片", false);
+                alert("请选择jpeg、png格式的图片", false);
                 return;
             }
-            // var URL = URL || webkitURL;
             //获取照片方向角属性，用户旋转控制
             EXIF.getData(file, function () {
-                // alert(EXIF.pretty(this));
                 EXIF.getAllTags(this);
-                //alert(EXIF.getTag(this, 'Orientation'));
                 Orientation = EXIF.getTag(this, 'Orientation');
-                //return;
             });
 
             var oReader = new FileReader();
             oReader.onload = function (e) {
-                //var blob = URL.createObjectURL(file);
-                //_compress(blob, file, basePath);
                 var image = new Image();
                 image.src = e.target.result;
                 image.onload = function () {
@@ -72,8 +65,6 @@
                     //修复ios
                     if (navigator.userAgent.match(/iphone/i)) {
                         console.log('iphone');
-                        //alert(expectWidth + ',' + expectHeight);
-                        //如果方向角不为1，都需要进行旋转 added by lzk
                         if (Orientation != "" && Orientation != 1) {
                             alert('旋转处理');
                             switch (Orientation) {
