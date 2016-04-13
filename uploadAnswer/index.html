@@ -110,9 +110,9 @@
             },
             error: function () {
                 //墨绿深蓝风
-                //询问框
-                layer.confirm('上传失败！请重新上传！', {
-                    btn: ['确定'] //按钮
+                layer.alert('上传失败！请重新上传！', {
+                    skin: 'layui-layer-molv' //样式类名
+                    , closeBtn: 0
                 }, function () {
                     window.location.reload();
                 });
@@ -123,20 +123,11 @@
 
 
     function addImg(e) {
-        /*判断上传图片类型*/
-        var index = layer.load(0, {
-            content: "上传中...",
-            style: 'font-size:14px',
-
-            shade: [0.8, '#fff']
-            //0.1透明度的白色背景
-        });
-
 
         //阻止默认行为
-
         e = e || window.event;
         e.preventDefault ? e.preventDefault() : e.returnValue = false;
+        /*判断上传图片类型*/
 
         var strUrl = $("#android").val();//获取图片地址
         if (strUrl) {
@@ -147,6 +138,12 @@
                 return;
             }
 
+            var index = layer.load(0, {
+                content: "上传中...",
+//              style: 'font-size:14px',
+                shade: [0.8, '#fff']
+                //0.1透明度的白色背景
+            });
             var fromData = new FormData($("#f1")[0]);
             var oReq = new XMLHttpRequest();
             oReq.open("POST", "http://ksfile.up0.v1.wcsapi.com/file/upload?key=stu/" + keyId + str + "&token=" + token);
@@ -155,8 +152,9 @@
                 if (oReq.status == 200) {
                     addImgInfo(oReq);
                 } else {
-                    layer.confirm('上传失败！请重新上传！', {
-                        btn: ['确定'] //按钮
+                    layer.alert('上传失败！请重新上传！', {
+                        skin: 'layui-layer-molv' //样式类名
+                        , closeBtn: 0
                     }, function () {
                         window.location.reload();
                     });

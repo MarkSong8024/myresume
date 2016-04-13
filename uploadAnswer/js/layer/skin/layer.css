@@ -709,13 +709,13 @@ html #layui_layer_skinlayercss {
 }
 
 .layui-layer-molv .layui-layer-title {
-    background: #009f95;
+    background: #337ab7;
     color: #fff;
     border: none
 }
 
 .layui-layer-molv .layui-layer-btn a {
-    background: #009f95
+    background: #337ab7
 }
 
 .layui-layer-molv .layui-layer-btn .layui-layer-btn1 {

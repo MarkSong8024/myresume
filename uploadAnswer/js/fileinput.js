@@ -1345,8 +1345,11 @@
             };
             fnError = function (jqXHR, textStatus, errorThrown) {
                 //文件上传失败,提示重新上传
-                layer.confirm('上传失败！请重新上传！', {
-                    btn: ['确定'] //按钮
+
+
+                layer.alert('上传失败！请重新上传！', {
+                    skin: 'layui-layer-molv' //样式类名
+                    , closeBtn: 0
                 }, function () {
                     window.location.reload();
                 });
