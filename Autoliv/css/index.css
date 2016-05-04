@@ -1,0 +1,236 @@
+
+.close {
+    position: fixed;
+    right: 0.32rem;
+    top: 0.32rem;
+    width: 0.48rem;
+    z-index: 49;
+}
+
+/*首页*/
+.landing {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.Image_bgTop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.Image_bgBelow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.Image_logo {
+    position: fixed;
+    margin: 0.32rem 0 0 0.32rem;
+    width: 1.8rem;
+    z-index: 5;
+}
+
+.Image_Landing_slogan {
+    position: absolute;
+    top: 1.2rem;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%);
+    width: 80%;
+    z-index: 5;
+}
+
+.landing_But {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%);
+    height: 35%;
+    z-index: 5;
+}
+
+.Bt_Landing {
+    height: 29.5%;
+}
+
+.landing_popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(166, 218, 240, 0.95);
+    /*background-color: #25559C;*/
+    z-index: 54;
+}
+
+.popup_box {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100%;
+    font-size: 0.4rem;
+    line-height: 0.6rem;
+    text-align: center;
+    color: #25559C;
+    z-index: 55;
+}
+
+.popup_Qu {
+    top: 77%;
+}
+
+.popup_box > p {
+    display: block;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    padding: 0 0.9rem;
+    font-family: 'myfirstfont';
+
+}
+
+.popup_box > img {
+    width: 100%;
+    z-index: 55;
+}
+
+/*调差问卷页*/
+
+.questionnairesPage {
+    position: relative;
+    width: 100%;
+    /*height: 100%;*/
+    overflow: scroll;
+}
+
+.Questionnaire_wrapper {
+    position: relative;
+    padding: 2.2rem 0.7rem 0 0.7rem;
+    margin-bottom: 1.48rem;
+    z-index: 10;
+}
+
+.Questionnaire_content {
+    margin-bottom: 0.8rem;
+}
+
+.Questionnaire_title {
+    position: absolute;
+    top: 0.82rem;
+    left: 1.8rem;
+    height: 0.84rem;
+    z-index: 10;
+}
+
+.Questionnaire_label {
+    margin-bottom: 0.36rem;
+    font-size: 0.4rem;
+    line-height: 0.48rem;
+    color: rgb(37, 85, 156);
+    font-family: myfirstfont;
+}
+
+.Questionnaire_label > p {
+    font-family: myfirstfont;
+    /*margin-left: 0.8rem;*/
+}
+
+.Questionnaire_click {
+    /*position: absolute;*/
+}
+
+.Questionnaire_click .input {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0);
+    padding: 0.1rem;
+    height: 1.06rem;
+    width: 80%;
+    font-size: 0.3rem;
+    line-height: 0.32rem;
+    color: rgba(74, 74, 74, 0.5);
+    margin-top: 0.26rem;
+
+}
+
+.yes, .no {
+    margin-bottom: 0.3rem;
+}
+
+.Questionnaire_click .yes_click, .Questionnaire_click .no_click {
+    width: 0.4rem;
+    height: 0.4rem;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: inset;
+    margin-right: 0.3rem;
+    display: flex;
+    float: left;
+}
+
+.Questionnaire_click .yes_text, .Questionnaire_click .no_text {
+    font-size: 0.3rem;
+    color: rgb(74, 74, 74);
+}
+
+.Questionnaire_submit {
+    position: relative;
+    margin-bottom: 0.32rem;
+    height: 0.84rem;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    z-index: 10;
+}
+
+/*盖章页*/
+.stampPage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.Stamp {
+    position: relative;
+    top: 10%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    width: 100%;
+
+}
+.Stamp_bg{
+    width: 100%;
+}
+.Stamp .Stamp_print1{
+    position: absolute;
+    top: 15%;
+    left: 13%;
+    width: 37%;
+}
+.Stamp .Stamp_print2{
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    width: 37%;
+}
+.Stamp .Stamp_print3{
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    width: 47%;
+}

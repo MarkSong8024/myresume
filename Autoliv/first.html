@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="keyword" content=""/>
+    <meta name="description" content=""/>
+    <meta name="screen-orientation" content="portrait">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>奥托立夫嘉年华</title>
+    <link rel="stylesheet" href="css/index.css" type="text/css"/>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica', 'Heiti SC', '黑体', sans-serif;
+        }
+
+        html {
+            background-attachment: scroll !important;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-weight: 400;
+            background-attachment: scroll !important;
+            font-family: 'Helvetica', 'Heiti SC', '黑体', sans-serif;
+            color: rgb(255, 255, 243);
+            background-color: #A6DAF0;
+            overflow: hidden;
+        }
+
+        @font-face {
+            font-family: myfirstfont;
+            src: url('img/华康海报体W12.ttf')
+        }
+
+    </style>
+    <script language="JavaScript">
+        var winW = document.documentElement.clientWidth;//设备的宽
+        var desW = 640;//设计稿的宽
+        var rem = desW / 100;
+        if (winW > desW) {
+            winW = desW;
+        }
+        document.documentElement.style.fontSize = winW / rem + "px";
+    </script>
+</head>
+<body>
+<div class="landing">
+    <img src="img/Image_Landing_bg%20top.png" class="Image_bgTop"/>
+
+    <img src="img/Image_logo.png" class="Image_logo" alt=""/>
+    <img src="img/Image_Landing_slogan.png" class="Image_Landing_slogan"/>
+
+    <div class="landing_But">
+        <img src="img/Bt_Landing_get%20passport.png" class="Bt_Landing" id="Bt_Landing_get"/>
+        <img src="img/Bt_Landing_take%20photo_unable.png" class="Bt_Landing" id="Bt_Landing_take"/>
+        <img src="img/Bt_Landing_stamp_unable.png" class="Bt_Landing" id="Bt_Landing_stampUnable"/>
+    </div>
+    <img src="img/Image_Landing_bg%20below.png" class="Image_bgBelow"/>
+    <div class="landing_popup" id="landing_popup">
+        <div class="popup_box">
+            <p>本功能将在5月14日开放</br>敬请期待！</p>
+            <img src="img/Image_Need%20log_bg.png" alt=""/>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+//        $("img#Bt_Landing_take").click(function () {
+//            $("img#Bt_Landing_take").hide();
+//            $("img#Bt_Landing_takePhoto").show();
+//        });
+//        $("img#Bt_Landing_stampUnable").click(function () {
+//            $("img#Bt_Landing_stampUnable").hide();
+//            $("img#Bt_Landing_stamp").show();
+//        });
+        $(function () {
+            $("img#Bt_Landing_take,img#Bt_Landing_stampUnable").click(function () {
+                $("#landing_popup").css({visibility:"visible"});
+
+            });
+        });
+    });
+
+</script>
+</body>
+</html>

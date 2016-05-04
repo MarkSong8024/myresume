@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="29px" height="26px" viewBox="0 0 29 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon_Questionnaire_pitch</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Questionnaire" transform="translate(-35.000000, -273.000000)" fill="#64C1C3">
+            <g id="Question" transform="translate(31.000000, 186.000000)">
+                <g id="Q1">
+                    <path d="M31.1668689,87.2608078 C29.6342748,86.590661 27.8368356,87.2562792 27.148229,88.7498324 L12.8989643,104.235525 L9.74762858,99.291941 C8.84253037,97.8699407 6.92568878,97.4341403 5.46815717,98.3170866 C4.01009999,99.200033 3.56249612,101.068035 4.46874106,102.488939 L10.2581111,111.570959 C10.9391207,112.64001 12.1934913,113.1507 13.3943005,112.961163 C14.6160851,113.029332 15.8099662,112.378443 16.3413764,111.22535 L32.6936816,91.1773866 C33.3805204,89.6844055 32.6965962,87.9304303 31.1668689,87.2608078" id="Icon_Questionnaire_pitch"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

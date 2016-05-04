@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="keyword" content=""/>
+    <meta name="description" content=""/>
+    <meta name="screen-orientation" content="portrait">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>奥托立夫嘉年华</title>
+    <link rel="stylesheet" href="css/index.css" type="text/css"/>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica', 'Heiti SC', '黑体', sans-serif;
+        }
+
+        html {
+            background-attachment: scroll !important;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-weight: 400;
+            background-attachment: scroll !important;
+            font-family: 'Helvetica', 'Heiti SC', '黑体', sans-serif;
+            color: rgb(255, 255, 243);
+            background-color: #A6DAF0;
+            overflow: hidden;
+        }
+
+        @font-face {
+            font-family: myfirstfont;
+            src: url('img/华康海报体W12.ttf')
+        }
+
+    </style>
+    <script language="JavaScript">
+        var winW = document.documentElement.clientWidth;//设备的宽
+        var desW = 640;//设计稿的宽
+        var rem = desW / 100;
+        if (winW > desW) {
+            winW = desW;
+        }
+        document.documentElement.style.fontSize = winW / rem + "px";
+    </script>
+</head>
+<body>
+<div class="stampPage">
+    <img class="close" src="img/Bt_close.png"/>
+
+    <div class="Stamp">
+        <img class="Stamp_print1" src="img/Image_Stamp_print1.svg"/>
+        <img class="Stamp_print2" src="img/Image_Stamp_print2.svg"/>
+        <img class="Stamp_print3" src="img/Image_Stamp_print3.svg"/>
+        <img class="Stamp_bg" src="img/Image_Stamp_bg.png"/>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)
+            return unescape(r[2]);
+        return null;
+    }
+    id = getQueryString("id");
+    switch (id) {
+        case "1":
+            $(".Stamp_print1").css({
+                border: '3px solid red'
+            });
+            break;
+        case "2":
+            $(".Stamp_print2").css({
+                border: '3px solid green'
+            });
+            break;
+        case "3":
+            $(".Stamp_print3").css({
+                border: '3px solid yeloow'
+            });
+            break;
+    }
+</script>
+</body>
+</html>
