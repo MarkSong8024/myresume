@@ -5,6 +5,7 @@
     <meta name="keyword" content=""/>
     <meta name="description" content=""/>
     <meta name="screen-orientation" content="portrait">
+    <meta name="format-detection" content="telephone=no" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>奥托立夫嘉年华</title>
     <link rel="stylesheet" href="css/index.css" type="text/css"/>
@@ -47,7 +48,7 @@
     </script>
 </head>
 <body>
-<div class="landing">
+<div id="firstPage" class="landing">
     <img src="img/Image_Landing_bg%20top.png" class="Image_bgTop"/>
 
     <img src="img/Image_logo.png" class="Image_logo" alt=""/>
@@ -55,35 +56,50 @@
 
     <div class="landing_But">
         <img src="img/Bt_Landing_get%20passport.png" class="Bt_Landing" id="Bt_Landing_get"/>
-        <img src="img/Bt_Landing_take%20photo_unable.png" class="Bt_Landing" id="Bt_Landing_take"/>
-        <img src="img/Bt_Landing_stamp_unable.png" class="Bt_Landing" id="Bt_Landing_stampUnable"/>
+        <img src="img/Bt_Landing_take%20photo.png" class="Bt_Landing" id="Bt_Landing_take"/>
+        <img src="img/Bt_Landing_stamp.png" class="Bt_Landing" id="Bt_Landing_stampUnable"/>
     </div>
     <img src="img/Image_Landing_bg%20below.png" class="Image_bgBelow"/>
     <div class="landing_popup" id="landing_popup">
         <div class="popup_box">
-            <p>本功能将在5月14日开放</br>敬请期待！</p>
+            <p>对不起，您还没有电子护照哦～
+                赶快去领取吧！</p>
             <img src="img/Image_Need%20log_bg.png" alt=""/>
         </div>
+        <img class="Need_see" src="img/Bt_Need%20log_i%20see.png" />
+    </div>
+    <div class="landing_popup" id="stamp_landing_popup">
+        <div class="popup_box">
+            <p>当您完成每一个游戏之后,现场服务人员会向您出示一个二维码,请您打开微信的"扫一扫"功能进行扫码,即可在"我要盖章"环节成功为此游戏盖章.
+            </p>
+            <img src="img/Image_Need%20log_bg.png" alt=""/>
+        </div>
+        <img class="Need_see" src="img/Bt_Need%20log_i%20see.png" />
     </div>
 </div>
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript">
     $(function () {
-//        $("img#Bt_Landing_take").click(function () {
-//            $("img#Bt_Landing_take").hide();
-//            $("img#Bt_Landing_takePhoto").show();
-//        });
-//        $("img#Bt_Landing_stampUnable").click(function () {
-//            $("img#Bt_Landing_stampUnable").hide();
-//            $("img#Bt_Landing_stamp").show();
-//        });
-        $(function () {
-            $("img#Bt_Landing_take,img#Bt_Landing_stampUnable").click(function () {
-                $("#landing_popup").css({visibility:"visible"});
-
+            $('#Bt_Landing_get').click(function(){
+                $('#firstPage').hide();
+                window.location.href="userinfoPage.html"
             });
+//            $("img#Bt_Landing_take,img#Bt_Landing_stampUnable").click(function () {
+//                $("#landing_popup").css({visibility:"visible"});
+//            });
+            $("img#Bt_Landing_stampUnable").click(function(){
+                $("#stamp_landing_popup").css({visibility:"visible"});
+            });
+        $("img#Bt_Landing_take").click(function(){
+            window.location.href = "PhotoPage.html";
+            $("#firstPage").hide();
         });
+        $('.Need_see').click(function(){
+            $("#stamp_landing_popup").css({visibility:"hidden"});
+            $("#firstPage").show();
+
+        })
     });
 
 </script>

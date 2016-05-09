@@ -5,6 +5,7 @@
     <meta name="keyword" content=""/>
     <meta name="description" content=""/>
     <meta name="screen-orientation" content="portrait">
+    <meta name="format-detection" content="telephone=no" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>奥托立夫嘉年华</title>
     <link rel="stylesheet" href="css/index.css" type="text/css"/>
@@ -47,6 +48,38 @@
     </script>
 </head>
 <body>
+<div id="photoPage" class="stampPage">
+    <img id="stampClose" class="close" src="img/Bt_close.png"/>
 
+    <div class="Stamp">
+        <img class="getPassport_Bg" src="img/Image_Take%20Photo_bg.png"/>
+        <div class="takePhoto">
+
+            <p>上传您在活动现场捕捉的精彩瞬间</p>
+        </div>
+        <div class="hoverPhoto">
+
+        </div>
+    </div>
+    <img class="Stamp_unsubmit" src="img/Bt_Take Photo_upload.png" alt=""/>
+    <div class="landing_popup" id="stamp_Photo" style="visibility: visible">
+        <div class="popup_box">
+            <p>点击右上角</br>
+                分享给你的好友或朋友圈
+            </p>
+            <img src="img/Image_Need%20log_bg.png" alt=""/>
+        </div>
+        <img class="Need_see" src="img/Bt_Need%20log_i%20see.png" />
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#stampClose").click(function(){
+            window.location.href = "first.html";
+            $("#photoPage").hide();
+        })
+    })
+</script>
 </body>
 </html>

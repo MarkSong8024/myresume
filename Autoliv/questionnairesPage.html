@@ -57,7 +57,7 @@
 <body>
 <div class="questionnairesPage">
     <img src="img/Image_Questionnaire_bg%20top.png" class="Image_bgTop"/>
-    <img src="img/Bt_close.png" class="close"/>
+    <img id="Bt_close" src="img/Bt_close.png" class="close"/>
     <img src="img/Image_Questionnaire_title.png" class="Questionnaire_title"/>
 
     <div class="Questionnaire_wrapper">
@@ -161,12 +161,28 @@
     <img src="img/Bt_Questionnaire_submit.png" class="Questionnaire_submit"/>
     <img src="img/Image_Questionnaire_bg%20below.png" class="Image_bgBelow"/>
 
-    <div class="landing_popup" id="landing_popup">
-        <div class="popup_Qu popup_box">
-            <p>本功能将在5月14日开放</br>敬请期待！</p>
+    <div class="landing_popup" id="thanksforyou">
+        <div class="Thanks_title"></div>
+        <div class="popup_Qu">
+            <!--<img src="">-->
+            <img class="popup_Qu_bg" src="img/Image_Thanks_bg.png" alt=""/>
+        </div>
+        <p>长按识别图中二维码</br>
+        查看去年活动详情
+        </p>
+        <img class="back" src="img/Bt_back.png" />
+    </div>
+    <div class="landing_popup" id="getgift" style="visibility:hidden">
+        <div class="gift_box">
+            <p>恭喜您集齐印章,在活动结束后凭此页面向工作人员兑换精美礼品</p>
+            <div class="gift_box_info">姓名<p class="nameInfo">小明</p></br>
+                电话<p class="photoInfo">13000000000</p>
+            </div>
             <img src="img/Image_Need%20log_bg.png" alt=""/>
         </div>
+        <img class="Need_see" src="img/Bt_back.png" />
     </div>
+
 </div>
 
 
@@ -178,12 +194,16 @@
                 alert("请选择完整后再操作~");
                 return;
             }
-            if ($("#no_3").attr("src") != '' && !$("#input_3").val()) {
+            if ($("#no_3").attr("src") != '' && !$("#input_3").val().replace(/\s+/g,'')) {
                 alert('第三项内容不能为空');
+                $("#input_3").focus(function(){
+                    this.blur();
+                });
                 return;
             }
-            if ($("#no_4").attr("src") != '' && !$("#input_4").val()) {
+            if ($("#no_4").attr("src") != '' && !$("#input_4").val().replace(/\s+/g,'')) {
                 alert('第四项内容不能为空');
+                $('#input_4').focus();
                 return;
             }
             var ary = [];
@@ -191,7 +211,7 @@
             console.log(ary);
 
             $("body").css({"overflow": "hidden"});
-            $("#landing_popup").css({visibility: "visible"});
+            $("#thanksforyou").css({visibility: "visible"});
         })
     });
     function check(str) {
@@ -199,7 +219,7 @@
         //点击yes的时候
         if (s[0].indexOf("yes") > -1) {
             if (s[1] == '4' || s[1] == '3') {
-                $("#input_" + s[1]).css({'border': ''})
+                $("#input_" + s[1]).css({'border': ''});
             }
             if ($("#" + str).attr("src")) {
                 $("#" + str).attr("src", "")
@@ -211,7 +231,7 @@
         } else {
             //点击no的时候
             if (s[1] == '3' || s[1] == '4') {
-                $("#input_" + s[1]).css({'border': '1px solid rgb(37, 85, 156)'})
+                $("#input_" + s[1]).css({'border': '1px solid rgb(74, 74, 74)','border-radius': '6px;'}).focus();
             }
             if ($("#" + str).attr("src")) {
                 $("#" + str).attr("src", "")

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="keyword" content=""/>
+    <meta name="description" content=""/>
+    <meta name="screen-orientation" content="portrait">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>奥托立夫嘉年华</title>
+    <link rel="stylesheet" href="css/index.css" type="text/css"/>
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica', 'Heiti SC', '黑体', sans-serif;
+        }
+
+        html {
+            background-attachment: scroll !important;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        input {
+            border: none;
+            outline: medium;
+            box-shadow: none;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-weight: 400;
+            background-attachment: scroll !important;
+            font-family: 'Helvetica', 'Heiti SC', '黑体', sans-serif;
+            color: rgb(255, 255, 243);
+            background-color: #A6DAF0;
+            overflow: hidden;
+        }
+
+        @font-face {
+            font-family: myfirstfont;
+            src: url('img/华康海报体W12.ttf')
+        }
+
+    </style>
+    <script language="JavaScript">
+        var winW = document.documentElement.clientWidth;//设备的宽
+        var desW = 640;//设计稿的宽
+        var rem = desW / 100;
+        if (winW > desW) {
+            winW = desW;
+        }
+        document.documentElement.style.fontSize = winW / rem + "px";
+    </script>
+</head>
+<body>
+<!--填写页-->
+<div id="userPage" class="userinfoPage" style="display: block">
+    <img class="close" src="img/Bt_close.png"/>
+
+    <div class="Stamp">
+        <img class="getPassport_Bg" src="img/Image_Get%20Passport_bg.png"/>
+
+        <div class="user_important">
+            <div class="headP">
+                <img id="graderImg" class="InputPortrait" src="img/Input_portrait_male.png"/>
+            </div>
+            <div class="pres">
+                <ul>
+                    <li  class="user_li">姓名
+                        <input id="userPres" class="presText" value="" type="text"/></li>
+                    <li class="user_li">电话
+                        <input id="presText_inp" class="presText" type="text"/></li>
+                </ul>
+            </div>
+            <div class="user_career_pres">
+                <ul>
+                    <li class="user_career_li">公司
+                        <!--<input class="presText_career" type="text"/>-->
+
+                        <select id="presTextCareer" class="presText_career">
+                            <option value="volvo">请选择...</option>
+                            <option value="saab">Saab</option>
+                            <option value="opel">Opel</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </li>
+
+
+                    <li class="user_career_li">部门
+                        <input id="userCareer" class="presText_career" type="text"/></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <img id="userInfo_summit" class="getPassport_summit" src="img/Bt_Input_get%20passport.png"/>
+</div>
+<!--生成页-->
+<div id="infoPage" class="user_info_Page" style="display: none">
+    <img class="close" src="img/Bt_close.png"/>
+
+    <div class="Stamp">
+        <img class="getPassport_Bg" src="img/Image_Get%20Passport_bg.png"/>
+
+        <div class="user_important">
+            <div class="headP">
+            </div>
+            <div class="pres">
+                <ul>
+                    <li class="user_li">姓名
+                        <input class="presText" style="border: transparent" placeholder="seline" type="text"/></li>
+                    <li class="user_li">电话
+                        <input class="presText" style="border: transparent" placeholder="15011116666"
+                               type="text"/></li>
+                </ul>
+            </div>
+
+            <div class="user_career_pres">
+                <ul>
+                    <li class="user_career_li">公司
+                        <input class="presText_career" style="border: transparent" placeholder="北京市宏宇联动有限公司"
+                               type="text"/></li>
+                    <li class="user_career_li">部门
+                        <input class="presText_career" style="border: transparent" placeholder="IT部" type="text"/></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <img id="Passport_summit" class="getPassport_summit" src="img/Bt_back.png"/>
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+
+        $('.close').click(function () {
+            $('#userPage').hide();
+            window.location.href = "first.html"
+        });
+        $("img#userInfo_summit").click(function () {
+            if ($('#userPres').val().replace(/\s+/g,'') == "") {
+                return alert("请填写您的姓名!");
+            }
+            if ($("#presText_inp").val() == "") {
+                alert('请输入手机号码!');
+            }
+            else {
+                var reg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+                var b = reg.test($("#presText_inp").val());
+                if (!b) {
+                    return alert("手机号码格式不正确！");
+                }
+            }
+            if ($("#presTextCareer  option:selected").text() == '请选择...') {
+                return alert('请选择公司!')
+            }
+            if($("#userCareer").val().replace(/\s+/g,'')==""){
+                return alert('请输入部门!')
+            }
+            $("#userPage").hide();
+            $("#infoPage").show();
+
+        });
+
+
+        $('img#Passport_summit').click(function () {
+
+                $('.user_info_Page').hide();
+                window.location.href = "first.html";
+            });
+        $('#graderImg').click(function () {
+            if ($(this).hasClass('otherClass')) {
+                $(this).removeClass('otherClass').attr('src','img/Input_portrait_male.png');
+            } else {
+                $(this).addClass('otherClass').attr('src','img/Input_portrait_female.png');
+            }
+        })
+        })
+
+
+</script>
+</body>
+</html>
