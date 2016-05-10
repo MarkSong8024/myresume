@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <style>
+        .chk_1 + label {
+            border: 1px solid #C1CACA;
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            box-shadow: 0px 1px 1px #999 inset;
+        }
+
+        .chk_1:checked + label:after {
+            top: 0px;
+            left: 0px;
+            content: url(img/Icon_Questionnaire_pitch.svg);
+        }
+
+        .chk_1 {
+            display: none;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+<div>
+    <input type="radio" name="yes"id="checkbox_a1" class="chk_1"/>
+    <label for="checkbox_a1"></label>
+</div>
+
+<div>
+    <input type="radio" name="yes" id="checkbox_a2" class="chk_1"/>
+    <label for="checkbox_a2"></label>
+</div>
+<div>
+    <input type="checkbox" id="checkbox_a3" class="chk_1"/>
+    <label for="checkbox_a3"></label>
+</div>
+<div>
+    <input type="checkbox" id="checkbox_a4" class="chk_1"/>
+    <label for="checkbox_a4"></label>
+</div>
+
+
+</body>
+</html>
