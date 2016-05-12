@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传试卷</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet/less" href="css/index.less">
+</head>
+
+<body>
+    <!--答卷页-->
+    <div class="upload_page upload_current">
+        <section class="current_cont">
+            <!-- 标题 -->
+            <h2>2015学年北京昌平区初二下学期期末数学试卷学期期末数学试卷</h2>
+            <div class="current_detail">
+                <!-- 作者&&时间&&点赞 -->
+                <div class="current_txt">
+                    <p class="author">黄永辉</p>
+                    <p class="time">5分钟前</p>
+                    <span class="laud check">100</span>
+                </div>
+                <!-- 图片汇总 -->
+                <div class="current_pic">
+                    <p class="clearfix"> <img src="images/paper.png" alt=""></p>
+                    <p class="clearfix"> <img src="images/paper.png" alt=""></p>
+                    <p class="clearfix"> <img src="images/paper.png" alt=""></p>
+                    <p class="clearfix"> <img src="images/paper.png" alt=""></p>
+                </div>
+            </div>
+        </section>
+        <!-- 底部固定 -->
+        <footer class="clearfix">
+            <button class="btn_paper"><em></em><span>上传试卷</span></button>
+            <button class="btn_record"><em></em><span>上传记录</span></button>
+            <button class="btn_all check"><em></em><span>全部试卷</span></button>
+        </footer>
+    </div>
+    <script src="js/less.js"></script>
+</body>
+
+</html>

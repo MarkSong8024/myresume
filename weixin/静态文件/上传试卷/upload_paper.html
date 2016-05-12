@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传试卷</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="qiniu/upload/demo/bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="qiniu/upload/demo/styles/main.css">
+    <link rel="stylesheet" href="qiniu/upload/demo/styles/highlight.css">
+</head>
+
+<body>
+<!--答卷页-->
+<div class="upload_page">
+    <!-- 年部&&学科 -->
+    <ul class="filter_tab">
+        <li class="clearfix">
+            <label>年部：</label>
+
+            <div>
+                <a href="">小学</a>
+                <a href="">初中</a>
+                <a href="">高中</a>
+            </div>
+        </li>
+        <li class="clearfix">
+            <label>学科：</label>
+
+            <div>
+                <a href="">语文</a>
+                <a href="">数学</a>
+                <a href="" class="check">英语</a>
+                <a href="">物理</a>
+                <a href="">化学</a>
+                <a href="">生物</a>
+            </div>
+        </li>
+    </ul>
+    <!-- 搜索 -->
+    <input type="search" placeholder="请填写试卷名称">
+    <section class="pic_upload clearfix">
+        <a href=""><img src="images/paper.png" alt=""><i></i></a>
+        <a href=""><img src="images/paper.png" alt=""><i></i></a>
+
+        <a href="" class="btn_upload"><span></span></a>
+
+
+    </section>
+    <div class="col-md-12 exam_List">
+        <table class="table table-striped table-hover text-left" style="display:none">
+
+            <tbody id="fsUploadProgress">
+
+            </tbody>
+
+        </table>
+    </div>
+    <!-- 七牛上传-->
+    <div class="container">
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade in active" id="demo" aria-labelledby="demo-tab">
+                <div class="row" style="margin-top: 0px;">
+                    <div class="col-md-12 exam_SelectImg">
+                        <div id="container">
+                            <a class="btn btn-default btn-lg " id="pickfiles" href="#">
+                                <i class="glyphicon glyphicon-plus"></i>
+                                <span>选择图片</span>
+                            </a>
+                            <!--------------------------新增下面------------------------------------------>
+                            <!--<a class="btn btn-default btn-lg " id="up_load" href="#">
+                                <span>确认上传</span>
+                            </a>-->
+                            <!-- <a class="btn btn-default btn-lg " id="stop_load"  href="#" >
+                                 <span>暂停上传</span>
+                             </a>-->
+                            <!--------------------------新增上面------------------------------------------>
+
+                        </div>
+                    </div>
+                    <!--<div class="col-md-12 exam_List">-->
+                        <!--<table class="table table-striped table-hover text-left" style="display:none">-->
+
+                            <!--<tbody id="fsUploadProgress">-->
+
+                            <!--</tbody>-->
+
+                        <!--</table>-->
+                    <!--</div>-->
+                </div>
+                <!--<div id="success" style="display: none;" class="alert-success exam_success exam_other">-->
+                <!--<span><img src="demo/views/images/upload_success.png"></span> <span>上传成功</span>-->
+                <!--</div>-->
+                <!--<div id="error" style="display: none" class="alert-success exam_success exam_other">-->
+                <!--<span><img src="demo/views/images/upload_error.png"></span> <span>上传失败</span>-->
+                <!--</div>-->
+            </div>
+
+        </div>
+    </div>
+
+    <button class="upload_submit">提交</button>
+
+
+    <!-- 底部固定 -->
+    <footer class="clearfix">
+        <button class="btn_paper"><em></em><span>上传试卷</span></button>
+        <button class="btn_record"><em></em><span>上传记录</span></button>
+        <button class="btn_all check"><em></em><span>全部试卷</span></button>
+    </footer>
+</div>
+
+
+</body>
+<script type="text/javascript" src="qiniu/upload/script/all_exam.js"></script>
+<script type="text/javascript" src="qiniu/upload/script/main.js"></script>
+<script type="text/javascript" src="qiniu/upload/script/ui.js"></script>
+<script type="text/javascript" src="qiniu/upload/script/zh_CN.js"></script>
+</html>

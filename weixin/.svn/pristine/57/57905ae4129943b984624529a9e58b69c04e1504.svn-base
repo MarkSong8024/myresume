@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传试卷</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <!--答卷页-->
+    <div class="upload_page">
+        <!-- 年部&&学科 -->
+        <ul class="filter_tab">
+            <li class="clearfix">
+                <label>年部：</label>
+                <div>
+                    <a href="" class="first">小学</a>
+                    <a href="">初中</a>
+                    <a href="">高中</a>
+                </div>
+            </li>
+            <li class="clearfix">
+                <label>学科：</label>
+                <div>
+                    <a href="" class="first">语文</a>
+                    <a href="">数学</a>
+                    <a href="" class="check">英语</a>
+                    <a href="" class="first">物理</a>
+                    <a href="">化学</a>
+                    <a href="">生物</a>
+                </div>
+            </li>
+        </ul>
+        <!-- 搜索 -->
+        <input type="search" placeholder="请填写试卷名称">
+        <section class="pic_upload clearfix">
+            <a href=""><img src="images/img.png" alt=""></a>
+            <a href=""><img src="images/img.png" alt=""></a>
+            <a href=""><img src="images/img.png" alt=""></a>
+            <a href=""><img src="images/img.png" alt=""></a>
+            <a href=""><img src="images/img.png" alt=""></a>
+            <a href=""><img src="images/img.png" alt=""></a>
+            <a href=""><img src="images/img.png" alt=""></a>
+            <a href=""><img src="images/img.png" alt=""></a>
+            <a href=""><img src="images/img.png" alt=""></a>
+            <a href=""><img src="images/img.png" alt=""></a>
+            <a href="" class="btn_upload"><span></span></a>
+        </section>
+        <button class="upload_submit">提交</button>
+        <!-- 底部固定 -->
+        <footer class="clearfix">
+            <button class="btn_paper"><em></em><span>上传试卷</span></button>
+            <button class="btn_record"><em></em><span>上传记录</span></button>
+            <button class="btn_all check"><em></em><span>全部试卷</span></button>
+        </footer>
+    </div>
+</body>
+
+</html>
