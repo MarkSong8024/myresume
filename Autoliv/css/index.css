@@ -1,6 +1,36 @@
+/*清默认样式*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica', 'Heiti SC', '黑体', sans-serif;
+}
+
+input {
+    border: 0;
+}
+
+html {
+    background-attachment: scroll !important;
+}
+
+html, body {
+    width: 100%;
+    /*height: 100%;*/
+    font-weight: 400;
+    background-attachment: scroll !important;
+    font-family: 'Helvetica', 'Heiti SC', '黑体', sans-serif;
+    color: rgb(255, 255, 243);
+    background-color: #A6DAF0;
+    /*overflow: hidden;*/
+}
+
+@font-face {
+    font-family: myfirstfont;
+    src: url('../img/华康海报体W12.ttf')
+}
 
 .close {
-    position: fixed;
+    position: absolute;
     right: 0.32rem;
     top: 0.32rem;
     width: 0.48rem;
@@ -13,6 +43,7 @@
     width: 100%;
     height: 100%;
     z-index: 1;
+
 }
 
 .Image_bgTop {
@@ -169,14 +200,19 @@
 
 }
 .popup_Qu {
-    /*position: relative;*/
-    /*-webkit-transform: translate(-50%, -50%);*/
-    /*transform: translate(-50%, -50%);*/
+    position: relative;
     margin-top: 0.4rem;
     width: 100%;
 }
 .popup_Qu_bg{
     width: 100%;
+}
+.QU_code{
+    position: absolute;
+    top: 18%;
+    left: 28%;
+    width: 2.8rem;
+
 }
 .landing_popup > p{
     padding: 0.4rem 0 0 0;
@@ -229,10 +265,6 @@
     /*margin-left: 0.8rem;*/
 }
 
-.Questionnaire_click {
-    /*position: absolute;*/
-}
-
 .Questionnaire_click .input {
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 6px;
@@ -248,10 +280,40 @@
 }
 
 .yes, .no {
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.4rem;
 
 }
 
+textarea {
+    resize: none;
+}
+
+.chk_1 + label {
+    width: 0.4rem;
+    height: 0.4rem;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 1px 1px #999 inset;
+    margin-right: 0.3rem;
+    display: flex;
+    float: left;
+}
+
+.chk_1:checked + label:after {
+    content: url(../img/Icon_Questionnaire_pitch.svg);
+    margin-top: -0.6rem;
+    height: 0.4rem;
+}
+
+.threeAndfour .chk_1:checked + label:after {
+    content: url(../img/Icon_Questionnaire_pitch.svg);
+    margin-top: -0.5rem;
+    height: 0.4rem;
+}
+
+.chk_1 {
+    display: none;
+}
 .Questionnaire_click .yes_click, .Questionnaire_click .no_click {
     width: 0.4rem;
     height: 0.4rem;
@@ -288,7 +350,7 @@
 
 /*盖章页*/
 .stamptips_wrapper{
-    position: fixed;
+    position: absolute;
     width:100% ;
     bottom: 0;
     left: 0;
@@ -374,6 +436,18 @@
     /*background: url("../img/Input_portrait_male.png")no-repeat center bottom;*/
     /*background-size: cover;*/
 }
+.headP>p{
+    position: absolute;
+    bottom: 0;
+    font-size: 0.28rem;
+    line-height: 0.32rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    text-align: center;
+    opacity: 0.9;
+    visibility: visible;
+}
 .headP .InputPortrait{
     position: absolute;
     bottom: 0;
@@ -415,7 +489,7 @@ ul .user_li, ul .user_career_li {
 }
 
 .getPassport_summit, .Stamp_unsubmit ,.Need_see ,.back{
-    position: fixed;
+    position: absolute;
     display: inline-block;
     margin-bottom: 0.32rem;
     height: 0.84rem;
@@ -448,16 +522,22 @@ ul .user_li, ul .user_career_li {
     background-size: cover;
 }
 .hoverPhoto{
-    position: relative;
+    position: absolute;
+    left: 80%;
+    bottom: 0;
     z-index: 15;
-    top: -1.7rem;
-    left: 50%;
-    -webkit-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
-    width: 67%;
-    height: 3.56rem;
-    background-color: rgba(150, 150, 150, 0.4);
+    width: 20%;
+    height: 0.76rem;
+    text-align: center;
+    visibility: visible;
+
 }
+.hoverPhoto>img{
+    position: absolute;
+    left: 30%;
+    bottom: 0;
+}
+
 .takePhoto>p{
     text-align: center;
     display: block;

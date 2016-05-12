@@ -3550,16 +3550,15 @@
 <script type="text/javascript">
     $(function () {
         $("#print1").click(function () {
-//				($("#print1").attr('class', 'Stamp_print1 bounceIn animated'));
-			($(".Stamp_print1").stop('class','infinite'));
+			($("#print1").css('animation-play-state', 'paused'));
 			($(".Stamp_print1").css('fill','#DA202C'));
 		});
         $("#print2").click(function () {
-            ($("#print2").attr('class', 'Stamp_print2 bounceIn animated'));
+            ($("#print2").css('animation-play-state', 'paused'));
 			($(".Stamp_print2").css('fill','#DA202C'));
         });
         $("#print3").click(function () {
-            ($("#print3").attr('class', 'Stamp_print3 bounceIn animated'));
+            ($("#print3").css('animation-play-state', 'paused'));
 			($(".Stamp_print3").css('fill','#DA202C'));
         })
     });

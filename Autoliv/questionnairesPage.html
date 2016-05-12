@@ -8,68 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>奥托立夫嘉年华</title>
     <link rel="stylesheet" href="css/index.css" type="text/css"/>
-    <style type="text/css">
-        * {
-            margin: 0;
-            padding: 0;
-            font-family: 'Helvetica', 'Heiti SC', '黑体', sans-serif;
-        }
 
-        input {
-            border: 0;
-        }
-
-        html {
-            background-attachment: scroll !important;
-        }
-
-        html, body {
-            width: 100%;
-            /*height: 100%;*/
-            font-weight: 400;
-            background-attachment: scroll !important;
-            font-family: 'Helvetica', 'Heiti SC', '黑体', sans-serif;
-            color: rgb(255, 255, 243);
-            background-color: #A6DAF0;
-            /*overflow: hidden;*/
-        }
-
-        @font-face {
-            font-family: myfirstfont;
-            src: url('img/华康海报体W12.ttf')
-        }
-
-        textarea {
-            resize: none;
-        }
-
-        .chk_1 + label {
-            width: 0.4rem;
-            height: 0.4rem;
-            background-color: white;
-            border-radius: 50%;
-            box-shadow: 0 1px 1px #999 inset;
-            margin-right: 0.3rem;
-            display: flex;
-            float: left;
-        }
-
-        .chk_1:checked + label:after {
-            content: url(img/Icon_Questionnaire_pitch.svg);
-            margin-top: -0.6rem;
-        }
-
-        .threeAndfour .chk_1:checked + label:after {
-            content: url(img/Icon_Questionnaire_pitch.svg);
-            margin-top: -0.5rem;
-        }
-
-        .chk_1 {
-            display: none;
-        }
-
-
-    </style>
     <script language="JavaScript">
         var winW = document.documentElement.clientWidth;//设备的宽
         var desW = 640;//设计稿的宽
@@ -208,11 +147,11 @@
     <img src="img/Bt_Questionnaire_submit.png" class="Questionnaire_submit"/>
     <img src="img/Image_Questionnaire_bg%20below.png" class="Image_bgBelow"/>
 
-    <div class="landing_popup" id="thanksforyou">
+    <div class="landing_popup" id="thanksforyou" style="visibility: hidden">
         <div class="Thanks_title"></div>
         <div class="popup_Qu">
-            <!--<img src="">-->
             <img class="popup_Qu_bg" src="img/Image_Thanks_bg.png" alt=""/>
+            <img class="QU_code" src="img/QU_code.png">
         </div>
         <p>长按识别图中二维码</br>
             查看去年活动详情
@@ -240,20 +179,20 @@
         $(".Questionnaire_submit").click(function () {
             //非空验证
             if (!$('#yes1').is(':checked') && !$('#no1').is(':checked')) {
-                alert("请一项不能为空~");
+                alert("请选择第一项的内空~");
                 return;
             } else if (!$('#yes2').is(':checked') && !$('#no2').is(':checked')) {
-                alert("请二项不能为空~");
+                alert("请选择第二项的内空~");
                 return;
             } else if (!$('#yes3').is(':checked') && !$('#no3').is(':checked')) {
-                alert("请三项不能为空~");
+                alert("请选择第三项的内空~");
                 return;
             }
             else if (!$('#yes4').is(':checked') && !$('#no4').is(':checked')) {
-                alert("请四项不能为空~");
+                alert("请选择第四项的内空~");
                 return;
             } else if (!$('#yes5').is(':checked') && !$('#no5').is(':checked')) {
-                alert("请五项不能为空~");
+                alert("请选择第五项的内空~");
                 return;
             }
 
@@ -297,4 +236,5 @@
 
 </script>
 </body>
+
 </html>
