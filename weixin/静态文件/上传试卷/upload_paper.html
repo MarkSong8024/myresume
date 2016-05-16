@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -89,7 +89,6 @@
         if (gradeGroupId && subjectId) {
             $('#grade a,#subject a').each(function () {
                 var grade_sub = $(this).attr('id');
-                console.log(grade_sub);
                 if (grade_sub.indexOf('gradeGroupId') > -1) {
                     if (gradeGroupId == grade_sub.split('_')[1]) {
                         $('#' + grade_sub).addClass('check');

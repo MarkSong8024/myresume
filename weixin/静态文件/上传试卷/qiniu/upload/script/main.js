@@ -49,7 +49,7 @@ $(function () {
         //     },
         // },
         //自动上传 true为自动上传,false为取消自动上传
-        auto_start: false,
+        auto_start: true,
 
         log_level: 5,
         init: {
