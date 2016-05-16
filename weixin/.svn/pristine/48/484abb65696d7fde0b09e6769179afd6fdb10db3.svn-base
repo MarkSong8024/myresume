@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传成功</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <!--答卷页-->
+    <div class="upload_page pic_page">
+        <!-- 上传成功 -->
+        <section class="success_pic" >
+            <span></span>
+            <a href="" class="btn">查看</a>
+        </section>
+        <!-- 上传失败 -->
+        <section class="success_pic fail_pic" style="display: none;">
+            <span></span>
+            <a href="" class="btn">重新上传</a>
+        </section>
+        <!-- 底部固定 -->
+        <footer class="clearfix">
+            <button class="btn_paper check"><em></em><span>上传试卷</span></button>
+            <button class="btn_record"><em></em><span>上传记录</span></button>
+            <button class="btn_all"><em></em><span>全部试卷</span></button>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -18,6 +18,7 @@ function FileProgress(file, targetID) {
         var Wrappeer = this.fileProgressWrapper;
         Wrappeer.attr('id', this.fileProgressID).addClass('progressContainer');
 
+
         var progressText = $("<td class='exam_Info' style='display: none'/>");
         //progressText.addClass('progressName').text(file.name);
         progressText.addClass('progressName').text('');
@@ -28,7 +29,7 @@ function FileProgress(file, targetID) {
         progressSize.addClass("progressFileSize").text(fileSize);
 
         var progressBarTd = $("<td  class='exam_progress'/>");
-        var progressBarBox = $("<div/>");
+        var progressBarBox = $("<div style='width: 6.8rem'/>");
         progressBarBox.addClass('info');
         var progressBarWrapper = $("<div/>");
         progressBarWrapper.addClass("progress progress-striped");
@@ -239,7 +240,11 @@ FileProgress.prototype.setComplete = function (up, info) {
     var Wrapper = $('<div class="Wrapper"/>');
     var imgWrapper = $('<div class="imgWrapper col-md-3"/>');
     var linkWrapper = $('<a class="linkWrapper" target="_blank"/>');
-    var showImg = $('<img src="qiniu/upload/demo/views/images/loading.gif"/>');
+    var showImg = $('<img src="images/loading.gif"/>');
+    //添加删除小图标
+    var time = new Date().getTime();
+    var ico = $('<i onclick="removeEle(' + time + ')" id=' + time + '></i>');
+    Wrapper.append(ico);
 
     progressNameTd.append(Wrapper);
 
@@ -281,7 +286,7 @@ FileProgress.prototype.setComplete = function (up, info) {
 
 
     if (!isImg) {
-        showImg.attr('src', 'qiniu/upload/demo/views/images/default.png');
+        showImg.attr('src', 'images/default.png');
         Wrapper.addClass('default');
 
         /* imgWrapper.append(showImg);
@@ -299,8 +304,10 @@ FileProgress.prototype.setComplete = function (up, info) {
         $(img).attr('src', url);
 
         var height_space = 340;
+
         $(img).on('load', function () {
             showImg.attr('src', url);
+            //图片展示成功.加载删除的小图标
 
             //addImgInfo(url);
 
@@ -314,7 +321,7 @@ FileProgress.prototype.setComplete = function (up, info) {
                     $('#myModal-img').find('.text-warning').show();
                 }
                 var newImg = new Image();
-                modalBody.find('img').attr('src', 'qiniu/upload/demo/views/images/loading.gif');
+                modalBody.find('img').attr('src', 'images/loading.gif');
                 newImg.onload = function () {
                     modalBody.find('img').attr('src', url).data('key', key).data('h', height);
                     modalBody.find('.modal-body-wrapper').find('a').attr('href', url);
@@ -389,7 +396,7 @@ FileProgress.prototype.setComplete = function (up, info) {
             Wrapper.append(infoWrapper);
 
         }).on('error', function () {
-            showImg.attr('src', 'qiniu/upload/demo/views/images/default.png');
+            showImg.attr('src', 'images/default.png');
             Wrapper.addClass('default');
         });
     }

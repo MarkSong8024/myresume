@@ -53,15 +53,29 @@ h1 .view_code {
 }
 
 .info {
+    /*position: relative;*/
+    /*height: 100%;*/
+    /*width: 100%;*/
+
+    width: 29%;
+    border: 1px solid #d9d9d9;
+    margin-right: 6.5%;
+    float: left;
+    text-align: center;
+    font-size: 10rem;
+    margin-bottom: 1.5rem;
+    box-sizing: border-box;
+    color: #d9d9d9;
+    font-family: sans-serif;
     position: relative;
-    height: 100%;
+
 }
 
 tr .progress {
     width: 100%;
     /*width: 96%;*/
     display: inline-block;
-    margin: auto;
+    margin-top: 23%;
 }
 
 tr .progress-bar {
@@ -107,13 +121,13 @@ tr .progressCancel {
 }
 
 #container {
-    margin-bottom: 20px;
     border-width: 2px;
     border-radius: 3px;
     border-color: #dcdcdc;
     cursor: default;
     text-align: center;
-    margin-top: 50px;
+    float: left;
+    width: 29%;
 }
 
 #container:hover, #container:active {
@@ -139,8 +153,8 @@ tr .progressCancel {
 }
 
 #container a {
-    width: 15%;
-    min-width: 145px;
+    width: 100%;
+    height: 11.5rem;
 
 }
 
@@ -159,10 +173,11 @@ button {
 
 td .Wrapper {
     /*margin-top: 20px;*/
-    margin: 10px;
-    text-align: center;
+    /*margin: 10px;*/
+    /*text-align: center;*/
     overflow: hidden;
     /*min-width: 230px;*/
+    width: 100%;
 }
 
 td .Wrapper .infoWrapper {
@@ -332,16 +347,50 @@ a {
     position: relative;
 }
 
-.progressContainer{
-    /*width: 50%;*/
-    /*border: 1px solid #d9d9d9;*/
-    /*margin-right: 6.5%;*/
-    /*float: left;*/
-    /*text-align: center;*/
-    /*font-size: 10rem;*/
+.exam_Info{
+    display: inline-block;
+}
+
+.exam_List table{
+    border: none;
+}
+.exam_List table tr{
+    border: none;
+    float: left;
+    width: 29%;
+    margin-right: 3.5%;
+}
+
+.exam_List table tr td{
+    border: none;
+    width: 100%;
+}
+
+
+tr td{
+    width: 29%;
+    border: 1px solid #d9d9d9;
+    margin-right: 6.5%;
+    text-align: center;
+    font-size: 10rem;
     /*margin-bottom: 1.5rem;*/
-    /*box-sizing: border-box;*/
-    /*color: #d9d9d9;*/
-    /*font-family: sans-serif;*/
-    /*position: relative;*/
+    box-sizing: border-box;
+    color: #d9d9d9;
+    font-family: sans-serif;
+    position: relative;
+}
+.Wrapper{
+    float: left;
+}
+.weixin_tab{
+    border: none;
+}
+.Wrapper i{
+    background: url(../../../../images/upload_del.svg) no-repeat;
+    width: 20px;
+    height: 20px;
+    background-size: 100% 100%;
+    position: absolute;
+    right: -4px;
+    top: -4px;
 }

@@ -85,7 +85,7 @@ $(function () {
                 $('.exam_Info').show();
                 //隐藏进度条
                 $('.exam_progress').hide();
-                //显示成功
+                //
                 //$("#success").show();
 
 
