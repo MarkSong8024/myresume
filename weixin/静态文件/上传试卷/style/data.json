@@ -1,0 +1,23 @@
+﻿{
+  "data": [
+    {
+      "audit": "未审核",
+      "createDate": "2016-05-16 17:20:26",
+      "fileFormat": "图片",
+      "fileNum": 1,
+      "fileUrls": [
+        "http://file.aibeike.com/paper/1463544446374.jpg",
+        "http://file.aibeike.com/paper/1463544446374.jpg"
+      ],
+      "id": "8903lfdskjkKHkfhf92",
+      "isIntoTiKu": "未入库",
+      "label": 0,
+      "provider": "黄永辉",
+      "providerId": "18610611962",
+      "source": "爱贝克",
+      "title": "2016年北京海边测试入学卷"
+    }
+  ],
+  "message": "操作成功",
+  "success": true
+}

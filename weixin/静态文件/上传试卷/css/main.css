@@ -56,7 +56,6 @@ h1 .view_code {
     /*position: relative;*/
     /*height: 100%;*/
     /*width: 100%;*/
-
     width: 29%;
     /*border: 1px solid #d9d9d9;*/
     margin-right: 6.5%;
@@ -105,6 +104,7 @@ tr .progressCancel {
 .status {
     position: absolute;
     width: 100%;
+    height: 11.5rem;
     top: 0;
     left: 14px;
     text-align: center;
@@ -178,6 +178,7 @@ td .Wrapper {
     overflow: hidden;
     /*min-width: 230px;*/
     width: 100%;
+    height: 11.5rem;
 }
 
 td .Wrapper .infoWrapper {
@@ -291,13 +292,16 @@ a {
     text-align: center;
     font-size: 20px;
 }
-.exam_success{
+
+.exam_success {
     text-align: center;
 }
-.exam_success span img{
+
+.exam_success span img {
     width: 20px;
 }
-.exam_other{
+
+.exam_other {
     height: 30px;
     line-height: 30px;
 }
@@ -333,7 +337,8 @@ a {
     opacity: 0;
     width: 56px;
 }
-.lss{
+
+.lss {
     width: 29%;
     border: 1px solid #d9d9d9;
     margin-right: 6.5%;
@@ -347,27 +352,29 @@ a {
     position: relative;
 }
 
-.exam_Info{
+.exam_Info {
     display: inline-block;
 }
 
-.exam_List table{
+.exam_List table {
     border: none;
 }
-.exam_List table tr{
+
+.exam_List table tr {
     border: none;
     float: left;
     width: 29%;
     margin-right: 3.5%;
+    height: 11.5rem;
+    margin-bottom: 1.5rem;
 }
 
-.exam_List table tr td{
+.exam_List table tr td {
     border: none;
     width: 100%;
 }
 
-
-tr td{
+tr td {
     width: 29%;
     border: 1px solid #d9d9d9;
     margin-right: 6.5%;
@@ -379,18 +386,93 @@ tr td{
     font-family: sans-serif;
     position: relative;
 }
-.Wrapper{
+
+.Wrapper {
     float: left;
 }
-.weixin_tab{
+
+.weixin_tab {
     border: none;
 }
-.Wrapper i{
-    background: url(../../../../images/upload_del.svg) no-repeat;
+
+.Wrapper i {
+    background: url(../images/upload_del.svg) no-repeat;
     width: 20px;
     height: 20px;
     background-size: 100% 100%;
     position: absolute;
     right: -4px;
     top: -4px;
+}
+
+
+pre code {
+    display:block;
+    padding:0.5em;
+    font:12px Arial;
+    line-height:2.0em
+}
+pre .comment,pre .template_comment,pre .diff .header,pre .javadoc {
+    color:#998;
+    font-style:italic
+}
+pre .keyword,pre .css .rule .keyword,pre .winutils,pre .javascript .title,pre .nginx .title,pre .subst,pre .request,pre .status {
+//color:#333;
+    color: #787878;
+    font-weight:bold
+}
+pre .number,pre .hexcolor,pre .ruby .constant {
+    color:#099;
+}
+pre .string,pre .tag .value,pre .phpdoc,pre .tex .formula {
+    /*color:#d14*/
+    color: #409B1C;
+}
+pre .title,pre .id {
+    color:#900;
+    font-weight:bold
+}
+pre .javascript .title,pre .lisp .title,pre .clojure .title,pre .subst {
+    font-weight:normal
+}
+pre .class .title,pre .haskell .type,pre .vhdl .literal,pre .tex .command {
+    color:#458;
+    font-weight:bold
+}
+pre .tag,pre .tag .title,pre .rules .property,pre .django .tag .keyword {
+    color:#000080;
+    font-weight:normal
+}
+pre .attribute,pre .variable,pre .lisp .body {
+    /*color:#008080*/
+    color: #FF7800;
+}
+pre .regexp {
+    color:#009926
+}
+pre .class {
+    color:#458;
+    font-weight:bold
+}
+pre .symbol,pre .ruby .symbol .string,pre .lisp .keyword,pre .tex .special,pre .prompt {
+    color:#990073
+}
+pre .built_in,pre .lisp .title,pre .clojure .built_in {
+    color:#0086b3
+}
+pre .preprocessor,pre .pi,pre .doctype,pre .shebang,pre .cdata {
+    color:#999;
+    font-weight:bold
+}
+pre .deletion {
+    background:#fdd
+}
+pre .addition {
+    background:#dfd
+}
+pre .diff .change {
+    background:#0086b3
+}
+pre .chunk {
+    color:#aaa
 }

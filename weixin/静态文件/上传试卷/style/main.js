@@ -11,7 +11,7 @@ $(function () {
         container: 'container',
         drop_element: 'container',
         max_file_size: '1000mb',
-        flash_swf_url: 'bower_components/plupload/js/Moxie.swf',
+        flash_swf_url: 'bower_components/plupload/style/Moxie.swf',
         dragdrop: true,
         chunk_size: '4mb',
         multi_selection: !(mOxie.Env.OS.toLowerCase() === "ios"),

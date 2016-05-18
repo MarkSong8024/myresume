@@ -279,7 +279,7 @@ th {
   /*-moz-osx-font-smoothing: grayscale;*/
 /*}*/
 .glyphicon {
-  background: url(../../../../../../../images/add_pic.svg) no-repeat;
+  background: url(../images/add_pic.svg) no-repeat;
   width: 40px;
   height: 40px;
   background-size: 100% 100%;

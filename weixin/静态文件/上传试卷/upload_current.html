@@ -8,33 +8,70 @@
 </head>
 
 <body>
-    <!--答卷页-->
-    <div class="upload_page upload_current">
-        <section class="current_cont">
-            <!-- 标题 -->
-            <h2>2015学年北京昌平区初二下学期期末数学试卷学期期末数学试卷</h2>
-            <div class="current_detail">
-                <!-- 作者&&时间&&点赞 -->
-                <div class="current_txt">
-                    <p class="author">黄永辉</p>
-                    <p class="time">5分钟前</p>
-                </div>
-                <!-- 图片汇总 -->
-                <div class="current_pic">
-                    <p class="clearfix"> <img src="images/paper.png" alt=""></p>
-                    <p class="clearfix"> <img src="images/paper.png" alt=""></p>
-                    <p class="clearfix"> <img src="images/paper.png" alt=""></p>
-                    <p class="clearfix"> <img src="images/paper.png" alt=""></p>
-                </div>
+<!--答卷页-->
+<div class="upload_page upload_current">
+    <section class="current_cont">
+        <!-- 标题 -->
+        <h2 class="title"></h2>
+
+        <div class="current_detail">
+            <!-- 作者&&时间&&点赞 -->
+            <div class="current_txt">
+                <p class="author"></p>
+
+                <p class="time"></p>
             </div>
-        </section>
-        <!-- 底部固定 -->
-        <footer class="clearfix">
-            <button class="btn_paper"><em></em><span>上传试卷</span></button>
-            <button class="btn_record"><em></em><span>上传记录</span></button>
-            <button class="btn_all check"><em></em><span>全部试卷</span></button>
-        </footer>
-    </div>
+            <!-- 图片汇总 -->
+            <div class="current_pic">
+
+            </div>
+        </div>
+    </section>
+    <!-- 底部固定 -->
+    <footer class="clearfix">
+        <button class="btn_paper"><em></em><span>上传试卷</span></button>
+        <button class="btn_record"><em></em><span>上传记录</span></button>
+        <button class="btn_all check"><em></em><span>全部试卷</span></button>
+    </footer>
+</div>
+<script type="text/javascript" src="style/zepto.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        //截取url字符串
+        function queryURLParameter(url) {
+            var obj = {};
+            var reg = /([^?=&]+)=([^?=&]+)/g;
+            url.replace(reg, function () {
+                obj[arguments[1]] = arguments[2];
+            });
+            return obj;
+        }
+
+        var url = window.location.href;
+        if (!queryURLParameter(url)["id"]) return alert('查询详情失败,请稍后重试.');
+        var id = queryURLParameter(url)["id"];
+        $.ajax({
+            type: 'post',
+            url:'style/data.json',
+//            url: '/paperCollect/paperCollect!queryPaperById.action?id='+id,
+            dataType: "json",
+            success: function (data) {
+                if (!data.success) return alert('查询详情失败,请稍后重试.');
+                //表头,姓名,时间,img地址
+                var cur = data.data[0], title = cur.title, name = cur.provider, date = cur.createDate, imgList = cur.fileUrls, strImg = '';
+                $(".title")[0].innerText = title;
+                $(".author")[0].innerText = name;
+                $(".time")[0].innerText = date;
+                for (var i = 0; i < imgList.length; i++) {
+                    strImg += '<p class="clearfix"><img src="' + imgList[i] + '" alt=""></p>';
+                }
+                $(".current_pic").append(strImg);
+            }, error: function (data) {
+                alert('查询详情失败,请稍后重试.')
+            }
+        })
+    });
+</script>
 </body>
 
 </html>
