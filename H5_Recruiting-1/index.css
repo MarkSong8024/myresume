@@ -1,0 +1,136 @@
+
+ul {
+    list-style: none;
+}
+
+#main {
+    width: 640px;
+    height: 960px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -320px;
+    -webkit-transform-origin: top;
+
+}
+
+.slide li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.slide li:nth-child(1) {
+    background: #1F2830;
+
+    /*background: url("matter/bg.svg") no-repeat;*/
+}
+
+.slide li:nth-child(2) {
+    background: #1F2830;
+
+    /*background: url("matter/bg.svg") no-repeat;*/
+}
+
+.zIndex {
+    z-index: 111;
+}
+
+h1 {
+    font-size: 0.64rem;
+    line-height: 100%;
+    margin-bottom: 0.28rem;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 0.36rem;
+    line-height: 0.46rem;
+    margin: 0;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: normal;
+}
+
+.landingPage, .spayzPage {
+    display: block;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    overflow: hidden;
+}
+
+.text_area {
+    position: absolute;
+    margin: 0 0.6rem;
+    z-index: 20;
+    text-shadow: 0 0 4px #1F2830;
+}
+
+.imgBg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url("matter/bg.svg") no-repeat center center;
+    background-size: cover;
+    -webkit-animation: twinkling 15s infinite linear;
+    animation: twinkling 15s infinite linear;
+}
+
+/*.animated{*/
+/*-webkit-animation-duration: 2s;*/
+/*animation-duration: 2s;*/
+/*-webkit-animation-fill-mode: both;*/
+/*animation-fill-mode: both*/
+/*}*/
+@-webkit-keyframes twinkling {
+    0% {
+        opacity: 1;
+        background-position: 0 0;
+    }
+    25% {
+        background-position: 0 5%;
+        opacity: 0.5;
+    }
+    50% {
+        background-position: 0 10%;
+        opacity: 1;
+    }
+    75% {
+        background-position: 0 5%;
+        opacity: 0.5;
+    }
+
+    100% {
+        background-position: 0 0;
+        opacity: 1;
+    }
+}
+
+@keyframes twinkling {
+    0% {
+        opacity: 1;
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 0 10%;
+        opacity: 0.5;
+    }
+
+    100% {
+        background-position: 0 0;
+        opacity: 1;
+    }
+}
