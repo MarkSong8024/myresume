@@ -9,8 +9,8 @@ var desH = 960;
 
 //<script language="JavaScript">
 //
-//var winW = document.documentElement.clientWidth;//Éè±¸µÄ¿í
-//var desW = 750;//Éè¼Æ¸åµÄ¿í
+//var winW = document.documentElement.clientWidth;//è®¾å¤‡çš„å®½
+//var desW = 750;//è®¾è®¡ç¨¿çš„å®½
 //var rem = desW / 100;
 //if (winW > desW) {
 //    desW = winW;
@@ -20,7 +20,7 @@ var desH = 960;
 //</script>
 
 
-//Ëõ·ÅÒ³ÃæÊÊÅä¸÷¸öÒÆ¶¯Éè±¸
+//ç¼©æ”¾é¡µé¢é€‚é…å„ä¸ªç§»åŠ¨è®¾å¤‡
 main.style.webkitTransform = "scale(" + winH / desH + ")";
 
 [].forEach.call(oLis, function () {
@@ -47,22 +47,26 @@ function move(e) {
         arguments[0].className = "";
         arguments[0].firstElementChild.id = "";
     })
-    if (changePos > 0) {/*ÍùÏÂ»¬*/
+    if (changePos > 0) {/*å¾€ä¸‹æ»‘*/
         var pos = -winH + changePos;
         this.prevSIndex = cur == 0 ? oLis.length - 1 : cur - 1;
-
-    } else if (changePos < 0) {/*ÍùÉÏ»¬*/
+    } else if (changePos < 0) {/*å¾€ä¸Šæ»‘*/
         this.prevSIndex = cur == oLis.length - 1 ? 0 : cur + 1;
         var pos = winH + changePos;
-
     }
     oLis[this.prevSIndex].style.webkitTransform = "translate(0," + pos + "px)";
     oLis[this.prevSIndex].className = 'zIndex';
     oLis[this.prevSIndex].style.display = "block";
+
     oLis[cur].style.webkitTransform = "scale(" + (1 - Math.abs(changePos) / winH * step) + ") translate(0," + changePos + "px)";
 }
 function end(e) {
     if (this.flag) {
+        if (this.prevSIndex == 1) {
+            oLis[0].style.display = 'none';
+        } else {
+            oLis[1].style.display = 'none';
+        }
         oLis[this.prevSIndex].style.webkitTransform = "translate(0,0)";
         oLis[this.prevSIndex].style.webkitTransition = "0.5s";
         oLis[this.prevSIndex].addEventListener("webkitTransitionEnd", function () {
@@ -72,7 +76,6 @@ function end(e) {
     }
 
 }
-
 
 
 
