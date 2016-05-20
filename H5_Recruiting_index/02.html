@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<p id="show"></p>
+
+<body>
+<script type="text/javascript">
+    var time = 180000;
+    function fn() {
+        window.setTimeout('fn()', 60000);
+        if (time > 0) {
+            time = time - 60000;
+            console.log(time);
+        }
+    }
+    fn();
+</script>
+</body>
+</html>

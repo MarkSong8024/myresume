@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+h1 {
+    font-size: 0.64rem;
+    line-height: 100%;
+    margin-bottom: 0.28rem;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    font-weight: normal;
+
+}
+
+h2 {
+    font-size: 0.36rem;
+    line-height: 0.46rem;
+    margin: 0;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: normal;
+}
+
+.swiper-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 50;
+}
+.swiper-wrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.landingPage, .spayzPage, .leftrightPage, .albumPage, .casePage, .registerPage {
+    position: relative;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.text_area{
+    position: absolute;
+    margin: 0 0.6rem;
+    z-index: 20;
+    text-shadow: 0 0 4px #1F2830;
+}
+
+.leftright_wrapper{
+    position: absolute;
+    width: 3.3rem;
+    height: 6.28rem;
+    top: 38%;
+    transform: translate(-50%);
+    left: 50%;
+}
+.leftbody{
+    position: absolute;
+    width: 1.66rem;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+}
+.rightbody{
+    position: absolute;
+    width: 1.64rem;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+}
+.lefttext, .righttext{
+    opacity: 0;
+}
+
+
+.imgBg{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url("./matter/bg.svg")no-repeat center center;
+    background-size: cover;
+    z-index: 0;
+    -webkit-animation: twinkling 20s infinite  linear;
+    animation: twinkling 20s infinite linear;
+}
+/*animation*/
+
+@-webkit-keyframes twinkling{
+    0%{
+        background-size: 120%;
+        opacity: 1;
+    }
+    25%{
+        background-size: 110%;
+        opacity: 0.5;
+    }
+    50%{
+        background-size: 100%;
+        opacity: 0.1;
+    }
+    75%{
+        background-size: 110%;
+        opacity: 0.5;
+    }
+
+    100%{
+        background-size: 120%;
+        opacity: 1;
+    }
+}
+@keyframes twinkling {
+    0% {
+        background-size: 120%;
+        opacity: 1;
+    }
+    25% {
+        background-size: 110%;
+        opacity: 0.5;
+
+    }
+    50% {
+        background-size: 100%;
+        opacity: 0.1;
+    }
+    75% {
+        background-size: 110%;
+        opacity: 0.5;
+    }
+
+    100% {
+        background-size: 120%;
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
