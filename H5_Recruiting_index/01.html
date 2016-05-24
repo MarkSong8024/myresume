@@ -1,42 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
+<head>
+    <meta charset="utf-8">
+    <title>css3-rotate环形旋转特效网页摘星分享</title>
     <style>
-        .c1 {
-            transform: scale(1);
-            transition:all .7s ease-in-out;
-        }
-        .c2 {
-            transform: scale(1);
-            transition:all .7s ease-out;
-        }
-
-        div {
-            width: 200px;
-            height: 200px;
-            background: red;
-            transform: scale(0);
-        }
+        * {padding:0; margin:0;}
+        body {background:#000;}
+        img {border:none;}
+        li {list-style:none;}
+        a { text-decoration:none;}
+        #div1 {width:100px; height:100px; position:absolute; left:60%; top:50%; margin: -200px;}
+        #div1 img {position: absolute; left: 0; top: 0;}
     </style>
+    <script>
+        window.onload=function ()
+        {
+            var oDiv=document.getElementById('div1');
+            var aImg=oDiv.children;
+            for(var i=0; i<aImg.length; i++)
+            {
+                aImg[i].I=rndNum(-5,5);
+                if(aImg[i].I==0)aImg[i].I=1;
+                aImg[i]._I=aImg[i].I;
+                aImg[i].style.width=100+i*20+'px';
+                aImg[i].style.margin=-10*i+'px';
+            }
+            setInterval(function ()
+            {
+                for(var i=0; i<aImg.length; i++)
+                {
+                    aImg[i].style.WebkitTransform='rotate('+aImg[i].I+'deg)';
+                    aImg[i].style.MozTransform='rotate('+aImg[i].I+'deg)';
+                    aImg[i].style.msTransform='rotate('+aImg[i].I+'deg)';
+                    aImg[i].I+=aImg[i]._I;
+                }
+            });
+        };
+        function rndNum(m, n)
+        {
+            n++;
+            return parseInt(Math.random()*(n-m)+m);
+        }
+    </script>
 </head>
 <body>
-<div id="c1">
-
+<div id="div1">
+    <img src="/jscss/demoimg/201404/cycle.png">
+    <img src="/jscss/demoimg/201404/cycle.png">
+    <img src="/jscss/demoimg/201404/cycle.png">
+    <img src="/jscss/demoimg/201404/cycle.png">
+    <img src="/jscss/demoimg/201404/cycle.png">
+    <img src="/jscss/demoimg/201404/cycle.png">
+    <img src="/jscss/demoimg/201404/cycle.png">
+    <img src="/jscss/demoimg/201404/cycle.png">
+    <img src="/jscss/demoimg/201404/cycle.png">
+    <img src="/jscss/demoimg/201404/cycle.png">
+    <img src="/jscss/demoimg/201404/cycle.png">
 </div>
-<input type="button" value="确定" id="btn"/>
-<script>
-
-    var s = document.getElementById('c1');
-    var sb = document.getElementById('btn');
-    sb.onclick=function(){
-        s.className = 'c2';
-    }
-
-    var RE = /transform: scale\((0.[0-9]+)\)/;
-    var str = 'transform: scale(0.8)';
-    console.log(str.replace(RE, "$1"))
-</script>
+<div style="text-align:center;clear:both">
+</div>
 </body>
 </html>
