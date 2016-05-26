@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .test_box {
+            width: 400px;
+            min-height: 120px;
+            _height: 120px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 3px;
+            outline: 0;
+            border: 1px solid #a0b3d6;
+            font-size: 12px;
+            word-wrap: break-word;
+            overflow-x: hidden;
+            overflow-y: auto;
+            _overflow-y: visible;
+        }
+        #c1{
+            word-wrap:break-word
+        }
+    </style>
+</head>
+<body>
+
+<div class="test_box" contenteditable="true"><br /></div>
+
+
+<textarea id="erea" rows="1" cols="10" onkeyup="changerow()"></textarea>
+
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+    var rows=1;//根据文本框初始值设置。
+    var cols=10;//根据文本框初始值设置。
+    var num=0;
+    function changerow(){
+        num++;
+        if(num==rows*cols-1){
+            rows=rows+2;
+            document.getElementById("erea").rows=rows;
+        }
+    }
+</script>
+
+</body>
+</html>
