@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="keyword" content=""/>
+    <meta name="description" content=""/>
+    <meta name="screen-orientation" content="portrait">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>H5 Recruiting</title>
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <link rel="stylesheet" href="./animate.css"/>
+    <link rel="stylesheet" type="text/css" href="input.css"/>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Verdana", 'Heiti SC', '黑体', sans-serif;
+        }
+
+        html, body {
+            background-attachment: scroll !important;
+            width: 100%;
+            height: 100%;
+            font-family: "Verdana", 'Heiti SC', '黑体', sans-serif;
+            color: white;
+            background-color: #1F2830;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        textarea {
+            outline: none;
+            resize: none;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0%;
+        }
+
+        .container .page {
+            height: 100%;
+            position: relative;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+    <script language="JavaScript">
+        var winW = document.documentElement.clientWidth;//设备的宽
+        var desW = 750;//设计稿的宽
+        var rem = desW / 100;
+        if (winW > desW) {
+            desW = winW;
+        }
+        document.documentElement.style.fontSize = winW / rem + "px";
+
+    </script>
+</head>
+<body>
+
+<div class=" container swiper-container" style="z-index: 10;overflow: hidden;width: 100%;height: 100%">
+    <div class="swiper-wrapper">
+        <div id="page0" class="landingPage swiper-slide page  page0">
+            <div class="text_area" style="width: 57.6%; right: 0; bottom: 44%">
+                <h1 style="margin-bottom: 0.28rem;">我们是谁？</h1>
+
+                <h2>大家好！我们是“太空人”作为一家数字营销广告公司，我们致力于为客户提供市场互动策略与解决方案。</h2>
+            </div>
+            <!--<figure>-->
+            <img src="./matter/planet_brown.svg" style="position: absolute; width: 140%; top: 80%; right: -10%">
+            <img src="./matter/planet_lightgray.svg" style="position: absolute; width: 28.8%; top: 5%; right: -5%">
+            <img src="./matter/planet_red.svg" style="position: absolute; width: 12.8%; top: 20%; left: 5%">
+            <img src="./matter/planet_blue.svg" style="position: absolute; width: 3.7%; top: 15%; left: 30%">
+            <img src="./matter/planet_jove.svg"
+                 style="position: absolute; width: 12.8%; top: 4%; left: 50%; transform: rotate(18deg);-webkit-transform: rotate(18deg)">
+            <img src="./matter/planet_brown.svg" style="position: absolute; width: 140%; top: 80%; right: -10%">
+            <img src="./matter/persona.svg" style="position: absolute; width: 23.7%; bottom: 14%; left: 21%">
+
+            <!--</figure>-->
+        </div>
+        <div id="page1" class="spayzPage swiper-slide page page1">
+            <div class="spayz_wrapper">
+                <img src="matter/spayz_kv.png"
+                     style="position:absolute; width: 100%; height: 100%; top: 0; left: 0;z-index: 1">
+
+                <div class="img1"></div>
+                <div class="img2"></div>
+                <div class="img3"></div>
+            </div>
+            <div class="text_area" style="width: 48.6%; left: 0; bottom: 36%">
+                <h1 style="margin-bottom: 0.28rem;">Spayz</h1>
+
+                <h2>“Spayz”是我们开发的营销智能引擎，我们以此聚焦真实的数据认知，将营销科学带入广告和活动行业的诸多方面。</h2>
+            </div>
+            <!--<figure>-->
+            <img src="./matter/planet_blue.svg" style="position: absolute; width: 35%; top: 95%; left: 48%">
+            <img src="./matter/planet_brown.svg" style="position: absolute; width: 7.7%; top: 75%; right: 12%">
+            <img src="./matter/planet_red.svg" style="position: absolute; width: 16%; top: -4%; left: 10%">
+            <img src="./matter/persona.svg"
+                 style="position: absolute; width: 17.6%; bottom: 12%; left: 20%; transform: rotate(22deg);-webkit-transform: rotate(22deg)">
+            <!--</figure>-->
+        </div>
+        <div id="page2" class="leftrightPage swiper-slide page page2">
+            <div class="text_area" id="leftright_title" style="width:100%; margin: 0;  top: 18%; left: 0">
+                <h2 style="text-align: center">我们从数据和创意</br>双重途径来解决商业问题</br>达到商业目标</h2>
+                <img src="matter/left_tips.png" class="left_tips" id="left_tip">
+                <img src="matter/right_tips.png" class="right_tips" id="right_tip">
+            </div>
+            <div class="text_area lefttext" id="lefttext" style="width: 45%; left: 0; top: 16%">
+                <h1 style="margin-bottom: 0.28rem;">左脑</h1>
+
+                <h2>左脑则帮助我们聚焦数据收集与分析，获得真实数据认知。</h2>
+            </div>
+            <div class="text_area righttext" id="righttext" style="width: 45%; right: 0; top: 16%">
+                <h1 style="margin-bottom: 0.28rem;">右脑</h1>
+
+                <h2>我们以右脑实现创意提供包括线上和线下的一整套营销方案。</h2>
+            </div>
+            <div class="leftright_wrapper">
+                <img src="./matter/leftbody.png" id="leftbody" class="leftbody">
+                <img src="./matter/rightbody.png" id="rightbody" class="rightbody">
+                <img src="./matter/persona.svg" style=" width: 100%;">
+
+            </div>
+            <img src="./matter/planet_cyan.svg" style="position: absolute; width: 7.2%; top: 5%; left: -2%">
+            <img src="./matter/planet_blue.svg" style="position: absolute; width: 18.7%; top: 95%; right: 10%">
+            <img src="./matter/planet_brown.svg" style="position: absolute; width: 21.5%; top: 83%; left: -2%">
+            <img src="./matter/planet_lightgray.svg" style="position: absolute; width: 21.8%; top: -2%; left: 84%">
+            <img src="./matter/planet_jove.svg"
+                 style="position: absolute; width: 10%; top: 70%; left: 14%; transform: rotate(20deg);-webkit-transform: rotate(20deg)">
+        </div>
+        <div id="page3" class="albumPage swiper-slide page page3">
+            <h2 style="text-align: center;position: absolute;top: 5%;left:0; width: 100%">这是我的小伙伴们</br>
+                我们一起进行了很多团建活动</br>
+                彼此分享快乐、共同成长</h2>
+
+            <div class="album kePublic">
+                <ul class="album_container slides">
+                    <input type="radio" name="radio-btn" id="img-1" checked/>
+                    <li class="album_wrapper slide-container">
+                        <div class="slide">
+                            <div class="slide_mask">
+                                <div class="slide_img qq2"></div>
+                            </div>
+                        </div>
+                        <div class="nav">
+                            <label for="img-6" class="prev" id="img-1-prev"></label>
+                            <label for="img-2" class="next" id="img-1-next"></label>
+                        </div>
+
+                    </li>
+                    <input type="radio" name="radio-btn" id="img-2" checked/>
+                    <li class="album_wrapper slide-container">
+                        <div class="slide">
+                            <div class="slide_mask">
+                                <div class="slide_img qq3"></div>
+                            </div>
+                        </div>
+                        <div class="nav">
+                            <label for="img-1" class="prev" id="img-2-prev"></label>
+                            <label for="img-3" class="next" id="img-2-next"></label>
+                        </div>
+
+                    </li>
+                    <input type="radio" name="radio-btn" id="img-3" checked/>
+                    <li class="album_wrapper slide-container">
+                        <div class="slide">
+                            <div class="slide_mask">
+                                <div class="slide_img qq4"></div>
+                            </div>
+                        </div>
+                        <div class="nav">
+                            <label for="img-2" class="prev" id="img-3-prev"></label>
+                            <label for="img-4" class="next" id="img-3-next"></label>
+                        </div>
+
+                    </li>
+                    <input type="radio" name="radio-btn" id="img-4" checked/>
+                    <li class="album_wrapper slide-container">
+                        <div class="slide">
+                            <div class="slide_mask">
+                                <div class="slide_img qq5"></div>
+                            </div>
+                        </div>
+                        <div class="nav">
+                            <label for="img-3" class="prev" id="img-4-prev"></label>
+                            <label for="img-5" class="next" id="img-4-next"></label>
+                        </div>
+
+                    </li>
+                    <input type="radio" name="radio-btn" id="img-5" checked/>
+                    <li class="album_wrapper slide-container">
+                        <div class="slide">
+                            <div class="slide_mask">
+                                <div class="slide_img qq6"></div>
+                            </div>
+                        </div>
+                        <div class="nav">
+                            <label for="img-4" class="prev" id="img-5-prev"></label>
+                            <label for="img-6" class="next" id="img-5-next"></label>
+                        </div>
+
+                    </li>
+                    <input type="radio" name="radio-btn" id="img-6" checked/>
+                    <li class="album_wrapper slide-container">
+                        <div class="slide">
+                            <div class="slide_mask">
+                                <div class="slide_img qq1"></div>
+                            </div>
+                        </div>
+                        <div class="nav">
+                            <label for="img-5" class="prev" id="img-6-prev"></label>
+                            <label for="img-1" class="next" id="img-6-next"></label>
+                        </div>
+
+                    </li>
+                    <li class="nav-dots">
+                        <label for="img-1" class="nav-dot" id="img-dot-1"></label>
+                        <label for="img-2" class="nav-dot" id="img-dot-2"></label>
+                        <label for="img-3" class="nav-dot" id="img-dot-3"></label>
+                        <label for="img-4" class="nav-dot" id="img-dot-4"></label>
+                        <label for="img-5" class="nav-dot" id="img-dot-5"></label>
+                        <label for="img-6" class="nav-dot" id="img-dot-6"></label>
+                    </li>
+                </ul>
+            </div>
+            <img src="./matter/persona_computer.png" style="position: absolute; width: 35%; top: 62%; left: 36.3%">
+            <img src="./matter/planet_jove.svg"
+                 style="position: absolute; width: 11.5%; top: 5%; left: 8%; transform: rotate(21deg);-webkit-transform: rotate(21deg)">
+            <img src="./matter/planet_darkgray.svg" style="position: absolute; width: 22.6%; top: 20%; right: 7%">
+            <img src="./matter/planet_blue.svg" style="position: absolute; width: 7.7%; top: 48%; left: 15%">
+            <img src="./matter/planet_cyan.svg" style="position: absolute; width: 16%; top: 58%; left: 90%">
+            <img src="./matter/planet_red.svg" style="position: absolute; width: 25.6%; top: 90%; left: -5%">
+        </div>
+        <div id="page4" class="casePage swiper-slide page page4" style="transform-style: preserve-3d;">
+            <img src="matter/persona.svg"
+                 style="position: absolute; width: 16%; bottom: 5%; left: 15%;transform: rotate(8deg);-webkit-transform: rotate(8deg)">
+
+            <h2 style="position: absolute;bottom: 8%;right: 5%">这是我们的合作伙伴</br>我们的服务范围覆盖全世界</br>包括但不限于……</h2>
+            <img id="qiu1" src="logo_image/logostar_vienna.png"
+                 style="position: absolute; width: 21%; top: 1.3%; left: -3%">
+            <img id="qiu2" src="logo_image/logostar_hilton.png"
+                 style="position: absolute; width: 25%; top: -2.8%; left: 46%">
+            <img id="qiu3" src="logo_image/logostar_volkswagen.png"
+                 style="position: absolute; width: 18%; top: 14%; left: 18%">
+            <img id="qiu4" src="logo_image/logostar_qualcomm.png"
+                 style="position: absolute; width: 15.4%; top: 10%; left: 76%">
+            <img id="qiu5" src="logo_image/logostar_volvo.png"
+                 style="position: absolute; width: 13.3%; top: 19.6%; left: 50%">
+            <img id="qiu6" src="logo_image/logostar_switzerland.png"
+                 style="position: absolute; width: 25.6%; top: 33%; left: -4%">
+            <img id="qiu7" src="logo_image/logostar_globalblue.png"
+                 style="position: absolute; width: 16.6%; top: 29%; left: 28%">
+            <img id="qiu8" src="logo_image/logostar_mammut.png"
+                 style="position: absolute; width: 10%; top: 31%; left: 60%">
+            <img id="qiu9" src="logo_image/logostar_swiss.png"
+                 style="position: absolute; width: 22%; top: 23%; left: 82%">
+            <img id="qiu10" src="logo_image/logostar_asiana.png"
+                 style="position: absolute; width: 14%; top: 42%; left: 59.8%">
+            <img id="qiu11" src="logo_image/logostar_audi.png"
+                 style="position: absolute; width: 20.8%; top: 48%; left: 35%">
+            <img id="qiu12" src="logo_image/logostar_ana.png"
+                 style="position: absolute; width: 20%; top: 43%; left: 82%">
+            <img id="qiu13" src="logo_image/logostar_porsche.png"
+                 style="position: absolute; width: 19%; top: 59%; left: 9%">
+            <img id="qiu14" src="logo_image/logostar_Star%20Alliance.png"
+                 style="position: absolute; width: 28%; top: 57%; left: 67%">
+        </div>
+        <div id="page5" class="registerPage swiper-slide page page5 c1">
+            <div class="text_area" style="width: 100%; left: 0; top: 11.2%;  margin: 0">
+                <h1 style="margin-bottom: 0.28rem;text-align: center;">你愿意加入我们吗?</h1>
+            </div>
+            <img src="./matter/persona_head.png"
+                 style="position: absolute;width: 55%; top: 22%; left: 50%; transform: translate(-50%,0); -webkit-transform: translate(-50%,0); z-index: 52"/>
+            <img class="recruiting_open" src="./matter/bt_recruiting.png"
+                 style="position: absolute;width: 3.1rem; bottom: 24%; left: 50%; transform: translate(-50%,0);-webkit-transform:translate(-50%,0); z-index: 52"/>
+            <img class="bt_website" src="./matter/bt_website.png"
+                 style="position: absolute;width: 3.1rem; bottom: 12%; left: 50%; transform: translate(-50%,0);-webkit-transform:translate(-50%,0); z-index: 52"/>
+            <img src="./matter/planet_darkgray.svg" style="position: absolute; width: 10%; top: 8.5%; right: 10%">
+            <img src="./matter/planet_brown.svg" style="position: absolute; width: 12%; top: 61%; left: 8%">
+            <img src="./matter/planet_cyan.svg" style="position: absolute; width: 12%; top: 30%; left: 20%">
+            <img src="./matter/planet_red.svg" style="position: absolute; width: 19%; top: 33%; left: 83%">
+            <!--弹层-->
+            <div class="dialog_recruiting_wrapper">
+                <div class="dialog_recruiting">
+                    <div class="dialog_top">
+                        <img class="recruiting_close" src="matter/icon_close.svg"
+                             style="position: absolute; top: 0.34rem; right: 0.34rem; bottom: 0.34rem; width: 0.28rem">
+                    </div>
+                    <div class="dialog_content">
+                        <label>
+                            <input type="text"/>
+                            <span>姓名</span>
+                        </label>
+                        <label>
+                            <input type="text"/>
+                            <span>电话</span>
+                        </label>
+                        <label>
+                            <!--<input type="text"/>-->
+                            <span>应聘职位</span>
+                            <img src="matter/icon_dropdown.svg"
+                                 style="position: absolute; width: 0.2rem; right: 0.14rem; bottom: 0.28rem"/>
+                            <select id="presTextCareer" class="presText_career">
+                                <option value="  "></option>
+                                <option value="IT">IT 产品经理</option>
+                                <option value="客户部">客户经理</option>
+                                <option value="客户部">数字编辑</option>
+                            </select>
+                        </label>
+                        <label>
+                            <input type="textarea" class="label_4" type="text"/>
+
+                            <span>个人简介</span>
+                            <!--<div class="test_box" contenteditable="true"><br /></div>-->
+
+                            <!--<textarea class="label_4" id="input_3" style="overflow-y: hidden"  name="username"></textarea>-->
+                        </label>
+                        <img id="btSubmit" src="matter/bt_submit.png" style="width: 3.1rem; margin:0.4rem auto 0 auto"/>
+                    </div>
+
+                </div>
+            </div>
+            <div class="prompt">
+                <h2 style="text-align: center;width: 100%;margin-top: 0.75rem">您的信息我们已经收到啦</br>我们会尽快联系您！</br></h2>
+                <img id="btUnderstand" src="matter/bt_understand.png" style="width: 3.1rem;margin: 0.9rem auto 0 auto"
+                     alt=""/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="imgBg"></div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/prefixfree.min.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript">
+    var mySwiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+        longSwipesMs : 2000,
+        longSwipes:false,
+        preloadImages:false,
+        onSlideChangeEnd: function (swiper) {
+            if (swiper.activeIndex == 4) {
+                var num = 0;
+                var interVal = window.setInterval(function () {
+                    num++;
+                    if (num > 14) {
+                        clearInterval(interVal)
+                    } else {
+                        $('#qiu' + num).addClass('bounceIn animated')
+                    }
+                }, 100)
+            }
+        }
+    })
+
+
+</script>
+<script type="text/javascript">
+    $(function () {
+        $("#leftbody,#left_tip").click(function () {
+            $("#lefttext").animate({"opacity": "1"}, 100);
+            $("#righttext").animate({"opacity": "0"}, 100);
+            $("#leftbody").animate({"opacity": "1"}, 100);
+            $("#rightbody").animate({"opacity": "0"}, 100);
+            $("#leftright_title").animate({"opacity": "0"}, 100);
+        });
+        $("#rightbody,#right_tip").click(function () {
+            $("#lefttext").animate({"opacity": "0"}, 100);
+            $("#righttext").animate({"opacity": "1"}, 100);
+            $("#leftbody").animate({"opacity": "0"}, 100);
+            $("#rightbody").animate({"opacity": "1"}, 100);
+            $("#leftright_title").animate({"opacity": "0"}, 100);
+
+        });
+        $(".recruiting_open").click(function () {
+            if (!$(".prompt").is(":hidden")) {
+                return;
+            }
+            $('#page5').addClass('swiper-no-swiping');
+
+            $(".dialog_recruiting_wrapper").show(function () {
+                $(this).animate({top: "0", opacity: "1"}, 100);
+            });
+        });
+        $(".recruiting_close,#btSubmit").click(function () {
+            $(".dialog_recruiting_wrapper").animate({top: "100px", opacity: "0"}, 100, function () {
+                $(this).hide()
+            });
+        });
+        $(".recruiting_close").click(function () {
+                    $('#page5').removeClass('swiper-no-swiping');
+                }
+        );
+        $("img#btSubmit").click(function () {
+            $(".prompt").show(300, function () {
+                $(this).animate({top: "0", opacity: "1"}, 100);
+            });
+        });
+        $("img#btUnderstand").click(function () {
+            $('#page5').removeClass('swiper-no-swiping');
+            $(".prompt").animate({top: "100px", opacity: "0"}, 100, function () {
+                $(this).hide();
+            })
+        });
+    });
+</script>
+
+</body>
+</html>
