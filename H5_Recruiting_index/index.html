@@ -383,22 +383,28 @@
             if (!$(".prompt").is(":hidden")) {
                 return;
             }
+            $('#page5').addClass('swiper-no-swiping');
+
             $(".dialog_recruiting_wrapper").show(function () {
                 $(this).animate({top: "0", opacity: "1"}, 300);
             });
         });
         $(".recruiting_close,#btSubmit").click(function () {
-
             $(".dialog_recruiting_wrapper").animate({top: "100px", opacity: "0"}, 300, function () {
                 $(this).hide()
             });
         });
+        $(".recruiting_close").click(function () {
+                    $('#page5').removeClass('swiper-no-swiping');
+                }
+        );
         $("img#btSubmit").click(function () {
             $(".prompt").show(300, function () {
                 $(this).animate({top: "0", opacity: "1"}, 300);
             });
         });
         $("img#btUnderstand").click(function () {
+            $('#page5').removeClass('swiper-no-swiping');
             $(".prompt").animate({top: "100px", opacity: "0"}, 300, function () {
                 $(this).hide();
             })
