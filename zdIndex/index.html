@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="keyword" content=""/>
+    <meta name="description" content=""/>
+    <meta name="screen-orientation" content="portrait">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>正大猪九宝套餐</title>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/index-1.css"/>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            background-attachment: scroll !important;
+            width: 100%;
+            height: 100%;
+            font-family: "Lantinghei SC Heavy", "微软雅黑", '黑体', sans-serif;
+            font-weight: 700;
+            color: white;
+            overflow: hidden;
+            margin: 0;
+            background-color: #F9EAB3;
+        }
+
+        h2 {
+            font-size: 0.36rem;
+            line-height: 0.46rem;
+            margin: 0;
+            -webkit-margin-before: 0em;
+            -webkit-margin-after: 0em;
+            -webkit-margin-start: 0px;
+            -webkit-margin-end: 0px;
+            text-align: left;
+        }
+
+        ul {
+            list-style: none;
+        }
+    </style>
+    <script language="JavaScript">
+        var winW = document.documentElement.clientWidth;//设备的宽
+        var desW = 750;//设计稿的宽
+        var rem = desW / 100;
+        if (winW > desW) {
+            desW = winW;
+        }
+        document.documentElement.style.fontSize = winW / rem + "px";
+        $(document).ready(function () {
+            var show_per_page = 3;
+            var number_of_items = $('#grid').children().size();
+            var number_of_pages = Math.ceil(number_of_items / show_per_page);
+            $('#current_page').val(0);
+            $('#show_per_page').val(show_per_page);
+            var navigation_html = "";
+            var current_link = 0;
+            while (number_of_pages > current_link) {
+                navigation_html += '<div class="page_link" onclick="go_to_page(' + current_link + ')" longdesc="' + current_link + '"></div>';
+                current_link++;
+            }
+            $('#page_navigation').html(navigation_html);
+            $('#page_navigation .page_link:first').addClass('active_page');
+            $('#grid').children().css('display', 'none');
+            $('#grid').children().slice(0, show_per_page).css('display', '');
+        });
+        function previous() {
+            new_page = parseInt($('#current_page').val()) - 1;
+            if ($('.active_page').prev('.page_link').length == true) {
+                go_to_page(new_page);
+            }
+        }
+        function next() {
+            var new_page = parseInt($('#current_page').val()) + 1;
+            if ($('.active_page').next('.page_link').length == true) {
+                go_to_page(new_page);
+            }
+        }
+        function go_to_page(page_num) {
+            var show_per_page = parseInt($('#show_per_page').val());
+            var start_from = page_num * show_per_page;
+            var end_on = start_from + show_per_page;
+            $('#grid').children().css('display', 'none').slice(start_from, end_on).css('display', '');
+            $('.page_link[longdesc=' + page_num + ']').addClass('active_page').siblings('.active_page').removeClass('active_page');
+            $('#current_page').val(page_num);
+        }
+    </script>
+</head>
+<body>
+<div class="cp_Page">
+    <div class="firstPage" style="display: block">
+        <img src="img/logo.png" style="position: absolute;top: 0;width: 100%;"/>
+        <img src="img/first-page-slogan.png" style="position: absolute;top: 11%;width: 85%;transform: translate(-50%);-webkit-transform: translate(-50%);
+    left: 50%;"/>
+        <img src="img/first-page-pig.png" style="position: absolute;bottom: 0;width: 100%;z-index: 5;"/>
+
+        <h2 style="position: absolute; width: 100%;top: 33%;left:0;text-align: center;color: #b48749; -webkit-tap-highlight-color: rgba(255,0,0,0.5)">
+            精准营养,科学饲喂</br>更大程度发挥猪的生长潜力</h2>
+
+        <div class="firstButton"><p
+                style="margin: 0.2rem auto;letter-spacing:0.02rem; text-align: center;color: #805122;font-size: 0.44rem;">
+            开始挑战</p></div>
+        <p id="firstClick"
+           style="position: absolute;bottom: 2%;left: 50%; font-size: 0.32rem;line-height: 0.44rem; color: #FDFAFB;border-bottom: 1px solid #FDFAFB; transform: translate(-50%);-webkit-transform: translate(-50%);z-index: 10;">
+            活动规则</p>
+        <!--首页活动规则弹框-->
+        <div class="landing_popup" id="stamp_landing_popup">
+            <div class="popup_box">
+                <img src="img/board.png" style="position: relative;width: 100%;height: 100%;z-index: 56;"/>
+
+                <h1 style="position: absolute;display: inline-block; z-index: 60; top:2%; left: 50%;transform: translate(-50%);-webkit-transform: translate(-50%); text-align: center;font-size: 0.5rem;color: #895717;-webkit-text-stroke: 0.001rem white;">
+                    活动规则</h1>
+
+                <h3 style="position: absolute;top: 8%">活动时间:</br>2016年7月1日至2016年7月20日</h3>
+
+                <h3 style="position: absolute;top: 18%">参与方式:</br>点击 “开始挑战”进入游戏
+                    将正大猪九宝套餐的9款饲料产品，根据九宫格内的关键词提示分别放入对应位置
+                    在规定时间内完成挑战，将获得1次抽奖机会
+                    每人每天可参与1次挑战，将本活动分享后可获得额外的挑战机会（额外机会每天仅限1次）
+                </h3>
+
+                <h3 style="position: absolute;top: 51%">奖项设置:</br>一等奖:10000(1名)</br>二等奖:5000(6名)</br>三等奖:2000(12名)</br>
+                    四等奖:1000(30名)</br>纪念奖:100(60名)</br>请您务必正确填写领奖信息哦，以免与大奖擦肩而过！
+                </h3>
+                <span style="position: absolute;top: 84%; display: inline-block;font-size: 0.28rem;line-height: 0.39rem;color: #895717;margin: 0 0.9rem 0 0.9rem;">*本活动最终解释权归正大集团所有</span>
+            </div>
+            <div id="firstClose"
+                 style="position: fixed;bottom:6%;width: 0.58rem;z-index: 56; height: 0.58rem;left: 50%;transform: translate(-50%);-webkit-transform: translate(-50%);">
+                <img src="img/Button-close.png" style="width: 100%;height: 100%;"/>
+            </div>
+        </div>
+        <!--首页每天玩游戏次数提示弹框-->
+        <div class="landing_popup" id="stamp_landing_popup_2" style="visibility: hidden">
+            <div class="popup_box" style="top: 28%;">
+                <div id="shareFirst"
+                     style="position: fixed;display: inline-block; top: -75%; right: 10%; width: 0.82rem;height: 1.38rem">
+                    <img src="img/arrows.png" style="width: 100%;height: 100%;"/>
+                </div>
+                <img src="img/board-small.png" style="position: absolute;top:35%;width: 100%"/>
+
+                <p style="position: relative;display: inline-block; margin-top: 1.7rem; z-index: 60;font-size:0.48rem;line-height: 0.7rem; color: #895717;text-align: center;left: 50%; transform: translate(-50%);-webkit-transform: translate(-50%);-webkit-text-stroke: 0.003rem white;">
+                    立即分享，将额外获得</br>1次参与机会！</p>
+            </div>
+            <div id="firstClose_1"
+                 style="position: fixed;bottom:6%; left: 50%;transform: translate(-50%);-webkit-transform: translate(-50%); width: 0.58rem;height: 0.58rem">
+                <img src="img/Button-close.png" style="width: 100%;height: 100%;"/>
+            </div>
+        </div>
+        <!--今天已玩两次挑战提示弹框-->
+        <div class="landing_popup" id="stamp_landing_popup_3" style="visibility: hidden">
+            <div class="popup_box" style="top: 26%;">
+                <img src="img/board-small.png" style="position: absolute;top:35%;width: 100%"/>
+
+                <p style="position: relative;display: inline-block; margin-top: 1.7rem; z-index: 60;font-size:0.48rem;line-height: 0.7rem; color: #895717;text-align: center;left: 50%; transform: translate(-50%);-webkit-transform: translate(-50%);-webkit-text-stroke: 0.003rem white;">
+                    您本日已参与两次挑战</br>请明日再接再厉！</p>
+            </div>
+            <div id="firstClose_2"
+                 style="position: fixed;bottom:6%; left: 50%;transform: translate(-50%);-webkit-transform: translate(-50%); width: 0.58rem;height: 0.58rem">
+                <img src="img/Button-close.png" style="width: 100%;height: 100%;"/>
+            </div>
+        </div>
+    </div>
+    <div class="configBody" style="display: none">
+        <div class="configMargin">
+            <div class="configTitle">请将9款产品分别拖动到对应的九宫格内并释放</div>
+            <div class="grid_list">
+                <div class="configProduct">
+                    <div class='page_previous' onclick="previous();"></div>
+                    <div class="container">
+                        <div id="grid" class="grid">
+                            <div class="gridReturn">
+                                <div id="grid_1" class="grid__item">1</div>
+                                <img src="./img/plate.png">
+
+                                <div class="description">正大奶多宝</div>
+                            </div>
+                            <div class="gridReturn">
+                                <div id="grid_2" class="grid__item">2</div>
+                                <img src="./img/plate.png">
+
+                                <div class="description">正大代乳宝</div>
+                            </div>
+                            <div class="gridReturn">
+                                <div id="grid_3" class="grid__item">3</div>
+                                <img src="./img/plate.png">
+
+                                <div class="description">正大肥猪宝</div>
+                            </div>
+                            <div class="gridReturn">
+                                <div id="grid_4" class="grid__item">4</div>
+                                <img src="./img/plate.png">
+
+                                <div class="description">正大仔猪宝</div>
+                            </div>
+                            <div class="gridReturn">
+                                <div id="grid_5" class="grid__item">5</div>
+                                <img src="./img/plate.png">
+
+                                <div class="description">正大仔多宝</div>
+                            </div>
+                            <div class="gridReturn">
+                                <div id="grid_6" class="grid__item">6</div>
+                                <img src="./img/plate.png">
+
+                                <div class="description">正大大猪宝</div>
+                            </div>
+                            <div class="gridReturn">
+                                <div id="grid_7" class="grid__item">7</div>
+                                <img src="./img/plate.png">
+
+                                <div class="description">正大中猪宝</div>
+                            </div>
+                            <div class="gridReturn">
+                                <div id="grid_8" class="grid__item">8</div>
+                                <img src="./img/plate.png">
+
+                                <div class="description">正大乳猪宝</div>
+                            </div>
+                            <div class="gridReturn">
+                                <div id="grid_9" class="grid__item">9</div>
+                                <img src="./img/plate.png">
+
+                                <div class="description">正大小猪宝</div>
+                            </div>
+                        </div>
+                        <input type='hidden' id='current_page'/>
+                        <input type='hidden' id='show_per_page'/>
+
+                        <div id='page_navigation'></div>
+                    </div>
+                    <div class='page_next' onclick="next();"></div>
+                    <div class="clear"></div>
+                </div>
+                <div class="configPuzzle">
+                    <div id="drop-area" class="drop-area show">
+                        <div class="drop-area__item">1</div>
+                        <div class="drop-area__item">2</div>
+                        <div class="drop-area__item">3</div>
+                        <div class="drop-area__item">4</div>
+                        <div class="drop-area__item">5</div>
+                        <div class="drop-area__item">6</div>
+                        <div class="drop-area__item">7</div>
+                        <div class="drop-area__item">8</div>
+                        <div class="drop-area__item">9</div>
+                    </div>
+                    <!--连线错误时弹框-->
+                    <div class="drop-area-index"><p
+                            style="position: absolute;top: 22%;color: #ffffff;font-size: 0.4rem;line-height: 0.6rem;margin: 0 0.5rem 0 0.5rem">
+                        很遗憾，挑战失败，</br>
+                        您未在规定时间内完成！</br>
+                        立即分享，将额外得到1次参与机会！
+                    </p></div>
+                </div>
+
+                <input type="hidden" class="angle_1" value="">
+                <input type="hidden" class="angle_2" value="">
+                <input type="hidden" class="angle_3" value="">
+                <input type="hidden" class="angle_4" value="">
+                <input type="hidden" class="angle_5" value="">
+                <input type="hidden" class="angle_6" value="">
+                <input type="hidden" class="angle_7" value="">
+                <input type="hidden" class="angle_8" value="">
+                <input type="hidden" class="angle_9" value="">
+            </div>
+            <div class="time-bar">
+                <div class="time-bar-wid"></div>
+            </div>
+        </div>
+        <div class="nth-child">
+            <div class="flip">
+                <div class="front">aa</div>
+                <div class="back pig_image"></div>
+            </div>
+        </div>
+        <!--倒计时弹框-->
+        <div class="landing_popup" id="stamp_landing_popup_6" style="visibility: visible">
+            <div class="popup_box" style="position: relative;top: 28%;">
+                <img src="img/count-down-3.png" id="countDown"
+                     style="position: absolute;left: 50%;width: 4.5rem;transform: translate(-50%);-webkit-transform: translate(-50%)"/>
+            </div>
+        </div>
+        <!--kv弹框-->
+        <div class="landing_popup" id="stamp_landing_popup_5" style="visibility: hidden">
+            <div class="popup_box" style="position: relative;top: 24%;">
+                <img src="img/cp-kv.png"
+                     style="position: absolute;top: 60%;left: 50%; width: 90%;transform: translate(-50%);-webkit-transform: translate(-50%);"/>
+                <img src="img/seal.png" style="position: absolute;width: 40%;right: -5%;margin-top: -1.6rem;"/>
+
+            </div>
+            <div id="firstClose_3"
+                 style="position: fixed;bottom:6%; left: 50%;transform: translate(-50%);-webkit-transform: translate(-50%); width: 0.58rem;height: 0.58rem;z-index: 66">
+                <img src="img/Button-close.png" style="width: 100%;height: 100%;"/>
+            </div>
+        </div>
+    </div>
+    <div class="gameOverPage" style="display: block">
+        <div style="position: relative;top: 5%; width: 6.66rem;height: 2.56rem;display: block;left: 50%;transform: translate(-50%);-webkit-transform: translate(-50%);">
+            <img src="img/board-small.png" style="position: absolute;width: 100%;"/>
+
+            <p style="position: absolute; top: 18%; margin: 0 0.6rem 0 0.8rem;font-size: 0.4rem;-webkit-text-stroke: 0.001rem white;color: #986b38;">
+                使用正大猪九宝套餐，每头猪可提前5-7天出栏，并节省养殖成本50元！</p>
+        </div>
+
+        <div style="position: relative;top: 10%; width: 6.7rem;height: 6.63rem; left: 50%;transform: translate(-50%);-webkit-transform: translate(-50%); ">
+            <img src="img/puzzle-background.png" style="position: absolute;width: 100%;height: 100%"/>
+            <img id="fullPig" src="img/full-pig.png"
+                 style="position: absolute;top: 4%;width: 5.8rem;left: 50%;transform: translate(-50%);-webkit-transform: translate(-50%)"/>
+        </div>
+        <div id="gameOverButton" class="scratchButton" style="visibility: visible; bottom: 3%"><p id="gameOverP"
+                                                                                                  style="margin: 0.2rem auto; letter-spacing:0.02rem; text-align: center;color: #805122;font-size: 0.44rem;">
+            立即抽奖</p></div>
+    </div>
+    <div class="scratch_card_page" style="visibility: hidden">
+        <img src="img/logo.png" style="position: absolute;top: 0;width: 100%;"/>
+        <img src="img/first-page-slogan.png" style="position: absolute;top: 11%;width: 86%;transform: translate(-50%);-webkit-transform: translate(-50%);
+    left: 50%;"/>
+
+        <div class="scratch_card_bag">
+            <img src="img/imgBg.png" style="position: absolute;width: 100%;height: 100%"/>
+            <img id="lottery" src="img/lotteryBag.png"
+                 style="position: absolute;top: 22%;left: 50%;transform: translate(-50%);-webkit-transform: translate(-50%);width:5rem;z-index: 1"/>
+
+            <div class="scratch_card_last"
+                 style="position: relative;top: 22%;left: 50%;transform: translate(-50%);-webkit-transform: translate(-50%);width: 5rem;height: 2.5rem;">
+                <img src="img/scratch_card_3.png" style="position: absolute;width: 100%"/>
+                <div style="position: absolute; margin: 0 0.5rem 0.3rem 0.5rem;top: 13%; font-size: 0.36rem;line-height: 0.7rem;">
+                   <p style="color: #bc2227;text-align: center">一等奖</p>
+                    <p id="scratch_card_p" style="display: inline-block; top: 2%;color: #4b4b4b;font-size: 0.3rem; line-height: 0.4rem;">恭喜您获得<span>500元电子优惠券,</span></br><span
+                            style="display: inline-block; top: 2%;color: #4b4b4b;font-size: 0.3rem; line-height: 0.4rem;">请您点击下方按钮,填写个人领奖信息！</span>
+                    </p>
+                </div>
+
+            </div>
+            <span style="position: absolute;bottom: 14%;text-align: center;color: #956e3d;font-size: 0.32rem;width:100%;line-height: 0.46rem; left: 50%;transform: translate(-50%);-webkit-transform: translate(-50%);z-index: 2;">轻触上方屏幕刮开奖券</br>
+                赢取饲料大奖！</span>
+
+        </div>
+
+        <div id="scratchButton_1" class="scratchButton" style="visibility: hidden; bottom: 3%"><p id="scratchP"
+                                                                                                  style="margin: 0.2rem auto; letter-spacing:0.02rem; text-align: center;color: #805122;font-size: 0.44rem;">
+            立即分享</p></div>
+    </div>
+    <div class="drawn_prize_page" style="visibility: hidden">
+        <img src="img/logo.png" style="position: absolute;top: 0;width: 100%;"/>
+
+        <div class="drawn_prize_bag">
+            <img src="img/drawn_prize.png" style="position: absolute;width: 100%;height: 100%"/>
+
+            <p id="content"
+               style="position: absolute;color: #C54431;font-size: 0.44rem;z-index: 5;top: 33%;margin:0 0.6rem 1rem 0.8rem;line-height: 0.8rem">
+                温馨提示：<span style="display: block;line-height: 0.44rem;font-size: 0.32rem;">请您务必确保信息真实性，工作人员将在活动结束后15个工作日内与您联络。</span>
+            </p>
+
+            <div class="pres">
+                <ul>
+                    <li class="user_li">
+                        <input id="userPres" class="presText" placeholder="姓名" type="text"/></li>
+                    <li class="user_li">
+                        <input id="presText_inp" class="presText" placeholder="手机号码" type="text"/></li>
+                </ul>
+            </div>
+            <div id="context_1" style="display: none;z-index: 10;margin: 0 0.7rem 1rem 0.7rem;">
+                <p style="position:absolute;top: 39%; color:#C54431;  font-size: 0.44rem;line-height: 0.8rem;">
+                    领奖须知：</p>
+
+                <p style="position:absolute;top: 51%; color:#C54431;  font-size: 0.32rem;line-height: 0.44rem;margin: 0 0.7rem 0 0;">
+                    恭喜您已成功提交领奖信息！请保持手机畅通，我们的工作人员将在活动结束后的15个工作日内与您联系。</p>
+
+                <p style="position:absolute;top: 75%; color:#C54431;  font-size: 0.32rem;line-height: 0.44rem">
+                    *本活动奖品不予兑现</p>
+            </div>
+        </div>
+
+        <div id="scratchButton_2" class="scratchButton" style="bottom: 3%"><p id="button_context"
+                                                                                style="margin: 0.2rem auto; letter-spacing:0.02rem; text-align: center;color: #805122;font-size: 0.44rem;">
+            确认并提交</p></div>
+        <!--中奖页分享弹层-->
+        <div class="landing_popup" id="stamp_landing_popup_4" style="visibility: hidden">
+            <div class="popup_box">
+                <div id="share_drawn_prize"
+                     style="position: fixed;display: inline-block; top: 0; right: 10%; width: 0.82rem;height: 1.38rem">
+                    <img src="img/arrows.png" style="width: 100%;height: 100%;"/>
+                </div>
+                <p style="position: relative;margin-top: 1.8rem;font-size: 0.4rem; line-height: 0.56rem;float: right;right: 5%;">
+                    点击上方按钮，</br>分享给您的好友
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript" src="js/index.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<script src="js/draggabilly.pkgd.min.js"></script>
+<script src="js/dragdrop.js"></script>
+<script>
+    (function () {
+        var body = document.body,
+                dropArea = document.getElementById('drop-area'),
+                droppableArr = [], dropAreaTimeout;
+        [].slice.call(document.querySelectorAll('#drop-area .drop-area__item')).forEach(function (el) {
+            droppableArr.push(new Droppable(el, {
+                onDrop: function (instance, draggableEl) {
+                    if (!draggableEl['innerText']) {
+                        return false;
+                    }
+                    if (draggableEl['innerText'] == instance.el['innerText']) {
+                        $("#grid_" + draggableEl['innerText']).removeAttr("id");
+                        $(".nth-child").css("display", "block");
+                        $(".angle_" + draggableEl['innerText']).val(1);
+                        $(".pig_image").css('background', 'url(img/puzzle-pig-' + draggableEl['innerText'] + '.png) no-repeat center');
+                        $(".pig_image").css('background-size', '100% 100%');
+                    } else {
+                        classie.add(instance.el, 'drop-feedback');
+                    }
+                    clearTimeout(instance.checkmarkTimeout);
+                    instance.checkmarkTimeout = setTimeout(function () {
+                        //del drop-feedback
+                        classie.remove(instance.el, 'drop-feedback');
+                        if (draggableEl['innerText'] == instance.el['innerText']) {
+                            switchPage(instance.el, draggableEl['innerText']);
+                        }
+                    }, 100);
+                }
+            }));
+        });
+        // initialize draggable(s)
+        [].slice.call(document.querySelectorAll('.grid_list .grid__item')).forEach(function (el) {
+            new Draggable(el, droppableArr, {
+                draggabilly: {containment: document.body},
+                onStart: function () {
+                    clearTimeout(dropAreaTimeout);
+                    classie.add(dropArea, 'show');
+                },
+                onEnd: function (wasDropped) {
+
+                    var afterDropFn = function () {
+
+                    };
+                    if (!wasDropped) {
+                        afterDropFn();
+                    } else {
+                        clearTimeout(dropAreaTimeout);
+                        dropAreaTimeout = setTimeout(afterDropFn, 400);
+                    }
+                }
+            });
+        });
+    })();
+    function switchPage(calssName, pig) {
+        var heig = $(document).height();
+        $("#start_layer").css("height", "" + heig + "px");
+        $("#start_layer").show();
+        $("body").css("overflow", "hidden");
+        var count = 1;
+        var interval = setInterval(conutDown, 300);
+
+        function conutDown() {
+            count--;
+            if (count < 0) {
+                clearInterval(interval);
+                $(".nth-child .flip").css("transition", "0.09s");
+                $(".nth-child .flip").css("transform", "rotateY(180deg)");
+                settime(calssName, pig);
+            }
+        }
+    }
+    function settime(calssName, pig_image) {
+        var count = 1;
+        var interval = setInterval(conutDown, 300);
+
+        function conutDown() {
+            count--;
+            if (count < 0) {
+                clearInterval(interval);
+                $(".nth-child .flip").css("transition", "0.09s");
+                $(".nth-child .flip").css("transform", "rotateY(0deg)");
+                $(".nth-child").css("display", "none");
+                if (pig_image) {
+                    $(calssName).css('background', 'url(img/puzzle-pig-' + pig_image + '.png) no-repeat center');
+                    $(calssName).css('background-size', '100% 100%');
+                }
+                var angle = 0;
+                for (var i = 1; i < 10; i++) {
+                    if ($(".angle_" + i).val()) {
+                        angle += 1;
+                    }
+                }
+                if (angle == 9) {
+                    $("#stamp_landing_popup_5").css({visibility: "visible", "transition": "0.09s"});
+                }
+                $("#firstClose_3").on("touchstart", function (e) {
+                    e.preventDefault();
+                    $("#stamp_landing_popup_5").hide(function () {
+                        $(".configBody").hide();
+                        $(".gameOverPage").show(1000, function () {
+                            $("#fullPig").addClass("c1 c2");
+                            return
+                        });
+                        return
+                    })
+                    $("body").css("overflow", "visible");
+                    $("#start_layer").fadeOut(600);
+                });
+            }
+        }
+    }
+</script>
+</body>
+</html>

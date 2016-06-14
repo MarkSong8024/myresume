@@ -1,0 +1,157 @@
+
+ul{
+    list-style: none;
+}
+img{
+    border:0;
+}
+.clear{
+    clear:both
+}
+.configBody{
+    position: relative;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+    background:url(../img/background.png) no-repeat center center;
+    background-size:cover;
+}
+
+.configTitle{
+    color:#805122;
+    font-size: .26rem;
+
+    padding:.42rem 0 0 .4rem;
+}
+.configProduct{
+    display: block;
+    margin:.30rem .30rem 0 .30rem;
+    padding:0 .24rem;
+}
+.configProduct > .page_previous{
+    width:.24rem;
+    height:.40rem;
+    float:left;
+    background:url(../img/arrow-left.png) no-repeat left;
+    background-size:contain;
+    margin-left:-.24rem;
+    margin-top:.8rem;
+}
+.configProduct > .page_next{
+    width:.24rem;
+    height:.40rem;
+    float:right;
+    background:url(../img/arrow-right.png) no-repeat right;
+    background-size:contain;
+    margin-right:-.24rem;
+    margin-top:.8rem;
+}
+.configProduct > .container{
+    float:left;
+    width:100%;
+}
+.configProduct > .grid{
+    margin: 0 auto;
+}
+.configProduct .gridReturn{
+    float:left;
+    width:33.3%;
+    text-align:center;
+    margin: 0 auto;
+}
+.configProduct .grid__item{
+    display: inline-block;
+    text-align: center;
+    width:1.36rem;
+    height:1.95rem;
+    color: transparent;
+}
+
+.configProduct #grid_1{
+    background:url(../img/product-1.png) no-repeat center;
+    background-size:contain;
+    z-index:3;
+}
+.configProduct #grid_2{
+    background:url(../img/product-2.png) no-repeat center;
+    background-size:contain;
+    z-index:3;
+}
+.configProduct #grid_3{
+    background:url(../img/product-3.png) no-repeat center;
+    background-size:contain;
+    z-index:3;
+}
+.configProduct #grid_4{
+    background:url(../img/product-4.png) no-repeat center;
+    background-size:contain;
+    z-index:3;
+}
+.configProduct #grid_5{
+    background:url(../img/product-5.png) no-repeat center;
+    background-size:contain;
+    z-index:3;
+}
+.configProduct #grid_6{background:url(../img/product-6.png) no-repeat center;background-size:contain;z-index:3;
+}
+.configProduct #grid_7{background:url(../img/product-7.png) no-repeat center;background-size:contain;z-index:3;
+}
+.configProduct #grid_8{background:url(../img/product-8.png) no-repeat center;background-size:contain;z-index:3;
+}
+.configProduct #grid_9{background:url(../img/product-9.png) no-repeat center;background-size:contain;z-index:3;
+}
+
+.configProduct .gridReturn img{float:left;width:2.11rem;height:.82rem;margin-top:-.45rem;border:0;}
+.configProduct #page_navigation{width:55px;margin: 0 auto;}
+.configProduct #page_navigation .page_link{border:2px solid #e1c352;margin:0.02rem 2px 0 2px;height:5px;width:5px;color:black;text-decoration:none;border-radius:10px;color:white !important;float:left;background:#e1c352;}
+.configProduct #page_navigation .active_page{background:rgba(212,0,0,0);color:white !important;}
+.configProduct .description{width:2.3rem;height:.68rem;background:url(../img/product-name.png) no-repeat center;background-size:100% 100%;line-height:.34rem; text-align:center;font-size:.3em;color:#805122;/*font-weight:800;*/margin:.25rem 0 0 -.15rem;}
+
+.configPuzzle{margin:.215rem .50rem 0 .50rem;background:url(../img/puzzle-background.png) no-repeat center;background-size:100% 100%;width:6.5rem;height:6.5rem;border:0;}
+.configPuzzle .drop-area{margin:.21rem .2rem .2rem .35rem;display: inline-block;z-index:1;}
+.configPuzzle .drop-area__item{
+    float:left;
+    width:1.9rem;
+    height:1.9rem;
+    display:-webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+    -webkit-transition: -webkit-transform 0.3s, background 0.3s;
+    transition: transform 0.3s, background 0.3s;
+    -webkit-backface-visibility: hidden;
+    background:url(../img/puzzle-blank.png) no-repeat center;
+    background-size:100% 100%;
+    text-align: center;
+    font-size: .28rem;
+    color:#ea5504;
+    line-height: 0.5rem;
+    border-style:solid;
+    border-width:.017rem;
+    border-color: transparent;
+}
+.configPuzzle .drop-feedback{border:0.06rem solid #ea5504;border-radius:4px;}
+
+.time-bar{position: absolute;bottom: 3%;left: 50%;transform: translate(-50%);-webkit-transform: translate(-50%); height:.25rem;display:block;background:#cacdcc;width:6rem;border-radius:.1rem;border:.02rem solid #FFF;}
+.time-bar .time-bar-wid{height:100%;width:80%;background:url(../img/time-bar.png) no-repeat center;background-size:100% 100%;}
+
+#start_layer {width:100%;margin: 0 auto;background: #000000;opacity: 0.8;position: absolute;z-index: 105;color: #FFF;top: 0;text-align: center;display: none;visibility:visible;}
+
+.nth-child{perspective:1000;transform-style:preserve-3d;width:6rem;height:6rem;top:2rem;position:absolute;display: none;z-index:115;margin:.8rem;}
+.nth-child,.front,.back{width:6rem;height:6rem;}
+.flip{position:relative;transition:0.6s;transform-style:preserve-3d;}
+.front,.back{position:absolute;top: 0px;left: 0px;backface-visibility:hidden;z-index:125;}
+.front{background:url(../img/puzzle-blank.png) no-repeat center;background-size:100% 100%;line-height:6rem;text-align: center;font-size: .28rem;color:#ea5504;}
+.back{transform:rotateY(-180deg);}
+.nth-child:hover .flip{transform:rotateY(180deg);}
+.drop-area-index{
+    position: relative;
+    top: -99%;
+    display: none;
+    margin: .21rem .2rem .2rem .35rem;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1;
+    width: 5.8rem;
+    height: 5.78rem;
+    border-radius: 5px;
+}
+
